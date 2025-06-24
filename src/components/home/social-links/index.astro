@@ -1,0 +1,24 @@
+---
+import { userData } from '@/constants/site-data'
+import SocialLinksItem from './SocialLinksItem.astro'
+import { Icons } from '@/components/icons/icons'
+---
+
+<section id='social-links' class='section container'>
+  <h2 class='sr-only'>Social Links</h2>
+
+  <ul class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+    {
+      userData.social.map((link) => {
+        const Icon = Icons[link.icon as keyof typeof Icons]
+        return (
+          <li class='col-span-1 odd:border-r even:border-l border-border/50'>
+            <SocialLinksItem link={link}>
+              <Icon class='size-full text-foreground fill-foreground' />
+            </SocialLinksItem>
+          </li>
+        )
+      })
+    }
+  </ul>
+</section>

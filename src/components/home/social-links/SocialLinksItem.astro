@@ -1,0 +1,35 @@
+---
+import { Icons } from '@/components/icons/icons'
+import { userData } from '@/constants/site-data'
+
+interface Props {
+  link: (typeof userData)['social'][number]
+}
+
+const { title, href, description } = Astro.props.link
+---
+
+<a
+  class='group/link flex cursor-pointer items-center gap-4 p-4 pr-2 select-none max-sm:screen-line-before max-sm:screen-line-after sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after'
+  href={href}
+  target='_blank'
+  rel='noopener'
+>
+  <div
+    class='relative size-12 shrink-0 border-[0.5px] rounded-sm border-border/30'
+  >
+    <slot />
+  </div>
+
+  <div class='flex-1'>
+    <h3
+      class='flex items-center font-medium underline-offset-4 group-hover/link:underline'
+    >
+      {title}
+    </h3>
+
+    {description && <p class='text-sm text-muted-foreground'>{description}</p>}
+  </div>
+
+  <Icons.arrowUpRight class='size-4 text-muted-foreground' />
+</a>

@@ -1,0 +1,23 @@
+---
+import { userData } from '@/constants/site-data'
+import OverviewItem from './OverviewItem.astro'
+import { Icons } from '@/components/icons/icons'
+---
+
+<section id='overview' class='section container'>
+  <h2 class='sr-only'>Overview</h2>
+  <ul class='p-2 space-y-2'>
+    {
+      userData.overview.map((item) => {
+        const Icon = Icons[item.icon as keyof typeof Icons]
+        return (
+          <li>
+            <OverviewItem item={item}>
+              <Icon class='size-4' />
+            </OverviewItem>
+          </li>
+        )
+      })
+    }
+  </ul>
+</section>

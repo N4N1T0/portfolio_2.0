@@ -1,0 +1,35 @@
+---
+import type { userData } from '@/constants/site-data'
+
+interface Props {
+  item: (typeof userData)['overview'][number]
+}
+
+const { content, href } = Astro.props.item
+---
+
+<div class='flex items-center gap-4 font-mono text-sm'>
+  <div
+    class='flex size-6 shrink-0 items-center justify-center bg-muted rounded-sm'
+    aria-hidden
+  >
+    <slot />
+  </div>
+
+  <p class='text-balance'>
+    {
+      href ? (
+        <a
+          class='underline-offset-4 hover:underline'
+          href={href}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {content}
+        </a>
+      ) : (
+        content
+      )
+    }
+  </p>
+</div>

@@ -1,0 +1,48 @@
+---
+import { buttonVariants } from '@/components/ui/utils'
+import { Icons } from '@/components/icons/icons'
+---
+
+<button
+  id='theme-toggle'
+  class={buttonVariants({ variant: 'outline', size: 'icon' })}
+>
+  <Icons.moonAndStar class='hidden [html.dark_&]:block' />
+  <Icons.sun class='hidden [html.light_&]:block' />
+  <span class='sr-only'>Toggle Theme</span>
+</button>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle')
+  const html = document.documentElement
+
+  const getTheme = (): string => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') as string
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  }
+
+  const setTheme = (theme: string) => {
+    html.classList.remove('light', 'dark')
+    html.classList.add(theme)
+    localStorage.setItem('theme', theme)
+  }
+
+  setTheme(getTheme())
+
+  themeToggle?.addEventListener('click', () => {
+    const isDark = html.classList.contains('dark')
+    setTheme(isDark ? 'light' : 'dark')
+  })
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light')
+      }
+    })
+</script>

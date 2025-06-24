@@ -1,0 +1,47 @@
+---
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
+import { techStack } from '@/constants/site-data'
+import { Image } from 'astro:assets'
+---
+
+<section id='techstack' class='section container'>
+  <div
+    class='[--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75 px-4 py-6'
+  >
+    <ul class='flex flex-wrap gap-4 select-none'>
+      {
+        techStack.map(({ href, title, key, color }) => {
+          return (
+            <li class='flex'>
+              <Tooltip>
+                <TooltipTrigger>
+                  <a
+                    href={href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    aria-label={title}
+                  >
+                    <Image
+                      src={`https://cdn.simpleicons.org/${key}`}
+                      alt={`${title} icon`}
+                      width={32}
+                      height={32}
+                    />
+                    <span class='sr-only'>{title}</span>
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <span>{title}</span>
+                </TooltipContent>
+              </Tooltip>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+</section>

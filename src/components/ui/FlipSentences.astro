@@ -1,0 +1,58 @@
+---
+import { userData } from '@/constants/site-data'
+---
+
+<div
+  class='flip-sentences font-mono text-sm text-balance text-muted-foreground select-none h-fit'
+  data-sentences={JSON.stringify(userData.sentences)}
+>
+</div>
+
+<script>
+  import { animate } from 'animejs'
+
+  const initFlipSentences = () => {
+    const el = document.querySelector('.flip-sentences') as HTMLDivElement
+    if (!el) return
+
+    const sentences = JSON.parse(el.dataset.sentences || '[]')
+    let current: number = 0
+    let intervalId: NodeJS.Timeout | null = null
+
+    const updateSentence = () => {
+      el.textContent = sentences[current]
+      animate(el, {
+        translateY: [10, 0],
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'linear'
+      })
+    }
+
+    const start = () => {
+      updateSentence()
+      intervalId = setInterval(() => {
+        current = (current + 1) % sentences.length
+        updateSentence()
+      }, 3500)
+    }
+
+    const stop = () => {
+      if (intervalId) clearInterval(intervalId)
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'visible') {
+        stop()
+      } else {
+        current = (current + 1) % sentences.length
+        updateSentence()
+        start()
+      }
+    })
+
+    start()
+  }
+
+  initFlipSentences()
+</script>

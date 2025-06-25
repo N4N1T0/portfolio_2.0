@@ -1,0 +1,89 @@
+---
+import { Icons } from '@/components/icons/icons'
+import { data } from '@/constants/site-config'
+---
+
+<footer class='max-w-screen overflow-x-hidden px-2'>
+  <div
+    class='screen-line-before mx-auto border-x border-edge pt-4 md:max-w-3xl'
+  >
+    <p
+      class='mb-1 text-center font-mono text-sm text-balance text-muted-foreground'
+    >
+      Inspired by <a
+        href='https://chanhdai.com/'
+        target='_blank'
+        rel='noopener noreferrer'>Chanhdai</a
+      >, tailwindcss.com and ui.shadcn.com
+    </p>
+
+    <p
+      class='mb-4 text-center font-mono text-sm text-balance text-muted-foreground'
+    >
+      Built by{' '}
+      <a
+        class='link'
+        href='https://x.com/iamncdai'
+        target='_blank'
+        rel='noopener'
+      >
+        Adrian "Nano" Alvarez
+      </a>
+      . The source code is available on{' '}
+      <a
+        class='link'
+        href='https://github.com/N4N1T0'
+        target='_blank'
+        rel='noopener'
+      >
+        GitHub
+      </a>
+      .
+    </p>
+
+    <div
+      class='screen-line-before screen-line-after flex w-full before:z-1 after:z-1 bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56'
+    >
+      <div
+        class='mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4'
+      >
+        <a
+          class='flex font-mono text-xs font-medium text-muted-foreground'
+          href={`${data.url}/llms.txt`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          llms.txt
+        </a>
+
+        <div class='flex h-11 w-px bg-edge'></div>
+
+        <a
+          class='flex items-center text-muted-foreground transition-colors hover:text-foreground'
+          href={`${data.url}/rss`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Icons.rss class='size-4' />
+          <span class='sr-only'>RSS</span>
+        </a>
+
+        <div class='flex h-11 w-px bg-edge'></div>
+
+        <a
+          class='flex text-muted-foreground transition-colors hover:text-foreground'
+          href={process.env.NEXT_PUBLIC_DMCA_URL ||
+            'https://www.dmca.com/ProtectionPro.aspx'}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Icons.dmca class='h-5 w-auto' />
+          <span class='sr-only'>DMCA.com Protection Status</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class='pb-[env(safe-area-inset-bottom,0px)]'>
+    <div class='flex h-2'></div>
+  </div>
+</footer>

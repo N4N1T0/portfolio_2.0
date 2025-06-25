@@ -6,7 +6,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-linear-to-b from-zinc-700 to-zinc-800 text-white inset-shadow-[0_1px_2px] inset-shadow-white/50 transition-colors text-shadow-xs hover:to-zinc-700 dark:from-zinc-600 dark:to-zinc-700 dark:inset-shadow-white/30 dark:hover:to-zinc-600',
+          'bg-gradient-to-l from-background to-muted/50 text-foreground text-shadow-xs border transition-colors duration-300 ease-in hover:bg-muted/60 hover:from-muted/60 hover:to-muted/60',
         destructive:
           'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
         outline:

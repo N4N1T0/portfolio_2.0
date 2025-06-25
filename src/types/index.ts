@@ -19,4 +19,11 @@ export interface Position {
   skills: string[]
   isExpanded: boolean
 }
-;[]
+
+export interface Certification {
+  title: string
+  issuer: string
+  issuerLogoURL: string
+  issueDate: string
+  credentialURL: string
+}

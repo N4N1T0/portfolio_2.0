@@ -1,0 +1,100 @@
+---
+import { Icons } from '@/components/icons/icons'
+import {
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import type { Position } from '@/types'
+
+interface Props {
+  position: Position
+}
+
+const { employmentType, employmentPeriod, description, skills, id, title } =
+  Astro.props.position
+
+const { start, end } = employmentPeriod
+const isOnGoing = !end
+---
+
+<AccordionItem value={id}>
+  <div
+    class='relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background'
+  >
+    <AccordionTrigger
+      class='group/experience block w-full text-left select-none p-0 pt-2'
+    >
+      <div class='relative z-1 mb-1 flex items-center gap-3 bg-background'>
+        <div
+          class='flex size-6 shrink-0 items-center justify-center rounded-sm bg-muted text-muted-foreground'
+          aria-hidden
+        >
+          <slot />
+        </div>
+
+        <h4 class='flex-1 font-medium text-balance'>
+          {title}
+        </h4>
+      </div>
+
+      <div class='flex items-center gap-2 pl-9 text-sm text-muted-foreground'>
+        {
+          employmentType && (
+            <div>
+              <dt class='sr-only'>Employment Type</dt>
+              <dd>{employmentType}</dd>
+            </div>
+          )
+        }
+
+        <div>
+          <dt class='sr-only'>Employment Period</dt>
+          <dd class='flex items-center gap-0.5'>
+            <span>{start}</span>
+            <span class='font-mono'>—</span>
+            {
+              isOnGoing ? (
+                <>
+                  <Icons.infinity
+                    class='size-4.5 translate-y-[0.5px]'
+                    aria-hidden
+                  />
+                  <span class='sr-only'>Present</span>
+                </>
+              ) : (
+                <span>{end}</span>
+              )
+            }
+          </dd>
+        </div>
+      </div>
+    </AccordionTrigger>
+
+    <AccordionContent
+      class='overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down'
+    >
+      <ul class='prose text-foreground pl-9'>
+        {
+          description.map((sentence) => (
+            <li class='pt-2 list-disc'>{sentence}</li>
+          ))
+        }
+      </ul>
+
+      {
+        Array.isArray(skills) && skills.length > 0 && (
+          <ul class='flex flex-wrap gap-1.5 pt-2 pl-9'>
+            {skills.map((skill) => (
+              <li class='flex'>
+                <span class='inline-flex items-center rounded-lg border bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground'>
+                  {skill}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </AccordionContent>
+  </div>
+</AccordionItem>

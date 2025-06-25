@@ -1,0 +1,21 @@
+---
+interface Props {
+  items: any[]
+}
+
+const { items } = Astro.props
+---
+
+{
+  Array.isArray(items) && items.length > 0 && (
+    <ul class='flex flex-wrap gap-1.5 pt-2 pl-9'>
+      {items.map((item) => (
+        <li class='flex'>
+          <span class='inline-flex items-center rounded-lg border bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground'>
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}

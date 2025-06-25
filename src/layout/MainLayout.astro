@@ -1,5 +1,7 @@
 ---
-import Header from '@/components/layout/header/Header.astro'
+import Header from '@/components/layout/header/index.astro'
+import Footer from '@/components/layout/footer/index.astro'
+
 import '@/styles/global.css'
 
 interface Props {
@@ -27,5 +29,6 @@ const {
     <main class='max-w-screen overflow-x-hidden px-2'>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

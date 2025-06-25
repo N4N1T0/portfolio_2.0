@@ -111,6 +111,13 @@ export const techStack = [
     color: '#5FA04E'
   },
   {
+    key: 'express',
+    title: 'Express',
+    href: 'https://expressjs.com/',
+    categories: ['Framework'],
+    color: '#000000'
+  },
+  {
     key: 'react',
     title: 'React',
     href: 'https://react.dev/',
@@ -137,6 +144,13 @@ export const techStack = [
     href: 'https://tailwindcss.com/',
     categories: ['Framework'],
     color: '#06B6D4'
+  },
+  {
+    key: 'sass',
+    title: 'Sass',
+    href: 'https://sass-lang.com/',
+    categories: ['Framework'],
+    color: '#CC6699'
   },
   {
     key: 'shadcnui',
@@ -193,5 +207,108 @@ export const techStack = [
     href: 'https://www.figma.com/',
     categories: ['Tools', 'Design'],
     color: '#F24E1E'
+  }
+]
+
+export const experiences = [
+  {
+    id: '3dids',
+    companyName: '3dids',
+    isCurrentEmployer: false,
+    companyLogo:
+      'https://3dids.com/cdn/shop/files/logo3DIDS.png?v=1721725590&width=120', // If you have a logo, add it here
+    positions: [
+      {
+        id: '3dids-2024',
+        title: 'Digital Business Consultant',
+        employmentPeriod: {
+          start: '2024',
+          end: '2025'
+        },
+        employmentType: 'Full-time',
+        icon: 'briefcase',
+        description: [
+          'Creation of custom web solutions focused on performance, SEO and accessibility.',
+          'Development of online stores and interactive platforms for clients with specific needs.'
+        ],
+        skills: [
+          'React',
+          'Next.js',
+          'Astro',
+          'TypeScript',
+          'Tailwind CSS',
+          'Accessibility',
+          'SEO'
+        ],
+        isExpanded: true
+      }
+    ]
+  },
+  {
+    id: 'desoft',
+    companyName: 'Desoft',
+    isCurrentEmployer: false,
+    companyLogo:
+      'https://www.desoft.cu/themes/custom/buildframetheme/img/favicon-14.svg',
+    positions: [
+      {
+        id: 'desoft-2021',
+        title: 'Junior Front-End Developer',
+        employmentPeriod: {
+          start: '2021',
+          end: '2023'
+        },
+        employmentType: 'Full-time',
+        icon: 'code',
+        description: [
+          '- Development of interactive and optimized interfaces with React, Next.js and TypeScript.',
+          '- Implementation of design patterns and software architecture to improve code scalability.',
+          '- Maintenance and optimization of web applications, reducing loading times by 30% using Turbopack and Webpack.'
+        ],
+        skills: [
+          'React',
+          'Next.js',
+          'TypeScript',
+          'Turbopack',
+          'Webpack',
+          'Software Architecture',
+          'Performance'
+        ],
+        isExpanded: true
+      }
+    ]
+  },
+  {
+    id: 'freelance',
+    companyName: 'Freelance Projects',
+    companyLogo: 'https://www.adrian-alvarez.dev/favicon.ico',
+    isCurrentEmployer: true,
+    positions: [
+      {
+        id: 'freelance-2019',
+        title: 'Freelance Web Developer',
+        employmentPeriod: {
+          start: '2019'
+        },
+        employmentType: 'Freelance',
+        icon: 'globe',
+        description: [
+          '- Development and implementation of custom solutions for e-commerce clients and web platforms.',
+          '- Integration of technologies like React, Next.js, Tailwind CSS and Node.js to improve user experience and web performance.',
+          '- Collaboration with Liquid Developer Group team to improve project quality and optimization.'
+        ],
+        skills: [
+          'React',
+          'Next.js',
+          'Tailwind CSS',
+          'Node.js',
+          'eCommerce',
+          'Performance',
+          'UX',
+          'Liquid'
+        ],
+        isExpanded: true
+      }
+    ]
   }
 ]

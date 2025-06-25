@@ -129,11 +129,15 @@ export function getHoverBorderColor(className?: string): string {
  * @return {Promise<Array<CollectionEntry<"projects">>>} A promise that resolves to an array of projects.
  */
 export async function getProjects(
-  lang: string
+  lang: string,
+  limit?: number | undefined
 ): Promise<Array<CollectionEntry<'projects'>>> {
-  const projects = (
-    await getCollection('projects', ({ id }) => id.startsWith(lang))
+  const projects = await getCollection('projects', ({ id }) =>
+    id.startsWith(lang)
   )
+
+  const formattedProjects = projects
+    .slice(0, limit || projects.length)
     .sort((a, b) => {
       const aDate = new Date(a.data.date).valueOf()
       const bDate = new Date(b.data.date).valueOf()
@@ -150,7 +154,7 @@ export async function getProjects(
       }
     })
 
-  return projects
+  return formattedProjects
 }
 
 /**

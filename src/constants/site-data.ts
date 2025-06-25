@@ -312,3 +312,60 @@ export const experiences = [
     ]
   }
 ]
+
+export const certifications = [
+  {
+    title: 'Javascript Algorithms and Data structure',
+    issuer: 'freecodecamp.org',
+    issuerLogoURL:
+      'https://www.freecodecamp.org/favicon-32x32.png?v=6cba562cbd10e31af925a976f3db73f7',
+    issueDate: '06-12-2022',
+    credentialURL:
+      'https://www.freecodecamp.org/certification/fcc0c7054f7-09c1-43bf-8f90-c9121bc86e5a/javascript-algorithms-and-data-structures'
+  },
+  {
+    title: 'Responsive Web Design',
+    issuer: 'freecodecamp.org',
+    issuerLogoURL:
+      'https://www.freecodecamp.org/favicon-32x32.png?v=6cba562cbd10e31af925a976f3db73f7',
+    issueDate: '29-12-2022',
+    credentialURL:
+      'https://www.freecodecamp.org/certification/fcc0c7054f7-09c1-43bf-8f90-c9121bc86e5a/responsive-web-design'
+  },
+  {
+    title: 'Front-End Development Libraries',
+    issuer: 'freecodecamp.org',
+    issuerLogoURL:
+      'https://www.freecodecamp.org/favicon-32x32.png?v=6cba562cbd10e31af925a976f3db73f7',
+    issueDate: '22-02-2023',
+    credentialURL:
+      'https://www.freecodecamp.org/certification/fcc0c7054f7-09c1-43bf-8f90-c9121bc86e5a/front-end-development-libraries'
+  },
+  {
+    title: 'Back-End Development and APIs',
+    issuer: 'freecodecamp.org',
+    issuerLogoURL:
+      'https://www.freecodecamp.org/favicon-32x32.png?v=6cba562cbd10e31af925a976f3db73f7',
+    issueDate: '28-04-2023',
+    credentialURL:
+      'https://www.freecodecamp.org/certification/fcc0c7054f7-09c1-43bf-8f90-c9121bc86e5a/data-visualization'
+  },
+  {
+    title: 'Data Visualization',
+    issuer: 'freecodecamp.org',
+    issuerLogoURL:
+      'https://www.freecodecamp.org/favicon-32x32.png?v=6cba562cbd10e31af925a976f3db73f7',
+    issueDate: '06-04-2023',
+    credentialURL:
+      'https://www.freecodecamp.org/certification/fcc0c7054f7-09c1-43bf-8f90-c9121bc86e5a/data-visualization'
+  },
+  {
+    title: 'Graph Developer - Associate',
+    issuer: 'Apollo GraphQL',
+    issuerLogoURL:
+      'https://www.apollographql.com/tutorials/favicon-32x32.png?v=e03dad83eb16cf475a13342272058ebe',
+    issueDate: '06-04-2023',
+    credentialURL:
+      'https://www.apollographql.com/tutorials/certifications/2877a312-31ad-44a0-bd0c-febb6dc9a4ca'
+  }
+]

@@ -8,12 +8,20 @@ const projects = await getProjects('es')
 ---
 
 <section class='section container px-4'>
-  <h2 class='text-3xl font-bold font-pixel screen-line-after py-1'>Projects</h2>
+  <h2 class='text-3xl font-bold font-pixel screen-line-after py-1'>
+    Projects
+    <sup class='text-sm text-muted-foreground select-none'>
+      ({projects.length})
+    </sup>
+  </h2>
   {projects.map((project) => <ProjectItem project={project} />)}
   <div class='screen-line-before flex justify-center py-2'>
-    <button id='show-more' class={buttonVariants({ variant: 'default' })}>
+    <button
+      id='show-more-projects'
+      class={buttonVariants({ variant: 'default' })}
+    >
       Show More
-      <Icons.chevronUp class='rotate-180' id='show-more-icon' />
+      <Icons.chevronUp class='rotate-180' id='show-more-icon-projects' />
     </button>
   </div>
 </section>
@@ -21,9 +29,13 @@ const projects = await getProjects('es')
 <script>
   import { animate, stagger } from 'animejs'
 
-  const showMore = document.getElementById('show-more') as HTMLButtonElement
-  const showMoreIcon = document.getElementById('show-more-icon') as HTMLElement
-  const projectItems = document.querySelectorAll('.project-item') // use a class instead of ID
+  const showMore = document.getElementById(
+    'show-more-projects'
+  ) as HTMLButtonElement
+  const showMoreIcon = document.getElementById(
+    'show-more-icon-projects'
+  ) as HTMLElement
+  const projectItems = document.querySelectorAll('.project-item')
 
   let isExpanded = false
 
@@ -31,7 +43,6 @@ const projects = await getProjects('es')
     const hiddenItems = Array.from(projectItems).slice(3)
 
     if (!isExpanded) {
-      // SHOW more
       hiddenItems.forEach((item) => {
         item.classList.remove('hidden')
       })
@@ -48,7 +59,6 @@ const projects = await getProjects('es')
       showMoreIcon.classList.remove('rotate-180')
       isExpanded = true
     } else {
-      // HIDE again
       animate(hiddenItems, {
         opacity: [1, 0],
         scale: [1, 0.95],

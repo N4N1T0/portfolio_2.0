@@ -1,0 +1,53 @@
+{
+  "title": "YogIN",
+  "date": "2025-04-10",
+  "excerpt": "SaaS innovador para estudiantes y profesores de yoga que facilita la creación de eventos, clases y perfiles personalizados, con funcionalidades de pago y suscripciones para análisis y mejora continua.",
+  "images": [
+    {
+      "src": "src/assets/projects/yogin-1.webp",
+      "alt": "Yogi Website"
+    },
+    {
+      "src": "src/assets/projects/yogin-2.webp",
+      "alt": "Yogi Website"
+    }
+  ],
+  "liveLink": "https://yog-in.es",
+  "repoLink": "",
+  "colors": ["#122775", "#d3944a"],
+  "techStack": [
+    {
+      "title": "React",
+      "info": "A JavaScript framework for building interactive and dynamic user interfaces on the frontend.",
+      "link": "https://reactjs.org/"
+    },
+    {
+      "title": "Bit",
+      "info": "A tool for sharing and reusing UI components across projects and teams, enabling collaborative development.",
+      "link": "https://bit.dev/"
+    },
+    {
+      "title": "Node.js & Express",
+      "info": "Backend server and framework for building robust and scalable APIs with JavaScript.",
+      "link": "https://nodejs.org/, https://expressjs.com/"
+    },
+    {
+      "title": "Passport",
+      "info": "Middleware for authentication in Node.js, facilitating secure session management.",
+      "link": "http://www.passportjs.org/"
+    },
+    {
+      "title": "Tailwind CSS",
+      "info": "Utility-first CSS framework that allows fast building of clean and responsive designs.",
+      "link": "https://tailwindcss.com/"
+    }
+  ],
+  "testimonial": {
+    "name": "",
+    "quote": "",
+    "role": ""
+  },
+  "challenge": "Crear una plataforma SaaS moderna para estudiantes y profesores de yoga que permita gestionar eventos, clases, perfiles y pagos, con funcionalidades avanzadas de filtrado y suscripciones para análisis de desempeño, manteniendo una arquitectura segura y escalable.",
+  "solution": "Utilizamos React con Bit para construir una interfaz modular y reutilizable, junto con Node.js y Express en el backend para una API robusta. Implementamos Passport para autenticación segura, Tailwind CSS para un diseño limpio y responsive, y ChatGM para mejorar la experiencia UI. También integramos Tankstack para optimizar las llamadas API, garantizando rendimiento y escalabilidad.",
+  "comingSoon": false
+}

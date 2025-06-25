@@ -1,0 +1,48 @@
+{
+  "title": "Lola Barcelona",
+  "date": "2024-11-10",
+  "excerpt": "Ecommerce store for modern beauty and cosmetic products, created to enhance the user experience and built with the following technologies:",
+  "images": [
+    {
+      "src": "src/assets/projects/lola-barcelona-1.webp",
+      "alt": "Lola Barcelona Website"
+    },
+    {
+      "src": "src/assets/projects/lola-barcelona-2.webp",
+      "alt": "Lola Barcelona Website"
+    }
+  ],
+  "liveLink": "https://www.lola-barcelona.com/",
+  "repoLink": "https://github.com/N4N1T0/lola-barcelona-theme",
+  "colors": ["#ff28ab", "#ffffff"],
+  "techStack": [
+    {
+      "title": "Shopify",
+      "info": "Shopify is one of the most popular and user-friendly e-commerce platforms, allowing businesses to create fully functional online stores with customizable options for sales and product management.",
+      "link": "https://www.shopify.com/"
+    },
+    {
+      "title": "Liquid",
+      "info": "Liquid is the templating language used by Shopify to customize themes, allowing for dynamic content integration on store pages and adapting functionalities to the clients needs.",
+      "link": "https://shopify.github.io/liquid/"
+    },
+    {
+      "title": "JavaScript",
+      "info": "JavaScript is a fundamental programming language for creating interactive experiences in Shopify stores, from integrating custom features to improving the user interface.",
+      "link": "https://www.javascript.com/"
+    },
+    {
+      "title": "Shopify Custom Apps",
+      "info": "Shopify custom apps allow you to extend the functionality of your store beyond what standard apps offer, with unique features to enhance the shopping experience and optimize business management.",
+      "link": "https://shopify.dev/apps"
+    }
+  ],
+  "testimonial": {
+    "name": "Carles",
+    "quote": "Working with Adrian on this project was an excellent experience. I appreciate all of his support and will always be open to collaborating again on future projects.",
+    "role": "CMO of Lola Barcelona"
+  },
+  "challenge": "Develop a customized Shopify store that enhances user experience and optimizes sales",
+  "solution": "Created a base Shopify theme with customized design and added upselling/cross-selling components",
+  "comingSoon": false
+}

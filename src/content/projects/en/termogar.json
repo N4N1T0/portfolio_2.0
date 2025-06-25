@@ -1,0 +1,48 @@
+{
+  "title": "Termogar",
+  "date": "2024-12-20",
+  "excerpt": "High-end e-commerce platform for aerothermal product sales, built and powered with these technologies:",
+  "images": [
+    {
+      "src": "src/assets/projects/termogar-1.webp",
+      "alt": "Termogar Website"
+    },
+    {
+      "src": "src/assets/projects/termogar-2.webp",
+      "alt": "Termogar Website"
+    }
+  ],
+  "liveLink": "https://termogar-ecommerce-next.vercel.app/",
+  "repoLink": "https://github.com/N4N1T0/termogar-ecommerce-next",
+  "colors": ["#ff0000", "#FFFFFF"],
+  "techStack": [
+    {
+      "title": "Next.js",
+      "info": "Used by some of the world's largest companies, Next.js allows you to build complete web applications by extending the latest React features and integrating powerful Rust-based JavaScript tools for the fastest builds.",
+      "link": "https://nextjs.org/"
+    },
+    {
+      "title": "Sanity",
+      "info": "Sanity is a content management platform providing a highly flexible and customizable CMS, ideal for creating modern and scalable content experiences.",
+      "link": "https://www.sanity.io/"
+    },
+    {
+      "title": "NextAuth",
+      "info": "NextAuth is an authentication and user management solution offering customizable user registration, login, and profile features, streamlining security implementation in web applications.",
+      "link": "https://authjs.dev/"
+    },
+    {
+      "title": "Resend & React Email",
+      "info": "Resend is an email delivery platform that simplifies notification and campaign integration. Combined with React Email, it enables designing and sending customizable emails using React components.",
+      "link": "https://resend.com/"
+    }
+  ],
+  "testimonial": {
+    "name": "Alvaro Perez Muñoz",
+    "quote": "It has been a pleasure working with Adrian; his dedication and professionalism are exemplary in the development of Termogar.",
+    "role": "CEO of Termogar"
+  },
+  "challenge": "Completely overhaul an outdated WordPress website with modern technologies",
+  "solution": "Built a new website using Next.js with static and dynamic rendering capabilities",
+  "comingSoon": false
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Lola Barcelona",
+  "date": "2024-11-10",
+  "excerpt": "Modern cosmetics e-commerce based in Barcelona, rebuilt with a custom Shopify theme to better reflect the brand identity and improve UX. Technologies used include Liquid, JavaScript, and CRO techniques.",
+  "images": [
+    {
+      "src": "src/assets/projects/lola-barcelona-1.webp",
+      "alt": "Lola Barcelona Website"
+    },
+    {
+      "src": "src/assets/projects/lola-barcelona-2.webp",
+      "alt": "Lola Barcelona Website"
+    }
+  ],
+  "liveLink": "https://www.lola-barcelona.com/",
+  "repoLink": "https://github.com/N4N1T0/lola-barcelona-theme",
+  "colors": ["#ff28ab", "#ffffff"],
+  "techStack": [
+    {
+      "title": "Shopify",
+      "info": "Shopify is one of the most popular and user-friendly e-commerce platforms, allowing businesses to create fully functional online stores with customizable sales and product management options.",
+      "link": "https://www.shopify.com/"
+    },
+    {
+      "title": "Liquid",
+      "info": "Liquid is Shopify's template language for customizing themes, enabling the integration of dynamic content and adapting store functionalities to client needs.",
+      "link": "https://shopify.github.io/liquid/"
+    },
+    {
+      "title": "JavaScript",
+      "info": "JavaScript is essential for creating interactive experiences on Shopify stores, from custom feature integrations to enhanced user interfaces.",
+      "link": "https://www.javascript.com/"
+    },
+    {
+      "title": "Shopify Custom Apps",
+      "info": "Shopify custom apps extend your store’s functionality beyond standard features, offering unique tools for better shopping experiences and business management.",
+      "link": "https://shopify.dev/apps"
+    }
+  ],
+  "testimonial": {
+    "name": "Carles",
+    "quote": "Working with Adrian on this project was an excellent experience. I appreciate all his support and I’d gladly collaborate again on future projects.",
+    "role": "CMO of Lola Barcelona"
+  },
+  "challenge": "Redesign an outdated Shopify store with a generic theme into a tailored, performance-optimized e-commerce aligned with Lola Barcelona’s modern brand identity and user base. The solution needed to support marketing strategies and customer retention techniques.",
+  "solution": "Develop a custom Shopify theme using Liquid and JavaScript, with carefully crafted UI components and styling aligned with the brand. Integrated upselling and cross-selling strategies were implemented to boost AOV and improve retention.",
+  "comingSoon": false
+}

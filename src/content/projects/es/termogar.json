@@ -1,0 +1,48 @@
+{
+  "title": "Termogar",
+  "date": "2024-12-20",
+  "excerpt": "Rediseño completo de un ecommerce de aerotermia de alta gama con Next.js, Sanity y NextAuth. Una plataforma moderna, rápida y escalable, pensada para destacar productos técnicos con un diseño limpio y una experiencia de usuario optimizada para convertir.",
+  "images": [
+    {
+      "src": "src/assets/projects/termogar-1.webp",
+      "alt": "Termogar Website"
+    },
+    {
+      "src": "src/assets/projects/termogar-2.webp",
+      "alt": "Termogar Website"
+    }
+  ],
+  "liveLink": "https://termogar-ecommerce-next.vercel.app/",
+  "repoLink": "https://github.com/N4N1T0/termogar-ecommerce-next",
+  "colors": ["#ff0000", "#FFFFFF"],
+  "techStack": [
+    {
+      "title": "Next.js",
+      "info": "Utilizado por algunas de las empresas más grandes del mundo, Next.js le permite crear aplicaciones web completas ampliando las últimas funciones de React e integrando potentes herramientas JavaScript basadas en Rust para las construcciones más rápidas.",
+      "link": "https://nextjs.org/"
+    },
+    {
+      "title": "Sanity",
+      "info": "Sanity es una plataforma de gestión de contenido que proporciona un CMS altamente flexible y personalizable, ideal para crear experiencias de contenido modernas y escalables.",
+      "link": "https://www.sanity.io/"
+    },
+    {
+      "title": "NextAuth",
+      "info": "NextAuth es una solución de autenticación y administración de usuarios que ofrece registro, inicio de sesión y perfiles de usuarios completamente personalizables, facilitando la implementación de seguridad en las aplicaciones web.",
+      "link": "https://authjs.dev/"
+    },
+    {
+      "title": "Resend & React Email",
+      "info": "Resend es una plataforma de entrega de correos electrónicos que facilita la integración de notificaciones y campañas de correo. Junto con React Email, permite diseño y enviar correos electrónicos personalizables con componentes de React.",
+      "link": "https://resend.com/"
+    }
+  ],
+  "testimonial": {
+    "name": "Alvaro Perez Muñoz",
+    "quote": "Ha sido un placer trabajar con Adrian, su dedicación y profesionalismo son ejemplares en el desarrollo de Termogar.",
+    "role": "CEO de Termogar"
+  },
+  "challenge": "Renovar por completo una antigua página web en WordPress con tecnologías modernas",
+  "solution": "Desarrollar una nueva web con Next.js con capacidades de renderizado estático y dinámico",
+  "comingSoon": false
+}

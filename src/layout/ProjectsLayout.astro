@@ -1,0 +1,48 @@
+---
+import Navigation from '@/components/projects/Navigation.astro'
+import MainLayout from './MainLayout.astro'
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import { cn } from '@/lib/fetchers'
+
+interface Props {
+  project: CollectionEntry<'projects'>
+}
+
+const {
+  id,
+  data: { images }
+} = Astro.props.project
+---
+
+<MainLayout>
+  <Navigation projectId={id} />
+  <section class='screen-line-before aspect-square group container'>
+    <div class='size-full overflow-hidden relative'>
+      {
+        images.map(({ alt, src }, index) => {
+          const className =
+            index === 0
+              ? 'opacity-100 scale-100 group-hover:scale-120 group-hover:opacity-0 duration-500'
+              : 'opacity-0 scale-80 group-hover:scale-100 duration-200 group-hover:opacity-100'
+          return (
+            <Image
+              src={src as ImageMetadata}
+              alt={alt}
+              width={1200}
+              height={630}
+              quality={100}
+              class={cn(
+                'size-full transition-all absolute inset-0 ease-in-out',
+                className
+              )}
+            />
+          )
+        })
+      }
+    </div>
+  </section>
+  <section class='section px-4 container'>
+    <slot />
+  </section>
+</MainLayout>

@@ -1,0 +1,34 @@
+---
+import Navigation from '@/components/projects/Navigation.astro'
+import MainLayout from './MainLayout.astro'
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+
+interface Props {
+  post: CollectionEntry<'blog'>
+}
+
+const {
+  id,
+  data: { image, title }
+} = Astro.props.post
+---
+
+<MainLayout>
+  <Navigation projectId={id} />
+  <section class='screen-line-before aspect-square group container'>
+    <div class='size-full overflow-hidden relative'>
+      <Image
+        src={image as ImageMetadata}
+        alt={title}
+        width={1200}
+        height={630}
+        quality={100}
+        class='size-full absolute inset-0'
+      />
+    </div>
+  </section>
+  <section class='section px-4 container'>
+    <slot />
+  </section>
+</MainLayout>

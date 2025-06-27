@@ -507,6 +507,24 @@ export const Icons = {
       <path d='M4 4a16 16 0 0 1 16 16' />
       <circle cx='5' cy='19' r='1' />
     </svg>
+  ),
+  arrowLeft: (props: IconProps) => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      class='lucide lucide-arrow-left-icon lucide-arrow-left'
+      {...props}
+    >
+      <path d='m12 19-7-7 7-7' />
+      <path d='M19 12H5' />
+    </svg>
   )
 }
 

@@ -1,0 +1,67 @@
+---
+import { getProjects } from '@/lib/fetchers'
+import { Icons } from '@/components/icons/icons'
+import { buttonVariants } from '../ui/utils'
+
+// TYPES
+interface Props {
+  projectId: string
+}
+
+// PROPS
+const { projectId } = Astro.props
+
+// FETCHERS
+const projects = await getProjects('en')
+const actualProject = projects.findIndex(
+  (project) => project.id.replace('/', '') === projectId
+)
+
+// CONSTS
+const previous = actualProject > 0 ? projects[actualProject - 1] : null
+const next =
+  actualProject < projects.length - 1 ? projects[actualProject + 1] : null
+---
+
+<nav
+  class='flex items-center justify-between px-2 py-3 container border-x border-edge mt-1'
+>
+  <a href='/projects' class={buttonVariants({ variant: 'link' })}>
+    <Icons.arrowLeft />
+    Projects
+  </a>
+
+  <div class='flex items-center gap-2'>
+    {
+      previous && (
+        <a
+          href={`/projects${previous.id}`}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'hover:bg-muted'
+          })}
+        >
+          <Icons.arrowLeft />
+          <span class='sr-only'>Previous</span>
+        </a>
+      )
+    }
+
+    {
+      next && (
+        <a
+          href={`/projects${next.id}`}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'hover:bg-muted'
+          })}
+        >
+          <span class='sr-only'>Next</span>
+          <Icons.arrowLeft class='rotate-180' />
+        </a>
+      )
+    }
+  </div>
+</nav>

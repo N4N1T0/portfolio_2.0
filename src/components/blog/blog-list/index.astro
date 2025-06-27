@@ -3,12 +3,27 @@ import { getPosts } from '@/lib/fetchers'
 import BlogCard from './BlogCard.astro'
 import { buttonVariants } from '@/components/ui/utils'
 import { Icons } from '@/components/icons/icons'
+import { undefined } from 'astro:schema'
 
-const featuredPost = await getPosts('en', 4)
+interface Props {
+  subtitle?: string
+  showAll?: boolean
+}
+
+const { subtitle, showAll = false } = Astro.props
+
+// FETCHERS
+const featuredPost = await getPosts('en', showAll ? 0 : 4)
 ---
 
-<section class='section container px-4'>
-  <h2 class='text-3xl font-bold font-pixel screen-line-after py-1'>Blog</h2>
+<section class='section container px-4' data-show-more={showAll}>
+  <h2 class='text-3xl font-pixel screen-line-after py-2'>
+    Blog
+    <sup class='text-sm text-muted-foreground select-none'>
+      ({featuredPost.length})
+    </sup>
+  </h2>
+  {subtitle && <p class='text-muted-foreground py-1 font-pixel'>{subtitle}</p>}
   <div class='relative py-4'>
     <div
       class='pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2'
@@ -22,10 +37,17 @@ const featuredPost = await getPosts('en', 4)
     </div>
   </div>
 
-  <div class='screen-line-before flex justify-center py-2'>
-    <a href='/blog' class={buttonVariants({ variant: 'default' })}>
-      All Posts
-      <Icons.arrowUpRight />
-    </a>
-  </div>
+  {
+    !showAll && (
+      <div class='screen-line-before flex justify-center py-2'>
+        <button
+          id='show-more-blog'
+          class={buttonVariants({ variant: 'default' })}
+        >
+          Show More
+          <Icons.chevronUp class='rotate-180' id='show-more-icon-blog' />
+        </button>
+      </div>
+    )
+  }
 </section>

@@ -2,15 +2,18 @@
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 
+// TYPES
 interface Props {
   blogPost: CollectionEntry<'blog'>
 }
 
+// PROPS
 const {
   id,
   data: { image, imageAlt, title, date }
 } = Astro.props.blogPost
 
+// CONSTS
 const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   day: '2-digit',
   month: 'long',
@@ -19,7 +22,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 ---
 
 <a
-  href={`/blog/${id}`}
+  href={`/blog${id}`}
   class='group/post flex flex-col gap-2 p-2 max-sm:screen-line-before max-sm:screen-line-after sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after'
 >
   <div

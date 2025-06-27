@@ -1,25 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-@font-face {
-  src: url('/src/assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf')
-    format('.ttf');
-  font-family: 'Pixelify Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400 500 600 700;
-  font-style: normal;
-}
-
-@font-face {
-  src: url('/src/assets/fonts/Geist/Geist-VariableFont_wght.ttf') format('.ttf');
-  font-family: 'Geist', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100 200 300 400 500 600 700 800 900;
-  font-style: normal;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -49,9 +33,37 @@
   --color-code-foreground: var(--code-foreground);
   --color-code-number: var(--code-number);
   --color-code-highlight: var(--code-highlight);
-  --font-sans: var(--font-sans);
-  --font-pixel: var(--font-pixel);
+  --font-sans: 'Geist', sans-serif;
+  --font-pixel: 'Pixelify Sans', sans-serif;
   --shadow-popover: var(--shadow-popover);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--starwind-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--starwind-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility starwind-transition-colors {
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke,
+    --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--default-transition-timing-function);
+  transition-duration: var(--default-transition-duration);
 }
 
 @utility no-scrollbar {
@@ -123,8 +135,6 @@
   --code-number: oklch(0.705 0.015 286.067);
   --code-highlight: oklch(0.967 0.001 286.375);
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
-  --font-sans: 'Geist', sans-serif;
-  --font-pixel: 'Pixelify Sans', sans-serif;
 }
 
 .dark {
@@ -192,6 +202,10 @@
   [id] {
     @apply scroll-mt-22;
   }
+
+  .custom-prose {
+    @apply prose text-foreground prose-headings:font-pixel prose-headings:text-foreground prose-h2:text-3xl prose-h2:font-normal prose-h2:w-full prose-blockquote:text-foreground;
+  }
 }
 
 @layer components {
@@ -203,7 +217,7 @@
     }
 
     code {
-      @apply font-mono text-sm;
+      @apply font-pixel text-sm;
     }
   }
 
@@ -221,6 +235,10 @@
 
   [data-line-numbers] {
     counter-reset: line;
+  }
+
+  [data-disabled='true'] {
+    @apply pointer-events-none line-through opacity-75;
   }
 
   [data-line-numbers] > [data-line]::before {

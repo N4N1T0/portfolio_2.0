@@ -1,0 +1,13 @@
+---
+import MainLayout from '@/layout/MainLayout.astro'
+import Projects from '@/components/projects/index.astro'
+import Separator from '@/components/shared/Separator.astro'
+---
+
+<MainLayout>
+  <Separator />
+  <Projects
+    subtitle="Here you'll find some of the projects I've worked on! Enjoy!"
+    showAll={true}
+  />
+</MainLayout>

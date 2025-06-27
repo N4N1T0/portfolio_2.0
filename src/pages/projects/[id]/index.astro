@@ -1,0 +1,102 @@
+---
+import { Icons } from '@/components/icons/icons'
+import ContentIndex from '@/components/shared/ContentIndex.astro'
+import { buttonVariants } from '@/components/ui/utils'
+import ProjectsLayout from '@/layout/ProjectsLayout.astro'
+import { getProjects } from '@/lib/fetchers'
+import type { GetStaticPaths } from 'astro'
+
+// STATIC
+export const getStaticPaths = (async () => {
+  const projects = await getProjects('en')
+
+  return projects
+    .filter((project) => !project.data.comingSoon)
+    .map((project) => ({
+      params: { id: project.id },
+      props: project
+    }))
+}) satisfies GetStaticPaths
+
+// PROPS & PARAMS
+const {
+  data: {
+    title,
+    excerpt,
+    challenge,
+    solution,
+    date,
+    techStack,
+    liveLink,
+    testimonial,
+    colors
+  },
+  id
+} = Astro.props
+
+// CONST
+const contentIndex = ['challenge', 'solutions', 'techstack']
+---
+
+<ProjectsLayout project={Astro.props}>
+  <section
+    id={id}
+    class='screen-line-before screen-line-after mb-6 py-2 text-5xl font-pixel flex justify-between items-center'
+  >
+    <h1 style={{ color: colors[1] }}>
+      {title}
+      <time class='text-xs' datetime={date}>({date})</time>
+    </h1>
+    <a
+      href={liveLink}
+      target='_blank'
+      class={buttonVariants({
+        variant: 'outline',
+        size: 'icon',
+        className: 'hover:bg-muted'
+      })}><Icons.arrowUpRight class='size-8' style={{ color: colors[1] }} /></a
+    >
+  </section>
+  <p class='lead mb-6'>{excerpt}</p>
+  <ContentIndex items={contentIndex} />
+  <section id='challenge' class='custom-prose mb-6'>
+    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>Challenge</h2>
+    <p>{challenge}</p>
+  </section>
+  <section id='solutions' class='custom-prose mb-6'>
+    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>Solutions</h2>
+    {solution}
+  </section>
+  <section id='techstack' class='custom-prose mb-6'>
+    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>TechStack</h2>
+    <ul class='flex flex-wrap gap-1.5'>
+      {
+        techStack.map(({ title, link }) => (
+          <li class='flex'>
+            <a
+              class={buttonVariants({ variant: 'default' })}
+              href={link}
+              target='_blank'
+              rel='noreferrer'
+            >
+              {title}
+              <Icons.arrowUpRight class='size-4' />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <section id='testimonial' class='custom-prose pb-6'>
+    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>testimonial</h2>
+    <blockquote
+      class='text-lg'
+      style={{ borderLeft: `4px solid ${colors[1]}` }}
+    >
+      {testimonial.quote}
+      <footer class='text-right mt-3 text-sm'>
+        -{testimonial.name} / {testimonial.role}
+      </footer>
+    </blockquote>
+  </section>
+</ProjectsLayout>

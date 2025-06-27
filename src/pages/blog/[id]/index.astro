@@ -1,0 +1,53 @@
+---
+import ContentIndex from '@/components/shared/ContentIndex.astro'
+import BlogLayout from '@/layout/BlogLayout.astro'
+import { getPosts } from '@/lib/fetchers'
+import type { GetStaticPaths } from 'astro'
+
+// STATIC
+export const getStaticPaths = (async () => {
+  const blogs = await getPosts('en')
+  return blogs.map((post) => ({
+    params: { id: post.id },
+    props: post
+  }))
+}) satisfies GetStaticPaths
+
+// PROPS
+const {
+  data: { title, date, excerpt },
+  rendered,
+  id
+} = Astro.props
+
+// CONST
+const formattedDate = new Date(date).toLocaleDateString('es-ES', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric'
+})
+const content = rendered
+// TODO: CHERRIO
+const contentIndex = [content?.html]
+---
+
+<BlogLayout post={Astro.props}>
+  <section
+    id={id}
+    class='screen-line-before screen-line-after mb-3 py-2 text-5xl font-pixel flex justify-between items-center'
+  >
+    <h1>
+      {title}
+      <time class='text-xs' datetime={formattedDate}>({formattedDate})</time>
+    </h1>
+  </section>
+  <section id='excerpt' class='screen-line-after mb-6 py-2'>
+    <p>
+      {excerpt}
+    </p>
+  </section>
+  <!-- <ContentIndex /> -->
+  <section class='custom-prose max-w-none px-4 pb-4'>
+    <div set:html={content?.html} />
+  </section>
+</BlogLayout>

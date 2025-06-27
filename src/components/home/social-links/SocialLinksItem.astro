@@ -2,10 +2,12 @@
 import { Icons } from '@/components/icons/icons'
 import { userData } from '@/constants/site-data'
 
+// TYPES
 interface Props {
   link: (typeof userData)['social'][number]
 }
 
+// PROPS
 const { title, href, description } = Astro.props.link
 ---
 

@@ -2,21 +2,21 @@ import { Avatar } from '@/assets/images'
 
 export const navItems = [
   {
-    title: 'Home',
+    title: 'Portfolio',
     href: '/'
   },
   {
-    title: 'About',
-    href: '/about'
+    title: 'Projects',
+    href: '/projects'
   },
   {
-    title: 'Contact',
-    href: '/contact'
+    title: 'Blog',
+    href: '/blog'
   }
 ]
 
 export const userData = {
-  displayName: 'Adrian "Nano" Alvarez Alonso',
+  displayName: 'Adrian "Nano" Alvarez',
   avatar: Avatar,
   sentences: [
     'Transformo ideas en productos web funcionales.',
@@ -228,14 +228,16 @@ export const experiences = [
         employmentType: 'Full-time',
         icon: 'briefcase',
         description: [
-          'Creation of custom web solutions focused on performance, SEO and accessibility.',
-          'Development of online stores and interactive platforms for clients with specific needs.'
+          'Development of custom web solutions using Liquid, with emphasis on performance, SEO, and accessibility.',
+          'Creation of online stores and modular components tailored to complex client needs and Shopify ecosystems.',
+          'Engineered Liquid-based web solutions optimized for speed, SEO, and accessibility standards.',
+          'Developed flexible e-commerce features and interactive UX tailored to specific client requirements.'
         ],
         skills: [
-          'React',
-          'Next.js',
-          'Astro',
-          'TypeScript',
+          'Shopify',
+          'Liquid',
+          'Javascript',
+          'JQuery',
           'Tailwind CSS',
           'Accessibility',
           'SEO'
@@ -252,22 +254,48 @@ export const experiences = [
       'https://www.desoft.cu/themes/custom/buildframetheme/img/favicon-14.svg',
     positions: [
       {
-        id: 'desoft-2021',
+        id: 'desoft-2022',
         title: 'Junior Front-End Developer',
         employmentPeriod: {
-          start: '2021',
+          start: '2022',
           end: '2023'
         },
         employmentType: 'Full-time',
         icon: 'code',
         description: [
-          '- Development of interactive and optimized interfaces with React, Next.js and TypeScript.',
-          '- Implementation of design patterns and software architecture to improve code scalability.',
-          '- Maintenance and optimization of web applications, reducing loading times by 30% using Turbopack and Webpack.'
+          'Development of interactive and optimized interfaces with React and TypeScript.',
+          'Implementation of design patterns and software architecture to improve code scalability.',
+          'Maintenance and optimization of web applications',
+          'Implemented reusable React components and integrated third-party libraries',
+          'Collaborated with UI/UX team to build responsive layouts'
         ],
         skills: [
           'React',
-          'Next.js',
+          'TypeScript',
+          'Turbopack',
+          'Webpack',
+          'Software Architecture',
+          'Performance'
+        ],
+        isExpanded: true
+      },
+      {
+        id: 'desoft-2021',
+        title: 'Trainee Front-End Developer',
+        employmentPeriod: {
+          start: '2021',
+          end: '2022'
+        },
+        employmentType: 'Full-time',
+        icon: 'code',
+        description: [
+          'Built responsive user interfaces using React components and hooks',
+          'Learned and implemented basic TypeScript types and interfaces',
+          'Assisted in maintaining existing React applications and fixing bugs',
+          'Collaborated with senior developers to understand React best practices and patterns'
+        ],
+        skills: [
+          'React',
           'TypeScript',
           'Turbopack',
           'Webpack',
@@ -293,9 +321,11 @@ export const experiences = [
         employmentType: 'Freelance',
         icon: 'globe',
         description: [
-          '- Development and implementation of custom solutions for e-commerce clients and web platforms.',
-          '- Integration of technologies like React, Next.js, Tailwind CSS and Node.js to improve user experience and web performance.',
-          '- Collaboration with Liquid Developer Group team to improve project quality and optimization.'
+          'Development and implementation of custom solutions for e-commerce clients and web platforms.',
+          'Integration of technologies like React, Next.js, Tailwind CSS and Node.js to improve user experience and web performance.',
+          'Collaboration with Liquid Developer Group team to improve project quality and optimization.',
+          'Led technical architecture decisions and implementation of scalable frontend solutions for multiple client projects.',
+          'Mentored junior developers and provided technical guidance while maintaining high code quality standards.'
         ],
         skills: [
           'React',

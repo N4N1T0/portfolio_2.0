@@ -4,13 +4,16 @@ import { Image } from 'astro:assets'
 import { formatDate } from '@/lib/utils'
 import { Icons } from '@/components/icons/icons'
 
+// TYPES
 interface Props {
   certification: Certification
 }
 
+// PROPS
 const { credentialURL, issueDate, issuer, issuerLogoURL, title } =
   Astro.props.certification
 
+// CONSTS
 const formattedDate = formatDate(issueDate)
 ---
 
@@ -27,7 +30,7 @@ const formattedDate = formatDate(issueDate)
     height={32}
     quality={100}
     class='mx-6 flex size-8 shrink-0 aspect-square rounded-sm'
-    aria-hidden
+    aria-hidden='true'
   />
 
   <div class='flex-1 space-y-1 border-l border-dashed border-edge p-4 pr-2'>
@@ -43,7 +46,7 @@ const formattedDate = formatDate(issueDate)
       <div>
         <dt class='sr-only'>Issued by</dt>
         <dd>
-          <span aria-hidden>@</span>
+          <span aria-hidden='true'>@</span>
           <span class='ml-0.5'>{issuer}</span>
         </dd>
       </div>
@@ -63,7 +66,7 @@ const formattedDate = formatDate(issueDate)
 
   {
     credentialURL && (
-      <Icons.arrowUpRight class='size-5 text-foreground' aria-hidden />
+      <Icons.arrowUpRight class='size-5 text-foreground' aria-hidden='true' />
     )
   }
 </a>

@@ -6,7 +6,7 @@ import { certifications } from '@/constants/site-data'
 ---
 
 <section class='section container'>
-  <h2 class='text-3xl font-bold font-pixel screen-line-after py-1'>
+  <h2 class='text-3xl font-pixel screen-line-after py-2 pl-4'>
     Certifications
     <sup class='text-sm text-muted-foreground select-none'>
       ({certifications.length})
@@ -42,7 +42,6 @@ import { certifications } from '@/constants/site-data'
     'show-more-icon-certifications'
   ) as HTMLElement
   const certificationItems = document.querySelectorAll('.certification-item')
-  console.log('🚀 ~ projectItems:', certificationItems)
 
   let isExpanded = false
 

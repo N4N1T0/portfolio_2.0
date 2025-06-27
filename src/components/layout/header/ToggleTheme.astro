@@ -5,7 +5,11 @@ import { Icons } from '@/components/icons/icons'
 
 <button
   id='theme-toggle'
-  class={buttonVariants({ variant: 'outline', size: 'icon' })}
+  class={buttonVariants({
+    variant: 'outline',
+    size: 'icon',
+    className: 'hover:bg-muted'
+  })}
 >
   <Icons.moonAndStar class='hidden [html.dark_&]:block' />
   <Icons.sun class='hidden [html.light_&]:block' />

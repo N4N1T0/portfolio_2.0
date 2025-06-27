@@ -1,0 +1,44 @@
+---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import { idToSlug } from '@/lib/utils'
+
+interface Props {
+  items: string[]
+}
+
+const { items } = Astro.props
+---
+
+<Accordion type='single' class='not-prose rounded-sm bg-muted font-sans mb-3'>
+  <AccordionItem value='toc'>
+    <AccordionTrigger
+      class='group/toc inline-flex w-full items-center justify-between text-sm font-medium'
+    >
+      Table of Contents
+    </AccordionTrigger>
+
+    <AccordionContent
+      class='overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down'
+    >
+      <ul class='flex flex-col px-4 pb-3 text-sm text-muted-foreground'>
+        {
+          items.map((item) => (
+            <li class='flex py-1'>
+              <a
+                class='underline-offset-4 transition-colors hover:text-accent-foreground hover:underline'
+                href={`#${idToSlug(item)}`}
+              >
+                {item}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>

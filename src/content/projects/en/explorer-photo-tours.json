@@ -5,11 +5,11 @@
   "images": [
     {
       "src": "src/assets/projects/explorer-photo-tours-1.webp",
-      "alt": "Explorer Photo Tours Website"
+      "alt": "Explorer Tours Website showcase 1"
     },
     {
       "src": "src/assets/projects/explorer-photo-tours-2.webp",
-      "alt": "Explorer Photo Tours Website"
+      "alt": "Explorer Tours Website showcase 2"
     }
   ],
   "liveLink": "https://explorersphototours.com",

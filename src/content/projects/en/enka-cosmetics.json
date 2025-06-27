@@ -5,11 +5,11 @@
   "images": [
     {
       "src": "src/assets/projects/enka-1.webp",
-      "alt": "ENKA Cosmetics Website"
+      "alt": "ENKA Cosmetics Website showcase 1"
     },
     {
       "src": "src/assets/projects/enka-2.webp",
-      "alt": "ENKA Cosmetics Website"
+      "alt": "ENKA Cosmetics Website showcase 2"
     }
   ],
   "liveLink": "https://enkaesteticapro.com/",

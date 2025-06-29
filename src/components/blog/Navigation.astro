@@ -1,0 +1,67 @@
+---
+import { getPosts } from '@/lib/fetchers'
+import { Icons } from '@/components/icons/icons'
+import { buttonVariants } from '@/components/ui/utils'
+
+// TYPES
+interface Props {
+  blogPostId: string
+}
+
+// PROPS
+const { blogPostId } = Astro.props
+
+// FETCHERS
+const blogPosts = await getPosts('en')
+const actualBlogPost = blogPosts.findIndex(
+  (blogPost) => blogPost.id === blogPostId
+)
+
+// CONSTS
+const previous = actualBlogPost > 0 ? blogPosts[actualBlogPost - 1] : null
+const next =
+  actualBlogPost < blogPosts.length - 1 ? blogPosts[actualBlogPost + 1] : null
+---
+
+<nav
+  class='flex items-center justify-between px-2 py-3 container border-x border-edge mt-1'
+>
+  <a href='/blog' class={buttonVariants({ variant: 'link' })}>
+    <Icons.arrowLeft />
+    Blog Posts
+  </a>
+
+  <div class='flex items-center gap-2'>
+    {
+      previous && (
+        <a
+          href={`/blog${previous.id}`}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'hover:bg-muted'
+          })}
+        >
+          <Icons.arrowLeft />
+          <span class='sr-only'>Previous</span>
+        </a>
+      )
+    }
+
+    {
+      next && (
+        <a
+          href={`/blog${next.id}`}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'hover:bg-muted'
+          })}
+        >
+          <span class='sr-only'>Next</span>
+          <Icons.arrowLeft class='rotate-180' />
+        </a>
+      )
+    }
+  </div>
+</nav>

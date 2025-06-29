@@ -15,8 +15,8 @@ const active = Astro.url.pathname
       return (
         <a
           class={cn(
-            'text-sm font-medium text-muted hover:text-foreground transition-colors ease-in duration-200',
-            isActive && 'text-foreground'
+            'text-sm font-medium text-foreground/50 hover:text-foreground transition-colors ease-in duration-200',
+            isActive && 'text-foreground underline'
           )}
           href={href}
         >

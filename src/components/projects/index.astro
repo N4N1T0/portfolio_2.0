@@ -7,9 +7,10 @@ import { Icons } from '@/components/icons/icons'
 interface Props {
   subtitle?: string
   showAll?: boolean
+  priority?: boolean
 }
 
-const { subtitle, showAll = false } = Astro.props
+const { subtitle, showAll = false, priority = false } = Astro.props
 
 // FETCHERS
 const projects = await getProjects('en')
@@ -22,25 +23,35 @@ const projects = await getProjects('en')
       ({projects.length})
     </sup>
   </h2>
-  {subtitle && <p class='text-muted-foreground py-1 font-pixel'>{subtitle}</p>}
+  {
+    subtitle && (
+      <p class='text-muted-foreground py-1 font-pixel screen-line-after'>
+        {subtitle}
+      </p>
+    )
+  }
   <ul>
     {
-      projects.map((project) => (
-        <li>
-          <ProjectItem project={project} />
+      projects.map((project, index) => (
+        <li class='max-sm:screen-line-before max-sm:screen-line-after sm:nth-[2n]:screen-line-before sm:nth-[2n]:screen-line-after project-item relative'>
+          <ProjectItem project={project} priority={priority && index < 4} />
         </li>
       ))
     }
   </ul>
-  <div class='screen-line-before flex justify-center py-2'>
-    <button
-      id='show-more-projects'
-      class={buttonVariants({ variant: 'default' })}
-    >
-      Show More
-      <Icons.chevronUp class='rotate-180' id='show-more-icon-projects' />
-    </button>
-  </div>
+  {
+    !showAll && (
+      <div class='screen-line-before flex justify-center py-2'>
+        <button
+          id='show-more-projects'
+          class={buttonVariants({ variant: 'default' })}
+        >
+          Show More
+          <Icons.chevronUp class='rotate-180' id='show-more-icon-projects' />
+        </button>
+      </div>
+    )
+  }
 </section>
 
 <script>

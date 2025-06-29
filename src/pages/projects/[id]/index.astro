@@ -35,7 +35,15 @@ const {
 } = Astro.props
 
 // CONST
-const contentIndex = ['challenge', 'solutions', 'techstack']
+const hasTestimonial = testimonial.quote && testimonial.name && testimonial.role
+const contentIndex = [
+  { label: 'Challenge', id: 'challenge' },
+  { label: 'Solutions', id: 'solutions' },
+  { label: 'TechStack', id: 'techstack' }
+]
+const formattedContentIndex = hasTestimonial
+  ? [...contentIndex, { label: 'Testimonial', id: 'testimonial' }]
+  : contentIndex
 ---
 
 <ProjectsLayout project={Astro.props}>
@@ -50,15 +58,18 @@ const contentIndex = ['challenge', 'solutions', 'techstack']
     <a
       href={liveLink}
       target='_blank'
+      title='See the project live'
       class={buttonVariants({
         variant: 'outline',
         size: 'icon',
         className: 'hover:bg-muted'
-      })}><Icons.arrowUpRight class='size-8' style={{ color: colors[1] }} /></a
-    >
+      })}
+      ><Icons.arrowUpRight class='size-8' style={{ color: colors[1] }} />
+      <span class='sr-only'>See the project live</span>
+    </a>
   </section>
   <p class='lead mb-6'>{excerpt}</p>
-  <ContentIndex items={contentIndex} />
+  <ContentIndex items={formattedContentIndex} />
   <section id='challenge' class='custom-prose mb-6'>
     <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>Challenge</h2>
     <p>{challenge}</p>
@@ -87,16 +98,20 @@ const contentIndex = ['challenge', 'solutions', 'techstack']
       }
     </ul>
   </section>
-  <section id='testimonial' class='custom-prose pb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>testimonial</h2>
-    <blockquote
-      class='text-lg'
-      style={{ borderLeft: `4px solid ${colors[1]}` }}
-    >
-      {testimonial.quote}
-      <footer class='text-right mt-3 text-sm'>
-        -{testimonial.name} / {testimonial.role}
-      </footer>
-    </blockquote>
-  </section>
+  {
+    hasTestimonial && (
+      <section id='testimonial' class='custom-prose pb-6'>
+        <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>testimonial</h2>
+        <blockquote
+          class='text-lg'
+          style={{ borderLeft: `4px solid ${colors[1]}` }}
+        >
+          {testimonial.quote}
+          <footer class='text-right mt-3 text-sm'>
+            -{testimonial.name} / {testimonial.role}
+          </footer>
+        </blockquote>
+      </section>
+    )
+  }
 </ProjectsLayout>

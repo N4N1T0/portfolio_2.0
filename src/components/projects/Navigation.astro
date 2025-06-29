@@ -1,7 +1,7 @@
 ---
 import { getProjects } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
-import { buttonVariants } from '../ui/utils'
+import { buttonVariants } from '@/components/ui/utils'
 
 // TYPES
 interface Props {
@@ -12,10 +12,10 @@ interface Props {
 const { projectId } = Astro.props
 
 // FETCHERS
-const projects = await getProjects('en')
-const actualProject = projects.findIndex(
-  (project) => project.id.replace('/', '') === projectId
-)
+const projects = await getProjects('en').then((projects) => {
+  return projects.filter((project) => !project.data.comingSoon)
+})
+const actualProject = projects.findIndex((project) => project.id === projectId)
 
 // CONSTS
 const previous = actualProject > 0 ? projects[actualProject - 1] : null

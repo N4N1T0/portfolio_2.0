@@ -5,10 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
-import { idToSlug } from '@/lib/utils'
 
 interface Props {
-  items: string[]
+  items: { label: string; id: string }[]
 }
 
 const { items } = Astro.props
@@ -22,18 +21,16 @@ const { items } = Astro.props
       Table of Contents
     </AccordionTrigger>
 
-    <AccordionContent
-      class='overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down'
-    >
+    <AccordionContent class='overflow-hidden duration-300'>
       <ul class='flex flex-col px-4 pb-3 text-sm text-muted-foreground'>
         {
-          items.map((item) => (
+          items.map(({ label, id }) => (
             <li class='flex py-1'>
               <a
                 class='underline-offset-4 transition-colors hover:text-accent-foreground hover:underline'
-                href={`#${idToSlug(item)}`}
+                href={`#${id}`}
               >
-                {item}
+                {label}
               </a>
             </li>
           ))

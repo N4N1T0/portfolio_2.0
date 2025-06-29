@@ -9,13 +9,16 @@ import type { ImageMetadata } from 'astro'
 // TYPES
 interface Props {
   project: CollectionEntry<'projects'>
+  priority?: boolean
 }
 
 // PROPS
+const { project, priority } = Astro.props
+
 const {
   id,
   data: { images, title, date, excerpt, techStack, comingSoon }
-} = Astro.props.project
+} = project
 
 // CONST
 const formattedDate = new Date(date).toLocaleDateString('es-ES', {
@@ -24,12 +27,10 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   year: 'numeric'
 })
 const techItems = techStack.map((tech) => tech.title)
-const projectLink = comingSoon ? '#' : `/projects${id}`
+const projectLink = comingSoon ? '/' : `/projects${id}`
 ---
 
-<article
-  class='grid grid-cols-1 md:grid-cols-3 gap-2 max-sm:screen-line-before max-sm:screen-line-after sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after project-item relative'
->
+<article class='grid grid-cols-1 md:grid-cols-3 gap-2'>
   {
     comingSoon && (
       <div class='absolute top-2 right-0 bg-muted text-accent-foreground px-2 py-1 text-xs font-medium rounded-sm'>
@@ -59,6 +60,7 @@ const projectLink = comingSoon ? '#' : `/projects${id}`
               width={1200}
               height={630}
               quality={100}
+              priority={priority}
               class={cn(
                 'size-full transition-all absolute inset-0 ease-in-out',
                 className

@@ -12,7 +12,3 @@ export const formatDate = (date: string) => {
     year: 'numeric'
   })
 }
-
-export function idToSlug(id: string) {
-  return id.replace(/\s+/g, '-').toLowerCase()
-}

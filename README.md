@@ -6,10 +6,14 @@
 - [x] Fix Astro toolbar issues
 - [x] Add my Comments
 - [x] Fix the Pixel Font
-- [ ] Add li to lists
-- [ ] Fix Button icon on show mores
-- [ ] Add DMCA
+- [x] Add li to lists
+- [x] Fix Button icon on show mores
+- [x] Fix the Project Navigation
+- [x] Add DMCA
 - [ ] Change the llms .txt
 - [ ] Delete info from projects stacks
 - [ ] Delete unused Icons
-- [ ] Fix the Project Navigation
+- [ ] Add SEO Component
+- [ ] Add JSONLD
+- [ ] Add OG Image
+- [ ] I18n

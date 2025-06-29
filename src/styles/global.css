@@ -107,33 +107,33 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.141 0.005 285.823);
+  --background: oklch(0.7975 0.0951 268.35);
+  --foreground: oklch(0.2781 0.0296 256.85);
+  --primary: oklch(0.2781 0.0296 256.85);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.141 0.005 285.823);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
+  --secondary: oklch(0.6735 0.0444 256.85);
+  --secondary-foreground: oklch(0.2781 0.0296 256.85);
+  --muted: oklch(0.6735 0.0444 256.85);
+  --muted-foreground: oklch(0.4 0.0321 256.85);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --card-foreground: oklch(0.2781 0.0296 256.85);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.2781 0.0296 256.85);
   --popover-border: color-mix(in oklab, var(--color-black) 15%, transparent);
-  --accent: oklch(0.967 0.001 286.375);
+  --accent: oklch(0.6735 0.0444 256.85);
   --accent-foreground: oklch(0.21 0.006 285.885);
-  --border: oklch(0.92 0.004 286.32);
+  --border: oklch(0.4824 0.0518 256.85);
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
-  --input: oklch(0.92 0.004 286.32);
+  --input: oklch(0.4824 0.0518 256.85);
   --ring: oklch(0.67 0.17 244.98);
   --info: oklch(0.67 0.17 244.98);
   --success: oklch(0.723 0.219 149.579);
   --destructive: oklch(0.577 0.245 27.325);
   --link: oklch(0.488 0.243 264.376);
   --code: oklch(0.985 0 0);
-  --code-foreground: oklch(0.141 0.005 285.823);
+  --code-foreground: oklch(0.2781 0.0296 256.85);
   --code-number: oklch(0.705 0.015 286.067);
-  --code-highlight: oklch(0.967 0.001 286.375);
+  --code-highlight: oklch(0.6735 0.0444 256.85);
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
@@ -175,6 +175,7 @@
   }
 
   html {
+    color-scheme: dark light;
     @apply motion-safe:scroll-smooth;
   }
 

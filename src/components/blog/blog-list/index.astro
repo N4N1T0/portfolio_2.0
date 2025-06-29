@@ -1,16 +1,16 @@
 ---
-import { getPosts } from '@/lib/fetchers'
+import { cn, getPosts } from '@/lib/fetchers'
 import BlogCard from './BlogCard.astro'
 import { buttonVariants } from '@/components/ui/utils'
 import { Icons } from '@/components/icons/icons'
-import { undefined } from 'astro:schema'
 
 interface Props {
   subtitle?: string
   showAll?: boolean
+  priority?: boolean
 }
 
-const { subtitle, showAll = false } = Astro.props
+const { subtitle, showAll = false, priority = false } = Astro.props
 
 // FETCHERS
 const featuredPost = await getPosts('en', showAll ? 0 : 4)
@@ -24,7 +24,7 @@ const featuredPost = await getPosts('en', showAll ? 0 : 4)
     </sup>
   </h2>
   {subtitle && <p class='text-muted-foreground py-1 font-pixel'>{subtitle}</p>}
-  <div class='relative py-4'>
+  <div class={cn('relative', showAll ? 'py-0' : 'py-4')}>
     <div
       class='pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2'
     >
@@ -32,21 +32,24 @@ const featuredPost = await getPosts('en', showAll ? 0 : 4)
       <div class='border-l border-edge'></div>
     </div>
 
-    <div class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-      {featuredPost.map((post) => <BlogCard blogPost={post} />)}
-    </div>
+    <ul class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+      {
+        featuredPost.map((post, index) => (
+          <li class='group/post flex flex-col gap-2 p-2 max-sm:screen-line-before max-sm:screen-line-after sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after'>
+            <BlogCard blogPost={post} priority={priority && index < 6} />
+          </li>
+        ))
+      }
+    </ul>
   </div>
 
   {
     !showAll && (
       <div class='screen-line-before flex justify-center py-2'>
-        <button
-          id='show-more-blog'
-          class={buttonVariants({ variant: 'default' })}
-        >
-          Show More
-          <Icons.chevronUp class='rotate-180' id='show-more-icon-blog' />
-        </button>
+        <a href='/blog' class={buttonVariants({ variant: 'default' })}>
+          Show All
+          <Icons.arrowUpRight />
+        </a>
       </div>
     )
   }

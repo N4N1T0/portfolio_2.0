@@ -19,11 +19,11 @@ export const userData = {
   displayName: 'Adrian "Nano" Alvarez',
   avatar: Avatar,
   sentences: [
-    'Transformo ideas en productos web funcionales.',
-    'Me enfoco en rendimiento, UX y escalabilidad.',
-    'Full stack con fuerte base en frontend.',
-    'Desarrollo soluciones ágiles, limpias y mantenibles.',
-    'Apasionado por la tecnología y el impacto.'
+    'Transforming ideas into functional web products.',
+    'Focused on performance, UX and scalability.',
+    'Full stack developer with strong frontend foundation.',
+    'Developing agile, clean and maintainable solutions.',
+    'Passionate about technology and impact.'
   ],
   overview: [
     {

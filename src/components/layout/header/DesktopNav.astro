@@ -13,7 +13,10 @@ const lang = getLangFromLocale(Astro.currentLocale)
   {
     navItems.map(({ title, href }) => {
       const isActive =
-        active === `/${lang}${href}` || (href !== '/' && active.includes(href))
+        href === '/'
+          ? active === '/es/' || active === '/en/'
+          : active === `/${lang}${href}` ||
+            (href !== '/' && active.includes(href))
       return (
         <a
           class={cn(

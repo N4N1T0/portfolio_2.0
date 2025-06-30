@@ -1,21 +1,11 @@
-# chanhdai.com
+# adrian-alvarez.dev
 
-> chanhdai.com is my minimal portfolio website, showcasing my work and experience as a Software Developer & UI/UX Designer.
+> adrian-alvarez.dev is my minimal portfolio website, showcasing my work and experience as a Front-end Developer & marketing strategist
 
-- [About](https://chanhdai.com/about.md): A quick intro to me, my tech stack, and how to connect.
-- [Experience](https://chanhdai.com/experience.md): Highlights from my career and key roles I've taken on.
-- [Projects](https://chanhdai.com/projects.md): Selected projects that show my skills and creativity.
-- [Awards](https://chanhdai.com/awards.md): My key awards and honors.
-- [Certifications](https://chanhdai.com/certifications.md): Certifications and credentials I've earned.
+## Blog (spanish)
 
-## Blog
+## Blog (english)
 
-- [Followed by @shadcn on X](https://chanhdai.com/blog/followed-by-shadcn-on-x.md): Still can't believe it — such an honor.
-- [Work Experience](https://chanhdai.com/blog/work-experience-component.md): Displays a list of work experiences with role details and durations.
-- [React Wheel Picker](https://chanhdai.com/blog/react-wheel-picker.md): iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
-- [ChanhDai Brand](https://chanhdai.com/blog/chanhdai-brand.md): Key elements of the ChanhDai visual identity, including the mark, logotype, clear space, and more.
-- [Theme Switcher](https://chanhdai.com/blog/theme-switcher-component.md): A theme switcher component for Next.js apps with next-themes and Tailwind CSS, supporting system, light, and dark modes.
-- [Writing Effect inspired by Apple](https://chanhdai.com/blog/writing-effect-inspired-by-apple.md): Create a "Xin chào" and "Hello" writing effect inspired by Apple using Motion for React.
-- [Awesome Terminal — iTerm2 + Zsh + Oh My Zsh + Amazon Q](https://chanhdai.com/blog/awesome-terminal.md): Optimize your terminal with iTerm2, Zsh, Oh My Zsh, and Amazon Q - a guide to installation, theme customization, plugins, and configuration for an enhanced command-line experience.
-- [Installing Uptime Kuma with Docker and setting up NGINX with SSL](https://chanhdai.com/blog/uptime-kuma.md): Uptime Kuma is an easy-to-use self-hosted monitoring tool.
-- [Welcome to chanhd
+## Projects (spanish)
+
+## Projects (english)

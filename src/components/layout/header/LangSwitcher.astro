@@ -1,10 +1,23 @@
 ---
 import { buttonVariants } from '@/components/ui/utils'
+import { getLangFromLocale } from '@/i18n/utils'
+import { getCounterpartById } from '@/lib/fetchers'
+import { getIsBlogOrProject, getBlogOrProject } from '@/lib/utils'
 
-const lang = Astro.currentLocale || 'es'
+let counterPartId = null
+
+const lang = getLangFromLocale(Astro.currentLocale)
+const isBlogOrProject = getIsBlogOrProject(Astro.url)
+
+if (!isBlogOrProject) {
+  const PageId = Astro.url.toString().split('/').filter(Boolean)[4]
+  const blogOrProject = getBlogOrProject(Astro.url)
+  counterPartId = await getCounterpartById(PageId, lang, blogOrProject)
+}
 ---
 
 <button
+  data-counterpart-id={counterPartId}
   id='lang-switcher'
   class={buttonVariants({
     variant: 'outline',
@@ -25,9 +38,10 @@ const lang = Astro.currentLocale || 'es'
   const langSwitcherBtn = document.getElementById(
     'lang-switcher'
   ) as HTMLButtonElement
+  const counterpartId = langSwitcherBtn.dataset.counterpartId
 
-  langSwitcherBtn.addEventListener('click', () => {
-    const newUrl = changeLangFromUrl(url, lang)
+  langSwitcherBtn.addEventListener('click', async () => {
+    const newUrl = changeLangFromUrl(url, lang, counterpartId)
     window.location.href = newUrl // now a full redirect works
   })
 </script>

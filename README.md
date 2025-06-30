@@ -11,9 +11,10 @@
 - [x] Fix the Project Navigation
 - [x] Add DMCA
 - [ ] Change the llms .txt
-- [ ] Delete info from projects stacks
+- [ ] Delete unused fields from content
 - [ ] Delete unused Icons
 - [ ] Add SEO Component
 - [ ] Add JSONLD
 - [ ] Add OG Image
 - [ ] I18n
+- [ ] Astro Integrations

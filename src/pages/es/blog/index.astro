@@ -2,13 +2,14 @@
 import MainLayout from '@/layout/MainLayout.astro'
 import BlogList from '@/components/blog/blog-list/index.astro'
 import Separator from '@/components/shared/Separator.astro'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
 ---
 
 <MainLayout>
   <Separator />
-  <BlogList
-    showAll={true}
-    priority={true}
-    subtitle='A collection of articles about tech, development and marketing. I hope they will be useful'
-  />
+  <BlogList showAll={true} priority={true} subtitle={t('blogList').subtitle} />
 </MainLayout>

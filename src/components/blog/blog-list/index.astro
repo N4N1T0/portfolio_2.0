@@ -3,22 +3,30 @@ import { cn, getPosts } from '@/lib/fetchers'
 import BlogCard from './BlogCard.astro'
 import { buttonVariants } from '@/components/ui/utils'
 import { Icons } from '@/components/icons/icons'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
+// TYPES
 interface Props {
   subtitle?: string
   showAll?: boolean
   priority?: boolean
 }
 
+// PROPS
 const { subtitle, showAll = false, priority = false } = Astro.props
 
+// CONST
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+
 // FETCHERS
-const featuredPost = await getPosts('en', showAll ? 0 : 4)
+const featuredPost = await getPosts(lang, showAll ? 0 : 4)
 ---
 
 <section class='section container px-4' data-show-more={showAll}>
   <h2 class='text-3xl font-pixel screen-line-after py-2'>
-    Blog
+    {t('blogList').title}
     <sup class='text-sm text-muted-foreground select-none'>
       ({featuredPost.length})
     </sup>
@@ -46,8 +54,11 @@ const featuredPost = await getPosts('en', showAll ? 0 : 4)
   {
     !showAll && (
       <div class='screen-line-before flex justify-center py-2'>
-        <a href='/blog' class={buttonVariants({ variant: 'default' })}>
-          Show All
+        <a
+          href={getRelativeLocaleUrl(lang, '/blog')}
+          class={buttonVariants({ variant: 'default' })}
+        >
+          {t('blogList').showMore}
           <Icons.arrowUpRight />
         </a>
       </div>

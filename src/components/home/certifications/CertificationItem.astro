@@ -1,12 +1,13 @@
 ---
-import type { Certification } from '@/types'
 import { Image } from 'astro:assets'
 import { formatDate } from '@/lib/utils'
 import { Icons } from '@/components/icons/icons'
+import type { certifications } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
-  certification: Certification
+  certification: (typeof certifications)[0]
 }
 
 // PROPS
@@ -15,6 +16,9 @@ const { credentialURL, issueDate, issuer, issuerLogoURL, title } =
 
 // CONSTS
 const formattedDate = formatDate(issueDate)
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <a
@@ -37,7 +41,7 @@ const formattedDate = formatDate(issueDate)
     <h3
       class='leading-snug font-medium text-balance underline-offset-4 group-hover/cert:underline'
     >
-      {title}
+      {title[lang]}
     </h3>
 
     <div

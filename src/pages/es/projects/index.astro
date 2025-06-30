@@ -1,0 +1,15 @@
+---
+import MainLayout from '@/layout/MainLayout.astro'
+import Projects from '@/components/projects/index.astro'
+import Separator from '@/components/shared/Separator.astro'
+import { useTranslations, getLangFromLocale } from '@/i18n/utils'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+---
+
+<MainLayout>
+  <Separator />
+  <Projects subtitle={t('projects').subtitle} showAll={true} priority={true} />
+</MainLayout>

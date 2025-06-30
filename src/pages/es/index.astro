@@ -1,0 +1,34 @@
+---
+import Hero from '@/components/home/hero/index.astro'
+import About from '@/components/home/about/index.astro'
+import Overview from '@/components/home/overview/index.astro'
+import SocialLinks from '@/components/home/social-links/index.astro'
+import Separator from '@/components/shared/Separator.astro'
+import MainLayout from '@/layout/MainLayout.astro'
+import TechStack from '@/components/home/techstack/index.astro'
+import BlogList from '@/components/blog/blog-list/index.astro'
+import Experience from '@/components/home/experiences/index.astro'
+import Projects from '@/components/projects/index.astro'
+import Certifications from '@/components/home/certifications/index.astro'
+---
+
+<MainLayout>
+  <Hero />
+  <Separator />
+  <Overview />
+  <Separator />
+  <SocialLinks />
+  <Separator />
+  <About />
+  <Separator />
+  <TechStack />
+  <Separator />
+  <BlogList />
+  <Separator />
+  <Experience />
+  <Separator />
+  <Projects />
+  <Separator />
+  <Certifications />
+  <Separator />
+</MainLayout>

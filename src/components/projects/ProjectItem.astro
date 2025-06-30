@@ -1,12 +1,12 @@
 ---
 import { Icons } from '@/components/icons/icons'
 import BadgeList from '@/components/shared/BadgeList.astro'
-import { cn } from '@/lib/fetchers'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import type { ImageMetadata } from 'astro'
 import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n'
 import { getLangFromLocale } from '@/i18n/utils'
+import { cn } from '@/lib/utils'
 
 // TYPES
 interface Props {

@@ -3,7 +3,7 @@ import { getProjects } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
 import { buttonVariants } from '@/components/ui/utils'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
-
+import { getRelativeLocaleUrl } from 'astro:i18n'
 // TYPES
 interface Props {
   projectId: string
@@ -40,7 +40,7 @@ const next =
     {
       previous && (
         <a
-          href={`/projects${previous.id}`}
+          href={getRelativeLocaleUrl(lang, `/projects${previous.id}`)}
           class={buttonVariants({
             variant: 'outline',
             size: 'icon',
@@ -56,7 +56,7 @@ const next =
     {
       next && (
         <a
-          href={`/projects${next.id}`}
+          href={getRelativeLocaleUrl(lang, `/projects${next.id}`)}
           class={buttonVariants({
             variant: 'outline',
             size: 'icon',

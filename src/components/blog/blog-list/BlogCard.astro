@@ -1,6 +1,8 @@
 ---
+import { useTranslations, getLangFromLocale } from '@/i18n/utils'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 // TYPES
 interface Props {
@@ -21,9 +23,11 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   month: 'long',
   year: 'numeric'
 })
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
 ---
 
-<a href={`/blog${id}`}>
+<a href={getRelativeLocaleUrl(lang, `/blog${id}`)}>
   <div
     class='relative select-none [&_img]:aspect-5/3 rounded-sm overflow-hidden border border-muted'
   >
@@ -44,7 +48,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     </h3>
 
     <div>
-      <dt class='sr-only'>Published on</dt>
+      <dt class='sr-only'>{t('blogList.published')}</dt>
       <dd class='text-sm text-muted-foreground'>
         <time datetime={formattedDate}>
           {formattedDate}

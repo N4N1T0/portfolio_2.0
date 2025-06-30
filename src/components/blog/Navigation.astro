@@ -2,6 +2,7 @@
 import { getPosts } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
 import { buttonVariants } from '@/components/ui/utils'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
 // TYPES
 interface Props {
@@ -21,6 +22,10 @@ const actualBlogPost = blogPosts.findIndex(
 const previous = actualBlogPost > 0 ? blogPosts[actualBlogPost - 1] : null
 const next =
   actualBlogPost < blogPosts.length - 1 ? blogPosts[actualBlogPost + 1] : null
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
 ---
 
 <nav
@@ -28,7 +33,7 @@ const next =
 >
   <a href='/blog' class={buttonVariants({ variant: 'link' })}>
     <Icons.arrowLeft />
-    Blog Posts
+    {t('blogList').navigation}
   </a>
 
   <div class='flex items-center gap-2'>

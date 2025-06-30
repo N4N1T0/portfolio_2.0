@@ -13,19 +13,19 @@ export const navItems = [
       en: 'Projects',
       es: 'Proyectos'
     },
-    href: '/projects/'
+    href: '/projects'
   },
   {
     title: {
       en: 'Blog',
       es: 'Blog'
     },
-    href: '/blog/'
+    href: '/blog'
   }
 ]
 
 export const userData = {
-  displayName: 'Adrian "Nano" Alvarez' as string,
+  displayName: 'Adrian "Nano" Alvarez',
   avatar: Avatar,
   sentences: {
     en: [

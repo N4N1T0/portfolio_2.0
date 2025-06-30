@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
 
+import vercel from '@astrojs/vercel'
+
 export default defineConfig({
   site: process.env.CI
     ? 'https://www.adrian-alvarez.dev'
@@ -21,15 +23,19 @@ export default defineConfig({
   ],
 
   output: 'static',
+
   vite: {
     plugins: [tailwindcss()]
   },
 
   i18n: {
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     locales: ['es', 'en'],
     routing: {
-      prefixDefaultLocale: true
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false
     }
-  }
+  },
+
+  adapter: vercel()
 })

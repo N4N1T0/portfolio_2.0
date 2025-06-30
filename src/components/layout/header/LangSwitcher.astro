@@ -1,19 +1,33 @@
 ---
 import { buttonVariants } from '@/components/ui/utils'
-import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const lang = Astro.currentLocale || 'es'
 ---
 
-<a
+<button
   id='lang-switcher'
   class={buttonVariants({
     variant: 'outline',
     size: 'icon',
     className: 'hover:bg-muted'
   })}
-  href={getRelativeLocaleUrl(lang, '/')}
 >
   {lang === 'en' ? <span>EN</span> : <span>ES</span>}
   <span class='sr-only'>Lang Switcher</span>
-</a>
+</button>
+
+<script>
+  import { changeLangFromUrl, getLangFromLocale } from '@/i18n/utils'
+
+  const locale = window.location.href.split('/')[3]
+  const lang = getLangFromLocale(locale)
+  const url = new URL(window.location.href)
+  const langSwitcherBtn = document.getElementById(
+    'lang-switcher'
+  ) as HTMLButtonElement
+
+  langSwitcherBtn.addEventListener('click', () => {
+    const newUrl = changeLangFromUrl(url, lang)
+    window.location.href = newUrl // now a full redirect works
+  })
+</script>

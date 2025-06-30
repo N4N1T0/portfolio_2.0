@@ -41,7 +41,8 @@ const t = useTranslations(lang)
   import { animate, stagger } from 'animejs'
   import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
-  const lang = getLangFromLocale(Astro.currentLocale)
+  const locale = window.location.href.split('/')[3]
+  const lang = getLangFromLocale(locale)
   const t = useTranslations(lang)
 
   const showMore = document.getElementById(

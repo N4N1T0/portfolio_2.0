@@ -1,10 +1,10 @@
 export const languages = {
   en: {
-    route: '/en/',
+    route: 'en/',
     icon: 'en'
   },
   es: {
-    route: '/es/',
+    route: 'es/',
     icon: 'es'
   }
 }
@@ -36,6 +36,9 @@ export const ui = {
     },
     experiences: {
       title: 'Experiences'
+    },
+    content: {
+      title: 'Table of Content'
     },
     overview: {
       title: 'Overview'
@@ -104,6 +107,9 @@ export const ui = {
       showLess: 'Mostrar Menos',
       subtitle:
         'Aquí encontrarás algunos de los proyectos en los que he trabajado! Disfruta!'
+    },
+    content: {
+      title: 'Índice'
     },
     experiences: {
       title: 'Experiencias'

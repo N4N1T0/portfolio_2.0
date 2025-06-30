@@ -1,26 +1,29 @@
 ---
 import { cn } from '@/lib/utils'
 import { navItems } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 // CONST
 const active = Astro.url.pathname
+console.log('🚀 ~ active:', active)
+const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <nav class='flex items-center gap-4'>
   {
     navItems.map(({ title, href }) => {
       const isActive =
-        active === href || (href !== '/' && active?.startsWith(href))
-
+        active === `/${lang}${href}` || (href !== '/' && active.includes(href))
       return (
         <a
           class={cn(
             'text-sm font-medium text-foreground/50 hover:text-foreground transition-colors ease-in duration-200',
             isActive && 'text-foreground underline'
           )}
-          href={href}
+          href={getRelativeLocaleUrl(lang, href)}
         >
-          {title}
+          {title[lang]}
         </a>
       )
     })

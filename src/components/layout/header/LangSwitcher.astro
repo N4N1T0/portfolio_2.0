@@ -1,0 +1,19 @@
+---
+import { buttonVariants } from '@/components/ui/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+const lang = Astro.currentLocale || 'es'
+---
+
+<a
+  id='lang-switcher'
+  class={buttonVariants({
+    variant: 'outline',
+    size: 'icon',
+    className: 'hover:bg-muted'
+  })}
+  href={getRelativeLocaleUrl(lang, '/')}
+>
+  {lang === 'en' ? <span>EN</span> : <span>ES</span>}
+  <span class='sr-only'>Lang Switcher</span>
+</a>

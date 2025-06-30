@@ -1,5 +1,6 @@
 ---
 import type { userData } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
@@ -8,6 +9,12 @@ interface Props {
 
 // PROPS
 const { content, href } = Astro.props.item
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+
+// CONST
+const formattedContent = typeof content === 'object' ? content[lang] : content
 ---
 
 <div class='flex items-center gap-4 text-sm'>
@@ -27,10 +34,10 @@ const { content, href } = Astro.props.item
           target='_blank'
           rel='noopener noreferrer'
         >
-          {content}
+          {formattedContent}
         </a>
       ) : (
-        content
+        formattedContent
       )
     }
   </p>

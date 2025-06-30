@@ -2,10 +2,15 @@
 import { userData } from '@/constants/site-data'
 import OverviewItem from './OverviewItem.astro'
 import { Icons } from '@/components/icons/icons'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
 ---
 
 <section id='overview' class='section container'>
-  <h2 class='sr-only'>Overview</h2>
+  <h2 class='sr-only'>{t('overview').title}</h2>
   <ul class='p-2 space-y-2'>
     {
       userData.overview.map((item) => {

@@ -1,10 +1,14 @@
 ---
 import { userData } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <div
   class='flip-sentences text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
-  data-sentences={JSON.stringify(userData.sentences)}
+  data-sentences={JSON.stringify(userData.sentences[lang])}
 >
 </div>
 
@@ -17,7 +21,7 @@ import { userData } from '@/constants/site-data'
 
     const sentences = JSON.parse(el.dataset.sentences || '[]')
     let current: number = 0
-    let intervalId: NodeJS.Timeout | null = null
+    let intervalId: number | null = null
 
     const updateSentence = () => {
       el.textContent = sentences[current]
@@ -31,7 +35,7 @@ import { userData } from '@/constants/site-data'
 
     const start = () => {
       updateSentence()
-      intervalId = setInterval(() => {
+      intervalId = window.setInterval(() => {
         current = (current + 1) % sentences.length
         updateSentence()
       }, 3500)

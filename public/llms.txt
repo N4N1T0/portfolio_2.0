@@ -2,10 +2,24 @@
 
 > adrian-alvarez.dev is my minimal portfolio website, showcasing my work and experience as a Front-end Developer & marketing strategist
 
-## Blog (spanish)
+## Blog
+- (https://www.adrian-alvarez.dev/es/blog/habilidades-de-busqueda-de-orama-e-ia/)[Búsqueda e IA: El Dúo Imbatible para Aumentar Ingresos en eCommerce]
+- (https://www.adrian-alvarez.dev/es/blog/introducion-a-redsys-en-nextjs-15-parte-2/)[Integrando Redsys con Next.js 15 – Parte 2]
+- (https://www.adrian-alvarez.dev/es/blog/como-extraer-productos-para-un-ecommerce-con-sanity-cms-y-cheerio/)[Cómo Extraer Productos para un E-commerce con Sanity CMS y Cheerio]
+- (https://www.adrian-alvarez.dev/es/blog/introducion-a-redsys-en-nextjs-15/)[Introducción a la Integración de Redsys con Next.js 15]
+- (https://www.adrian-alvarez.dev/es/blog/tina-un-impresionante-headless-cms/)[TinaCMS: Un CMS Headless con Control de Versiones en Git]
+- (https://www.adrian-alvarez.dev/es/blog/usando-notion-para-mejorar-tus-royectos/)[Usando Notion para Mejorar Tus Proyectos]
+- (https://www.adrian-alvarez.dev/es/blog/astro-el-futuro-del-desarrollo-web/)[Astro 5.0 el Futuro del Desarrollo Web]
+- (https://www.adrian-alvarez.dev/es/blog/8-tips-para-optimizar-ecommerce/)[8 Tips para optimizar tu Pagina de Productos]
+- (https://www.adrian-alvarez.dev/es/blog/estrategias-narrativas/)[Estrategias Narrativas]
+- (https://www.adrian-alvarez.dev/es/blog/gestion-en-scrum/)[Gestionando Proyectos Digitales con Scrum]
+- (https://www.adrian-alvarez.dev/es/blog/dise%C3%B1o-marketing-digital/)[El Poder del Diseño Gráfico en el Marketing]
+- (https://www.adrian-alvarez.dev/es/blog/optimizacion-seo/)[Optimización SEO]
+- (https://www.adrian-alvarez.dev/es/blog/guia-dise%C3%B1o-responsive/)[Diseño Responsivo en Sitios Web]
 
-## Blog (english)
-
-## Projects (spanish)
-
-## Projects (english)
+## Projects
+- (https://www.adrian-alvarez.dev/en/projects/yogin/)[Yog-IN]
+- (https://www.adrian-alvarez.dev/en/projects/interprefy/)[Interprefy]
+- (https://www.adrian-alvarez.dev/en/projects/enka-cosmetics/)[Enka Cosmetics]
+- (https://www.adrian-alvarez.dev/en/projects/termogar/)[Termogar]
+- (https://www.adrian-alvarez.dev/en/projects/lola-barcelona/)[Lola Barcelona]

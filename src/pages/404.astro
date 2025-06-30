@@ -1,0 +1,27 @@
+---
+import { Icons } from '@/components/icons/icons'
+import { buttonVariants } from '@/components/ui/utils'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import MainLayout from '@/layout/MainLayout.astro'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+---
+
+<MainLayout>
+  <div
+    class='flex h-[calc(100svh-5.5rem)] flex-col items-center justify-center'
+  >
+    <h1 class='mt-8 mb-6 text-9xl font-medium font-pixel'>404</h1>
+
+    <a
+      href={getRelativeLocaleUrl(lang, '/')}
+      class={buttonVariants({ variant: 'link' })}
+    >
+      {t('404').goHome}
+      <Icons.arrowUpRight />
+    </a>
+  </div>
+</MainLayout>

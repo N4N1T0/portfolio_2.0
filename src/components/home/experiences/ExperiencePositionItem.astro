@@ -5,12 +5,13 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
-import type { Position } from '@/types'
 import BadgeList from '@/components/shared/BadgeList.astro'
+import type { experiences } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
-  position: Position
+  position: (typeof experiences)[0]['positions'][0]
   isMoreThanOne: boolean
 }
 
@@ -21,10 +22,13 @@ const { employmentType, employmentPeriod, description, skills, id, title } =
 
 // CONSTS
 const { start, end } = employmentPeriod
-const isOnGoing = !end
+const isOnGoing = end === null
 const lineBeforeClassname = isMoreThanOne
   ? 'relative space-y-4 first:before:absolute first:before:left-3 first:before:top-3 first:before:h-full first:before:w-px first:before:bg-border'
   : ''
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <AccordionItem value={id} class={lineBeforeClassname}>
@@ -40,7 +44,7 @@ const lineBeforeClassname = isMoreThanOne
       </div>
 
       <h4 class='flex-1 font-medium text-balance'>
-        {title}
+        {title[lang]}
       </h4>
     </div>
 
@@ -80,7 +84,7 @@ const lineBeforeClassname = isMoreThanOne
   <AccordionContent>
     <ul class='pl-5 md:pl-9'>
       {
-        description.map((sentence) => (
+        description[lang].map((sentence) => (
           <li class='pt-2 list-disc'>{sentence}</li>
         ))
       }

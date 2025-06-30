@@ -1,19 +1,130 @@
 ---
+import { changeLangFromUrl } from '@/i18n/utils'
+
 interface Props {
-  title?: string
-  description?: string
+  title?: string | undefined
+  description?: string | undefined
+  image?: ImageMetadata
+  ld?: string
+  lang: string | undefined
 }
 
-const {
-  title = 'Default Title',
-  description = 'Default description for the website'
-} = Astro.props
+const { title, description, image, ld, lang } = Astro.props
+
+const newLangUrl = changeLangFromUrl(Astro.url, lang || 'es')
+const ogImage = image ? image.src : `${Astro.site}${lang}/og-image.jpg`
 ---
 
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <!-- Basic HTML Meta Tags -->
+  <meta charset='utf-8' />
+  <meta name='robots' content='index, follow' />
+  <meta name='googlebot' content='index, follow' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='generator' content={Astro.generator} />
+  <meta name='subject' content='Adrian Alvarez Alonso Portfolio' />
+  <meta name='language' content={lang && lang.toUpperCase()} />
+  <meta name='Classification' content='Business' />
+  <meta
+    name='author'
+    content="Adrian 'Nano' Alvarez, adrian.alvarezalonso1991@gmail.com"
+  />
+  <meta name='designer' content="Adrian 'Nano' Alvarez" />
+  <meta name='owner' content="Adrian 'Nano' Alvarez" />
+  <link rel='canonical' href={Astro.url} />
+  <meta name='title' content={title} />
   <meta name='description' content={description} />
+  <link rel='sitemap' href={`${Astro.site}sitemap-0.xml`} />
+  <link
+    rel='alternate'
+    type='application/rss+xml'
+    title='RSS Feed para mi Website'
+    href='rss.xml'
+  />
   <title>{title}</title>
-  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+  <!-- Language -->
+  <link rel='alternate' href={Astro.url} hreflang=`${lang}-es` />
+  <link
+    rel='alternate'
+    href={`${Astro.site}${newLangUrl}`}
+    hreflang=`${lang === 'es' ? 'en' : 'es'}-es`
+  />
+
+  <!-- Favicon -->
+  <link
+    rel='apple-touch-icon-precomposed'
+    href={`${Astro.site}apple-touch-icon.png`}
+  />
+  <!-- iPhone, iPod e Android 2.2+ -->
+  <link
+    rel='shortcut icon'
+    type='image/x-icon'
+    href={`${Astro.site}favicon.ico`}
+  />
+
+  <!-- Open Graph -->
+  <meta property='og:type' content='website' />
+  <meta property='og:url' content={Astro.url} />
+  <meta property='og:title' content={title} />
+  <meta property='og:description' content={description} />
+  <meta property='og:image' content={ogImage} />
+  <meta property='og:logo' content={`${Astro.site}favicon.ico`} />
+
+  <!-- Twitter -->
+  <meta property='twitter:card' content='summary_large_image' />
+  <meta property='twitter:url' content={Astro.url} />
+  <meta property='twitter:title' content={title} />
+  <meta property='twitter:description' content={description} />
+  <meta property='twitter:image' content={ogImage} />
+
+  <!-- Rss Feed -->
+  <link
+    rel='alternate'
+    type='application/rss+xml'
+    title="Your Site's Title"
+    href={new URL('rss.xml', Astro.site)}
+  />
+
+  <!-- Schema -->
+  <Fragment
+    set:html={ld
+      ? `<script type='application/ld+json'>${ld}</script>`
+      : `<script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebDevelopment",
+    "name": "Adrian Alvarez",
+    "description": "Cuban-born and self-taught, I bring a unique blend of passion and proficiency to development and design. Obsessed with performance and dedicated to crafting clean, impactful designs, my work is a testament to the fusion of skill and creativity.",
+    "image": "${Astro.site}${lang}/og-image.jpg",
+    "logo": "${Astro.site}/apple-touch-icon.png",
+    "parentOrganization": {
+      "@type": "OnlineBusiness",
+      "name": "Adrian Alvarez Web Development",
+      "url": "${Astro.site}"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Spain",
+      "addressLocality": "Marbella"
+    },
+    "foundingDate": "2019-10-24"
+  }
+</script>`}
+  />
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    is:inline
+    src='https://www.googletagmanager.com/gtag/js?id=G-BH16G0HVKV'></script>
+  <script type='text/partytown' is:inline>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-BH16G0HVKV')
+  </script>
 </head>

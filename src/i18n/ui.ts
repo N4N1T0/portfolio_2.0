@@ -16,7 +16,9 @@ export const ui = {
     blogList: {
       showMore: 'Show More',
       published: 'Published on',
-      title: 'Blog Posts'
+      title: 'Blog Posts',
+      subtitle:
+        'A collection of articles about tech, development and marketing. I hope they will be useful'
     },
     about: {
       title: 'About'
@@ -84,7 +86,9 @@ export const ui = {
     blogList: {
       showMore: 'Mostrar Más',
       published: 'Publicado el',
-      tittle: 'Artículos'
+      title: 'Artículos',
+      subtitle:
+        'Una colección de artículos sobre tecnología, desarrollo y marketing. Espero que sean útiles'
     },
     about: {
       title: 'Acerca de Mi'

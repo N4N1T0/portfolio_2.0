@@ -18,5 +18,6 @@ export function changeLangFromUrl(url: URL, lang: string) {
   const newLang = lang === 'es' ? 'en' : 'es'
   const splitUrl = url.pathname.split('/')
   splitUrl[1] = newLang
-  return splitUrl.join('/').substring(1)
+  url.pathname = splitUrl.join('/')
+  return url.toString()
 }

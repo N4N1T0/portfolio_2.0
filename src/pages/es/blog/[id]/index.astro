@@ -1,4 +1,5 @@
 ---
+import { generateJsonLDForBlogPost } from '@/components/layout/head/jsonLD'
 import ContentIndex from '@/components/shared/ContentIndex.astro'
 import BlogLayout from '@/layout/BlogLayout.astro'
 import { getPosts } from '@/lib/fetchers'
@@ -7,7 +8,7 @@ import { load } from 'cheerio'
 
 // STATIC
 export const getStaticPaths = (async () => {
-  const blogs = await getPosts('en')
+  const blogs = await getPosts('es')
   return blogs.map((post) => ({
     params: { id: post.id },
     props: post
@@ -40,9 +41,12 @@ if (content?.html) {
     })
   })
 }
+
+// SEO
+const ld = await generateJsonLDForBlogPost(Astro.props, 'en')
 ---
 
-<BlogLayout post={Astro.props}>
+<BlogLayout post={Astro.props} ld={ld}>
   <section
     id={id}
     class='screen-line-before screen-line-after mb-3 py-2 text-5xl font-pixel flex justify-between items-center'

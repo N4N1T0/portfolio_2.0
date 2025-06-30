@@ -2,13 +2,23 @@
 import MainLayout from '@/layout/MainLayout.astro'
 import Projects from '@/components/projects/index.astro'
 import Separator from '@/components/shared/Separator.astro'
+import { useTranslations } from '@/i18n/utils'
+import { getProjects } from '@/lib/fetchers'
+import { generateProjectListJsonLD } from '@/components/layout/head/jsonLD'
+
+// I18N
+const t = useTranslations('en')
+
+// SEO
+const allProjects = await getProjects('en')
+const ld = generateProjectListJsonLD(allProjects, 'en')
 ---
 
-<MainLayout>
+<MainLayout
+  description='Explore a compilation of my finest endeavors spanning Web Design and Development. In a dynamic digital landscape'
+  title='Adrian - Projects'
+  ld={ld}
+>
   <Separator />
-  <Projects
-    subtitle="Here you'll find some of the projects I've worked on! Enjoy!"
-    showAll={true}
-    priority={true}
-  />
+  <Projects subtitle={t('projects').subtitle} showAll={true} priority={true} />
 </MainLayout>

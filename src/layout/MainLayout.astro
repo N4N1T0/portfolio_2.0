@@ -5,6 +5,7 @@ import Head from '@/components/layout/head/index.astro'
 
 import '@/styles/global.css'
 
+// TYPES
 interface Props {
   title?: string | undefined
   description?: string | undefined
@@ -12,6 +13,7 @@ interface Props {
   ld?: string
 }
 
+// PROPS
 const {
   title = 'Default Title',
   description = 'Default description for the website',
@@ -19,6 +21,7 @@ const {
   ld = 'summary_large_image'
 } = Astro.props
 
+// I18N
 const lang = Astro.currentLocale
 ---
 

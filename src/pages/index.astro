@@ -1,0 +1,15 @@
+---
+import { languages } from '@/i18n/ui'
+export const prerender = false
+
+const preferredLocale = Astro.preferredLocaleList
+const locale = Object.entries(languages).find(([key, _]) =>
+  preferredLocale?.find((locale) => locale === key)
+)
+
+if (locale) {
+  return Astro.redirect(`${Astro.site}${locale[1].route}`)
+} else {
+  return Astro.redirect(`${Astro.site}${languages.es.route}`)
+}
+---

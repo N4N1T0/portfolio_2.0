@@ -2,13 +2,23 @@
 import MainLayout from '@/layout/MainLayout.astro'
 import BlogList from '@/components/blog/blog-list/index.astro'
 import Separator from '@/components/shared/Separator.astro'
+import { useTranslations } from '@/i18n/utils'
+import { generateBlogListJsonLD } from '@/components/layout/head/jsonLD'
+import { getPosts } from '@/lib/fetchers'
+
+// I18N
+const t = useTranslations('en')
+
+// SEO
+const blogPosts = await getPosts('en')
+const ld = generateBlogListJsonLD(blogPosts, 'en')
 ---
 
-<MainLayout>
+<MainLayout
+  description='Explore una recopilación de mis mejores esfuerzos en Diseño y Desarrollo Web. En un panorama digital dinámico'
+  title='Adrian - Blog'
+  ld={ld}
+>
   <Separator />
-  <BlogList
-    showAll={true}
-    priority={true}
-    subtitle='A collection of articles about tech, development and marketing. I hope they will be useful'
-  />
+  <BlogList showAll={true} priority={true} subtitle={t('blogList').subtitle} />
 </MainLayout>

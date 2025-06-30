@@ -1,16 +1,15 @@
 ---
 import { Icons } from '@/components/icons/icons'
+import { generateProjectJsonLD } from '@/components/layout/head/jsonLD'
 import ContentIndex from '@/components/shared/ContentIndex.astro'
 import { buttonVariants } from '@/components/ui/utils'
-import { getLangFromLocale } from '@/i18n/utils'
 import ProjectsLayout from '@/layout/ProjectsLayout.astro'
 import { getProjects } from '@/lib/fetchers'
 import type { GetStaticPaths } from 'astro'
 
 // STATIC
 export const getStaticPaths = (async () => {
-  const lang = getLangFromLocale(Astro.currentLocale)
-  const projects = await getProjects(lang)
+  const projects = await getProjects('es')
 
   return projects
     .filter((project) => !project.data.comingSoon)
@@ -39,21 +38,24 @@ const {
 // CONST
 const hasTestimonial = testimonial.quote && testimonial.name && testimonial.role
 const contentIndex = [
-  { label: 'Challenge', id: 'challenge' },
-  { label: 'Solutions', id: 'solutions' },
+  { label: 'Problema', id: 'challenge' },
+  { label: 'Soluciones', id: 'solutions' },
   { label: 'TechStack', id: 'techstack' }
 ]
 const formattedContentIndex = hasTestimonial
-  ? [...contentIndex, { label: 'Testimonial', id: 'testimonial' }]
+  ? [...contentIndex, { label: 'Testimonio', id: 'testimonial' }]
   : contentIndex
+
+// SEO
+const ld = generateProjectJsonLD(Astro.props, 'en')
 ---
 
-<ProjectsLayout project={Astro.props}>
+<ProjectsLayout project={Astro.props} ld={ld}>
   <section
     id={id}
     class='screen-line-before screen-line-after mb-6 py-2 text-5xl font-pixel flex justify-between items-center'
   >
-    <h1 style={{ color: colors[1] }}>
+    <h1 style={{ color: colors }}>
       {title}
       <time class='text-xs' datetime={date}>({date})</time>
     </h1>
@@ -66,22 +68,22 @@ const formattedContentIndex = hasTestimonial
         size: 'icon',
         className: 'hover:bg-muted'
       })}
-      ><Icons.arrowUpRight class='size-8' style={{ color: colors[1] }} />
+      ><Icons.arrowUpRight class='size-8' style={{ color: colors }} />
       <span class='sr-only'>See the project live</span>
     </a>
   </section>
   <p class='lead mb-6'>{excerpt}</p>
   <ContentIndex items={formattedContentIndex} />
   <section id='challenge' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>Challenge</h2>
+    <h2 style={{ borderBottom: `1px solid ${colors}` }}>Challenge</h2>
     <p>{challenge}</p>
   </section>
   <section id='solutions' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>Solutions</h2>
+    <h2 style={{ borderBottom: `1px solid ${colors}` }}>Solutions</h2>
     {solution}
   </section>
   <section id='techstack' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>TechStack</h2>
+    <h2 style={{ borderBottom: `1px solid ${colors}` }}>TechStack</h2>
     <ul class='flex flex-wrap gap-1.5'>
       {
         techStack.map(({ title, link }) => (
@@ -103,10 +105,10 @@ const formattedContentIndex = hasTestimonial
   {
     hasTestimonial && (
       <section id='testimonial' class='custom-prose pb-6'>
-        <h2 style={{ borderBottom: `1px solid ${colors[1]}` }}>testimonial</h2>
+        <h2 style={{ borderBottom: `1px solid ${colors}` }}>testimonial</h2>
         <blockquote
           class='text-lg'
-          style={{ borderLeft: `4px solid ${colors[1]}` }}
+          style={{ borderLeft: `4px solid ${colors}` }}
         >
           {testimonial.quote}
           <footer class='text-right mt-3 text-sm'>

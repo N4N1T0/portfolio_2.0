@@ -6,15 +6,17 @@ import Navigation from '@/components/blog/Navigation.astro'
 
 interface Props {
   post: CollectionEntry<'blog'>
+  ld: string
 }
 
+const { post, ld } = Astro.props
 const {
   id,
-  data: { image, title }
-} = Astro.props.post
+  data: { image, title, excerpt }
+} = post
 ---
 
-<MainLayout>
+<MainLayout title={title} description={excerpt} ld={ld} image={image}>
   <Navigation blogPostId={id} />
   <section class='screen-line-before aspect-3/2 group container'>
     <div class='size-full overflow-hidden relative'>

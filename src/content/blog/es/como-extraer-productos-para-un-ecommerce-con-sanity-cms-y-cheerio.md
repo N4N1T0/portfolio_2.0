@@ -3,9 +3,9 @@ title: 'Cómo Extraer Productos para un E-commerce con Sanity CMS y Cheerio'
 date: 2025-03-06
 excerpt: 'Descubre cómo extraer productos de un sitio de WordPress hacia Sanity CMS para una tienda en línea, utilizando Cheerio, Heroku CORS Anywhere y cron jobs.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/effect-of-mobile-apps-on-Consumer-and-Retailers--1024x538.webp'
+image: 'src/assets/blog/effect-of-mobile-apps-on-Consumer-and-Retailers--1024x538.webp'
 imageAlt: 'El comercio electrónico y la tecnología juntos'
-language: 'es'
+counterpartId: 'en/automate-product-imports-ecommerce-sanity-cheerio'
 ---
 
 ## Introducción

@@ -13,41 +13,36 @@
     }
   ],
   "liveLink": "https://yog-in.es",
-  "repoLink": "",
-  "colors": ["#122775", "#d3944a"],
+  "colors": "#d2944a",
   "techStack": [
     {
       "title": "React",
-      "info": "A JavaScript framework for building interactive and dynamic user interfaces on the frontend.",
       "link": "https://reactjs.org/"
     },
     {
       "title": "Bit",
-      "info": "A tool for sharing and reusing UI components across projects and teams, enabling collaborative development.",
       "link": "https://bit.dev/"
     },
     {
       "title": "Node.js & Express",
-      "info": "Backend server and framework for building robust and scalable APIs with JavaScript.",
       "link": "https://nodejs.org/, https://expressjs.com/"
     },
     {
       "title": "Passport",
-      "info": "Middleware for authentication in Node.js, facilitating secure session management.",
       "link": "http://www.passportjs.org/"
     },
     {
       "title": "Tailwind CSS",
-      "info": "Utility-first CSS framework that allows fast building of clean and responsive designs.",
       "link": "https://tailwindcss.com/"
     }
   ],
   "testimonial": {
-    "name": "",
-    "quote": "",
-    "role": ""
+    "name": "Victoria González López",
+    "quote": "La experiencia y dedicación de Adrian ayudó a transformar nuestra visión en realidad. La plataforma que construyó no solo optimizó nuestras operaciones sino que creó una experiencia fluida para nuestra comunidad de yoga.",
+    "role": "Propietaria de Yog-IN"
   },
   "challenge": "Crear una plataforma SaaS moderna para estudiantes y profesores de yoga que permita gestionar eventos, clases, perfiles y pagos, con funcionalidades avanzadas de filtrado y suscripciones para análisis de desempeño, manteniendo una arquitectura segura y escalable.",
   "solution": "Utilizamos React con Bit para construir una interfaz modular y reutilizable, junto con Node.js y Express en el backend para una API robusta. Implementamos Passport para autenticación segura, Tailwind CSS para un diseño limpio y responsive, y ChatGM para mejorar la experiencia UI. También integramos Tankstack para optimizar las llamadas API, garantizando rendimiento y escalabilidad.",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "en/yogin"
 }

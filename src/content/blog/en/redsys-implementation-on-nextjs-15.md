@@ -3,9 +3,9 @@ title: 'Introduction to Redsys Integration with Next.js 15'
 date: 2025-02-11
 excerpt: 'Learn how to integrate Redsys with Next.js 15 for secure payment processing using Server Actions and the redirect form method.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/pagos-redsys.webp'
+image: 'src/assets/blog/pagos-redsys.webp'
 imageAlt: 'Redsys Logo on a gray background'
-language: 'en'
+counterpartId: 'es/introducion-a-redsys-en-nextjs-15'
 ---
 
 Nowadays, everyone is trying to make money online—whether through a SaaS, an eCommerce store, or other types of web applications. While global payment processors like Stripe and PayPal are common, different countries have their own preferred payment platforms.

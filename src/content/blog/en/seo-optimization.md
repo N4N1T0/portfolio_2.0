@@ -3,9 +3,9 @@ title: 'SEO Optimization'
 date: 2023-07-20
 excerpt: 'Unify design and SEO for an effective website. From an intuitive structure to strategic keywords.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
+image: 'src/assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
 imageAlt: 'A screen showing HTML code and SEO'
-language: 'en'
+counterpartId: 'es/optimizacion-seo'
 ---
 
 In website construction, the connection between SEO and design is crucial for user-friendly navigation and understanding by search engines. By incorporating SEO best practices from the design phase, you can create a structure and experience that optimizes both usability and visibility in search engines.

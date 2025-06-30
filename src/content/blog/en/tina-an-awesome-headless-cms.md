@@ -3,9 +3,9 @@ title: 'TinaCMS: A Headless CMS with Git Version Control'
 date: 2025-01-25
 excerpt: 'Discover how TinaCMS revolutionizes content management with its headless approach, Git integration, and version control.'
 author: 'Adrián'
-image: '../../../assets/blog/TinaCMS - The Markdown CMS.webp'
+image: 'src/assets/blog/TinaCMS - The Markdown CMS.webp'
 imageAlt: 'TinaCMS interface with live editing'
-language: 'en'
+counterpartId: 'es/tina-un-impresionante-headless-cms'
 ---
 
 In the world of web development, Content Management Systems (CMS) have evolved significantly in recent years. With the growing demand for flexible, scalable, and modern workflow-compatible solutions, TinaCMS has positioned itself as a standout option. This open-source, headless CMS offers native integration with Git, giving developers total control over content with an efficient versioning system.

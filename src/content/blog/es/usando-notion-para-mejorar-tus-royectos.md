@@ -3,9 +3,9 @@ title: 'Usando Notion para Mejorar Tus Proyectos'
 date: 2025-01-10
 excerpt: 'Descubre cómo mantenerte organizado y optimizar tu flujo de trabajo como desarrollador web freelance con Notion.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/team-nocoloco-aFbs3cwlpZI-unsplash.webp'
+image: 'src/assets/blog/team-nocoloco-aFbs3cwlpZI-unsplash.webp'
 imageAlt: 'Espacio de trabajo en Notion para gestión de proyectos'
-language: 'es'
+counterpartId: 'en/using-notion-to-improve-your-projects'
 ---
 
 ¿Eres un desarrollador web freelance que busca optimizar y organizar mejor tus proyectos? Notion podría ser la herramienta que necesitas para transformar tu flujo de trabajo y aumentar tu productividad.

@@ -3,9 +3,9 @@ title: 'Búsqueda e IA: El Dúo Imbatible para Aumentar Ingresos en eCommerce'
 date: 2025-05-19
 excerpt: 'Descubre cómo integrar Orama.search con embeddings de OpenAI transformó la experiencia de búsqueda y la conversión'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/orama-search.webp'
+image: 'src/assets/blog/orama-search.webp'
 imageAlt: 'El Logo de Orama.core'
-language: 'es'
+counterpartId: 'en/search-capabilities-and-ai'
 ---
 
 ## 🧩 El Reto: UX que Convierte en un eCommerce de Nicho

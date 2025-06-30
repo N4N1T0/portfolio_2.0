@@ -3,9 +3,9 @@ title: 'How to Scrap Product for E-commerce with Sanity CMS and Cheerio'
 date: 2025-03-06
 excerpt: 'Discover how to scrap product from a WordPress site into Sanity CMS for an e-commerce store, using Cheerio, Heroku CORS Anywhere, and cron jobs.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/effect-of-mobile-apps-on-Consumer-and-Retailers--1024x538.webp'
+image: 'src/assets/blog/effect-of-mobile-apps-on-Consumer-and-Retailers--1024x538.webp'
 imageAlt: 'Ecommerce and tech coming together'
-language: 'en'
+counterpartId: 'en/how-to-scrap-product-for-ecommerce-with-sanity-cms-and-cheerio'
 ---
 
 ## Introduction

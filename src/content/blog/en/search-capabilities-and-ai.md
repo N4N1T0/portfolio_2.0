@@ -3,9 +3,9 @@ title: 'Search and AI: The Dream Team for an eCommerce Revenue Boost'
 date: 2025-05-19
 excerpt: 'Discover how integrating Orama.search with OpenAI embeddings transformed search UX and conversion for a personalized store'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/orama-search.webp'
+image: 'src/assets/blog/orama-search.webp'
 imageAlt: 'Orama core logo'
-language: 'en'
+counterpartId: 'es/habilidades-de-busqueda-de-orama-e-ia'
 ---
 
 ## 🧩 The Challenge: UX That Converts for Niche eCommerce

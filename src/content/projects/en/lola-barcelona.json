@@ -13,27 +13,22 @@
     }
   ],
   "liveLink": "https://www.lola-barcelona.com/",
-  "repoLink": "https://github.com/N4N1T0/lola-barcelona-theme",
-  "colors": ["#ff28ab", "#ffffff"],
+  "colors": "#ff28ab",
   "techStack": [
     {
       "title": "Shopify",
-      "info": "Shopify is one of the most popular and user-friendly e-commerce platforms, allowing businesses to create fully functional online stores with customizable options for sales and product management.",
       "link": "https://www.shopify.com/"
     },
     {
       "title": "Liquid",
-      "info": "Liquid is the templating language used by Shopify to customize themes, allowing for dynamic content integration on store pages and adapting functionalities to the clients needs.",
       "link": "https://shopify.github.io/liquid/"
     },
     {
       "title": "JavaScript",
-      "info": "JavaScript is a fundamental programming language for creating interactive experiences in Shopify stores, from integrating custom features to improving the user interface.",
       "link": "https://www.javascript.com/"
     },
     {
       "title": "Shopify Custom Apps",
-      "info": "Shopify custom apps allow you to extend the functionality of your store beyond what standard apps offer, with unique features to enhance the shopping experience and optimize business management.",
       "link": "https://shopify.dev/apps"
     }
   ],
@@ -44,5 +39,6 @@
   },
   "challenge": "Develop a customized Shopify store that enhances user experience and optimizes sales",
   "solution": "Created a base Shopify theme with customized design and added upselling/cross-selling components",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "es/lola-barcelona"
 }

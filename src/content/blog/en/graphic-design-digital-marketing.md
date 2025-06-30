@@ -3,9 +3,9 @@ title: 'The Power of Graphic Design in Digital Marketing'
 date: 2023-08-17
 excerpt: 'Elevate your digital presence with strategic graphic design. From visual identity to impactful content, maximize your brand&quote;s potential.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
+image: 'src/assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
 imageAlt: 'An Apple setup with an iMac and an AirBook'
-language: 'en'
+counterpartId: 'es/diseño-marketing-digital'
 ---
 
 In today's digital era, visual content stands as a fundamental pillar for success in marketing. Studies reveal that images capture up to 80% more attention than plain text. However, creating attractive and high-quality visuals requires a strategic approach to graphic design.

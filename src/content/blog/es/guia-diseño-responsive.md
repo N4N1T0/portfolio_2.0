@@ -3,9 +3,9 @@ title: 'Diseño Responsivo en Sitios Web'
 date: 2023-06-19
 excerpt: 'Cómo el diseño responsivo transforma la experiencia del usuario, impulsa el SEO y optimiza tu presencia en todos los dispositivos.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
+image: 'src/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
 imageAlt: 'un setup de apple con una IMac y una AirBook'
-language: 'es'
+counterpartId: 'en/graphic-design-digital-marketing'
 ---
 
 En el mundo digital actual, contar con un sitio web responsivo es esencial para cualquier negocio u organización que busque llegar a sus clientes desde diferentes dispositivos. Los usuarios acceden a sitios web desde computadoras de escritorio, laptops, tabletas y teléfonos inteligentes de manera regular. Si tu sitio no está optimizado para diferentes tamaños de pantalla, puede afectar negativamente la experiencia del usuario y tus resultados financieros.

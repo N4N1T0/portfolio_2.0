@@ -13,41 +13,36 @@
     }
   ],
   "liveLink": "https://yog-in.es",
-  "repoLink": "",
-  "colors": ["#4d869c", "#d3944a"],
+  "colors": "#d2944a",
   "techStack": [
     {
       "title": "React",
-      "info": "A JavaScript framework for building interactive and dynamic user interfaces on the frontend.",
       "link": "https://reactjs.org/"
     },
     {
       "title": "Bit",
-      "info": "A tool for sharing and reusing UI components across projects and teams, enabling collaborative development.",
       "link": "https://bit.dev/"
     },
     {
       "title": "Node.js & Express",
-      "info": "Backend server and framework for building robust and scalable APIs with JavaScript.",
       "link": "https://nodejs.org/, https://expressjs.com/"
     },
     {
       "title": "Passport",
-      "info": "Middleware for authentication in Node.js, facilitating secure session management.",
       "link": "http://www.passportjs.org/"
     },
     {
       "title": "Tailwind CSS",
-      "info": "Utility-first CSS framework that allows fast building of clean and responsive designs.",
       "link": "https://tailwindcss.com/"
     }
   ],
   "testimonial": {
-    "name": "",
-    "quote": "",
-    "role": ""
+    "name": "Victoria González López",
+    "quote": "Adrian's expertise and dedication helped transform our vision into reality. The platform he built not only streamlined our operations but created a seamless experience for our yoga community.",
+    "role": "Owner of Yog-IN"
   },
   "challenge": "Build a modern SaaS platform for yoga students and instructors to manage events, classes, profiles, and payments, with advanced filtering and subscription analytics, maintaining a secure and scalable architecture.",
   "solution": "We used React with Bit to build a modular and reusable UI, along with Node.js and Express on the backend for a robust API. Passport was implemented for secure authentication, Tailwind CSS for clean and responsive design, and ChatGM to enhance the UI experience. Tankstack was integrated to optimize API calls, ensuring performance and scalability.",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "es/yogin"
 }

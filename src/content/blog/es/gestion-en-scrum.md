@@ -3,9 +3,9 @@ title: 'Gestionando Proyectos Digitales con Scrum'
 date: 2023-09-15
 excerpt: 'Domina proyectos digitales con Scrum: sprints cortos, colaboración eficiente y resultados predecibles. Descubre cómo potenciar tu equipo.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/dylan-gillis-KdeqA3aTnBY-unsplash.webp'
+image: 'src/assets/blog/dylan-gillis-KdeqA3aTnBY-unsplash.webp'
 imageAlt: 'un equipo de trabajo usando la metodología SCRUM'
-language: 'es'
+counterpartId: 'en/scrum-project-management'
 ---
 
 ## Desafíos en Proyectos Digitales

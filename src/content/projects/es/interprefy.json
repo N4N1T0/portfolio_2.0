@@ -13,32 +13,26 @@
     }
   ],
   "liveLink": "https://www.interprefy.com/",
-  "repoLink": "",
-  "colors": ["#f0f4f8", "#FF5D22"],
+  "colors": "#FF5D22",
   "techStack": [
     {
       "title": "HubSpot CMS",
-      "info": "Una plataforma CMS potente que permite a marketers y desarrolladores crear sitios web usando el site builder de HubSpot y el lenguaje de plantillas HubL.",
       "link": "https://developers.hubspot.com/docs/cms"
     },
     {
       "title": "HubL",
-      "info": "Lenguaje de marcado de HubSpot para crear módulos dinámicos y reutilizables personalizados según las necesidades del cliente.",
       "link": "https://developers.hubspot.com/docs/cms/hubl"
     },
     {
       "title": "JavaScript",
-      "info": "Utilizado para mejorar la interactividad del sitio, optimizar el rendimiento y crear animaciones suaves para una mejor experiencia de usuario.",
       "link": "https://developer.mozilla.org/es/docs/Web/JavaScript"
     },
     {
       "title": "jQuery",
-      "info": "Librería JavaScript popular para simplificar la manipulación del DOM y el manejo de eventos.",
       "link": "https://jquery.com/"
     },
     {
       "title": "Parallax.js",
-      "info": "Librería ligera para crear efectos de parallax scrolling que mejoran el atractivo visual.",
       "link": "https://matthew.wagerfield.com/parallax/"
     }
   ],
@@ -49,5 +43,6 @@
   },
   "challenge": "Interprefy necesitaba una renovación completa de su marca y la reconstrucción total de su sitio web en la plataforma de HubSpot, incluyendo módulos personalizados alineados con sus directrices de diseño y estructura, todo con un plazo ajustado.",
   "solution": "Desarrollamos módulos personalizados en HubL siguiendo las directrices de subsprite del cliente y usamos el site builder de HubSpot para armar el sitio rápidamente. Aplicamos JavaScript, jQuery y Parallax.js para mejorar el rendimiento y añadir animaciones suaves, entregando un producto pulido en pocas semanas.",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "en/interprefy"
 }

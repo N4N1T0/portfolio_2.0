@@ -3,9 +3,9 @@ title: 'Astro 5.0 el Futuro del Desarrollo Web'
 date: 2024-12-27
 excerpt: 'Explora Astro 5.0: rendimiento ultrarrápido, optimización para SEO y simplicidad para transformar tu desarrollo web. ¡Impulsa tu presencia en línea hoy!'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
+image: 'src/assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
 imageAlt: 'Astro 5.0 Logo'
-language: 'es'
+counterpartId: 'en/astro-the-future-of-web-development'
 ---
 
 En el panorama siempre cambiante del desarrollo web, mantenerse a la vanguardia significa adoptar herramientas que hagan los sitios más rápidos, ligeros y fáciles de gestionar. Aquí es donde entra **Astro 5.0**, la última versión del marco de trabajo JavaScript minimalista diseñado para crear sitios web de alto rendimiento, optimizados para SEO, con un enfoque en la simplicidad y la velocidad.

@@ -13,41 +13,36 @@
     }
   ],
   "liveLink": "https://www.interprefy.com/",
-  "repoLink": "",
-  "colors": ["#f0f4f8", "#FF5D22"],
+  "colors": "#FF5D22",
   "techStack": [
     {
       "title": "HubSpot CMS",
-      "info": "A powerful CMS platform that allows marketers and developers to build websites using the HubSpot site builder and HubL templating language.",
       "link": "https://developers.hubspot.com/docs/cms"
     },
     {
       "title": "HubL",
-      "info": "HubSpot’s markup language used to create dynamic and reusable website modules customized for client needs.",
       "link": "https://developers.hubspot.com/docs/cms/hubl"
     },
     {
       "title": "JavaScript",
-      "info": "Used to enhance site interactivity, optimize performance, and create smooth user experience animations.",
       "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
       "title": "jQuery",
-      "info": "A popular JavaScript library for simplifying DOM manipulation and event handling.",
       "link": "https://jquery.com/"
     },
     {
       "title": "Parallax.js",
-      "info": "A lightweight library to create parallax scrolling effects, enhancing visual appeal.",
       "link": "https://matthew.wagerfield.com/parallax/"
     }
   ],
   "testimonial": {
-    "name": "Client Name",
+    "name": "Sven Schumaker",
     "quote": "The collaboration was smooth and efficient, delivering a fully functional and visually appealing site in just a few weeks.",
     "role": "Marketing Manager at Interprefy"
   },
   "challenge": "Interprefy needed a full brand revamp with a complete website rebuild on HubSpot’s platform, including custom modules aligned with their design guidelines and structure, all on a tight deadline.",
   "solution": "Developed custom HubL modules adhering to the client’s subsprite guidelines and used HubSpot’s site builder to assemble the site quickly. Applied JavaScript, jQuery, and Parallax.js to improve performance and add smooth animations, delivering a polished product within weeks.",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "es/interprefy"
 }

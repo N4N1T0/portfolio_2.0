@@ -14,26 +14,22 @@
   ],
   "liveLink": "https://explorersphototours.com",
   "repoLink": "https://github.com/N4N1T0/explorer-photo-tours",
-  "colors": [],
+  "colors": "#000000",
   "techStack": [
     {
       "title": "Astro",
-      "info": "A modern static site builder that enables ultra-fast websites by shipping less JavaScript.",
       "link": "https://astro.build/"
     },
     {
       "title": "Preact",
-      "info": "A lightweight alternative to React, providing the same modern UI capabilities with a much smaller bundle size.",
       "link": "https://preactjs.com/"
     },
     {
       "title": "Anime.js",
-      "info": "A flexible JavaScript animation library used to create smooth and engaging UI animations.",
       "link": "https://animejs.com/"
     },
     {
       "title": "Vercel",
-      "info": "A cloud platform for static sites and Serverless Functions, optimized for frontend developers.",
       "link": "https://vercel.com/"
     }
   ],
@@ -44,5 +40,6 @@
   },
   "challenge": "Create a fast, SEO-friendly, and lightweight platform for personalized photography tours across diverse locations, with a modern design that encourages user engagement and conversion.",
   "solution": "Built with Astro for static site generation and performance optimization, Preact to minimize bundle size, and Anime.js for smooth animations. Hosted on Vercel to ensure scalability and fast global delivery, the platform focuses on CRO principles and modern UI design to maximize conversions.",
-  "comingSoon": true
+  "comingSoon": true,
+  "counterpartId": "es/explorer-photo-tours"
 }

@@ -13,27 +13,22 @@
     }
   ],
   "liveLink": "https://enkaesteticapro.com/",
-  "repoLink": "https://github.com/N4N1T0/enka-ecommerce",
-  "colors": ["#f5f5f5", "#cc3366"],
+  "colors": "#cc3366",
   "techStack": [
     {
       "title": "Next.js",
-      "info": "Next.js es un framework de React que permite desarrollar aplicaciones web modernas con renderizado estático y dinámico, optimizadas para rendimiento y SEO.",
       "link": "https://nextjs.org/"
     },
     {
       "title": "Sanity",
-      "info": "Sanity es una plataforma de gestión de contenido headless, ideal para crear experiencias flexibles y escalables. En este proyecto se usó como base de datos estructurada para productos.",
       "link": "https://www.sanity.io/"
     },
     {
       "title": "Cheerio",
-      "info": "Cheerio es una herramienta de scraping automatizado que permite extraer datos desde sitios web de terceros de manera eficiente y estructurada.",
       "link": "https://cheerio.js.org "
     },
     {
       "title": "Bootstrap",
-      "info": "Bootstrap es un framework CSS que permite desarrollar interfaces web responsivas rápidamente, ideal para maquetación urgente y consistente.",
       "link": "https://getbootstrap.com/"
     }
   ],
@@ -44,5 +39,6 @@
   },
   "challenge": "La marca había perdido completamente su sitio web y base de datos debido a una mala gestión anterior. Sin acceso a su antiguo contenido ni catálogo, necesitaban una solución rápida, segura y escalable para volver al mercado digital sin comprometer funcionalidad o rendimiento.",
   "solution": "Se diseñó un sistema automatizado de scrapping con Shibrio para reconstruir el catálogo desde los retailers. Se creó una web completamente nueva con Next.js y Sanity como CMS, utilizando Bootstrap para acelerar la maquetación. La plataforma ahora es rápida, segura y lista para escalar con nuevas funcionalidades.",
-  "comingSoon": false
+  "comingSoon": false,
+  "counterpartId": "es/enka-cosmetics"
 }

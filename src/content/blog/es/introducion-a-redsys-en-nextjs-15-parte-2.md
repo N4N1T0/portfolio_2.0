@@ -3,9 +3,9 @@ title: 'Integrando Redsys con Next.js 15 – Parte 2'
 date: 2025-03-21
 excerpt: 'Aprende a manejar notificaciones de pago y mejorar el rendimiento al integrar Redsys con Next.js 15.'
 author: 'Adrian "Nano" Alvarez'
-image: '../../../assets/blog/pagos-redsys.webp'
+image: 'src/assets/blog/pagos-redsys.webp'
 imageAlt: 'Logotipo de Redsys sobre un fondo gris'
-language: 'es'
+counterpartId: 'en/redsys-implementation-on-nextjs-15-part-2'
 ---
 
 ## Manejo Eficiente de Notificaciones de Pago

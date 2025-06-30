@@ -5,12 +5,19 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
+// TYPES
 interface Props {
   items: { label: string; id: string }[]
 }
 
+// PROPS
 const { items } = Astro.props
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
 ---
 
 <Accordion type='single' class='not-prose rounded-sm bg-muted font-sans mb-3'>
@@ -18,7 +25,7 @@ const { items } = Astro.props
     <AccordionTrigger
       class='group/toc inline-flex w-full items-center justify-between text-sm font-medium'
     >
-      Table of Contents
+      {t('content').title}
     </AccordionTrigger>
 
     <AccordionContent class='overflow-hidden duration-300'>

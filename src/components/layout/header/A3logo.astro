@@ -1,5 +1,13 @@
+---
+import { getLangFromLocale } from '@/i18n/utils'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+---
+
 <a
-  href='/'
+  href={getRelativeLocaleUrl(lang, '/')}
   class='font-pixel hover:text-muted duration-200 ease-in transition-colors'
 >
   AAA

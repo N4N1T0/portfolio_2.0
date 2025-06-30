@@ -5,6 +5,8 @@ import { cn } from '@/lib/fetchers'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import type { ImageMetadata } from 'astro'
+import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n'
+import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
@@ -27,7 +29,12 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   year: 'numeric'
 })
 const techItems = techStack.map((tech) => tech.title)
-const projectLink = comingSoon ? '/' : `/projects${id}`
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const projectLink = comingSoon
+  ? getRelativeLocaleUrl(lang, '/')
+  : getAbsoluteLocaleUrl(lang, `/projects${id}`)
 ---
 
 <article class='grid grid-cols-1 md:grid-cols-3 gap-2'>

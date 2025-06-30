@@ -3,22 +3,29 @@ import { getProjects } from '@/lib/fetchers'
 import ProjectItem from './ProjectItem.astro'
 import { buttonVariants } from '@/components/ui/utils'
 import { Icons } from '@/components/icons/icons'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
+// TYPES
 interface Props {
   subtitle?: string
   showAll?: boolean
   priority?: boolean
 }
 
+// CONST
 const { subtitle, showAll = false, priority = false } = Astro.props
 
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+
 // FETCHERS
-const projects = await getProjects('en')
+const projects = await getProjects(lang)
 ---
 
 <section class='section container px-4' data-show-more={showAll}>
   <h2 class='text-3xl font-pixel screen-line-after py-2'>
-    Projects
+    {t('projects').title}
     <sup class='text-sm text-muted-foreground select-none'>
       ({projects.length})
     </sup>
@@ -46,7 +53,7 @@ const projects = await getProjects('en')
           id='show-more-projects'
           class={buttonVariants({ variant: 'default' })}
         >
-          Show More
+          {t('projects').showMore}
           <Icons.chevronUp class='rotate-180' id='show-more-icon-projects' />
         </button>
       </div>
@@ -55,7 +62,12 @@ const projects = await getProjects('en')
 </section>
 
 <script>
+  import { getLangFromLocale, useTranslations } from '@/i18n/utils'
   import { animate, stagger } from 'animejs'
+
+  // I18N
+  const lang = getLangFromLocale(Astro.currentLocale)
+  const t = useTranslations(lang)
 
   const showMoreSection = document.querySelector(
     '[data-show-more]'
@@ -87,7 +99,7 @@ const projects = await getProjects('en')
           delay: stagger(100, { start: 0 })
         })
 
-        showMore.textContent = 'Show Less'
+        showMore.textContent = t('projects').showLess
         showMoreIcon.classList.remove('rotate-180')
         isExpanded = true
       } else {
@@ -102,7 +114,7 @@ const projects = await getProjects('en')
           }
         })
 
-        showMore.textContent = 'Show More'
+        showMore.textContent = t('projects').showMore
         showMoreIcon.classList.add('rotate-180')
         isExpanded = false
       }

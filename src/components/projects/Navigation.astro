@@ -2,6 +2,7 @@
 import { getProjects } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
 import { buttonVariants } from '@/components/ui/utils'
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
 // TYPES
 interface Props {
@@ -11,8 +12,12 @@ interface Props {
 // PROPS
 const { projectId } = Astro.props
 
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+
 // FETCHERS
-const projects = await getProjects('en').then((projects) => {
+const projects = await getProjects(lang).then((projects) => {
   return projects.filter((project) => !project.data.comingSoon)
 })
 const actualProject = projects.findIndex((project) => project.id === projectId)
@@ -28,7 +33,7 @@ const next =
 >
   <a href='/projects' class={buttonVariants({ variant: 'link' })}>
     <Icons.arrowLeft />
-    Projects
+    {t('projects').title}
   </a>
 
   <div class='flex items-center gap-2'>

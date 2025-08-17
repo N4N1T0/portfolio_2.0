@@ -205,7 +205,7 @@
   }
 
   .custom-prose {
-    @apply prose text-foreground prose-headings:font-pixel prose-headings:text-foreground prose-h2:text-3xl prose-h2:font-normal prose-h2:w-full prose-blockquote:text-foreground;
+    @apply prose text-foreground prose-headings:font-pixel prose-headings:text-foreground prose-h2:text-3xl prose-h2:font-normal prose-h2:w-full prose-blockquote:text-foreground prose-strong:text-foreground prose-strong:font-bold prose-code:text-foreground prose-a:text-foreground;
   }
 }
 

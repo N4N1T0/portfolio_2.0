@@ -1,0 +1,19 @@
+---
+import { buttonVariants } from '@/components/ui/utils'
+import { Icons } from '@/components/icons/icons'
+---
+
+<a
+  href='https://github.com/N4N1T0/portfolio_2.0'
+  target='_blank'
+  rel='noopener noreferrer'
+  class={buttonVariants({
+    variant: 'outline',
+    size: 'icon',
+    className: 'hover:bg-muted'
+  })}
+  aria-label='View source code on GitHub'
+>
+  <Icons.github class='h-4 w-4' />
+  <span class='sr-only'>GitHub Repository</span>
+</a>

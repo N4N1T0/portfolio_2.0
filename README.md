@@ -323,4 +323,5 @@ This project is open source and available under the [MIT License](LICENSE).
 <div align="center">
   <p>Made with ❤️ by Adrian "Nano" Alvarez</p>
   <p>⭐ Star this repo if you found it helpful!</p>
+  <p>☕ <a href="https://buymeacoffee.com/n4n1t0">Buy me a coffee</a></p>
 </div>

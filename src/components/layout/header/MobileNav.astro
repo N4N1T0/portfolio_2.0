@@ -1,0 +1,158 @@
+---
+import { cn } from '@/lib/utils'
+import { navItems, userData } from '@/constants/site-data'
+import { getLangFromLocale } from '@/i18n/utils'
+import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n'
+import { Icons } from '@/components/icons/icons'
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '@/components/starwind/dialog'
+import { buttonVariants } from '@/components/ui/utils'
+import { getPosts, getProjects } from '@/lib/fetchers'
+
+// CONST
+const active = Astro.url.pathname.split('/').filter(Boolean).pop()
+console.log('🚀 ~ active:', active)
+const lang = getLangFromLocale(Astro.currentLocale)
+
+// FETCH
+const projects = await getProjects(lang, 5)
+const posts = await getPosts(lang, 5)
+---
+
+<Dialog>
+  <DialogTrigger
+    class={buttonVariants({
+      variant: 'outline',
+      size: 'icon',
+      className: 'hover:bg-muted'
+    })}
+    aria-label='Open mobile menu'
+  >
+    <Icons.menu class='size-5' />
+    <span class='sr-only'>Open mobile menu</span>
+  </DialogTrigger>
+  <DialogContent class='flex flex-col gap-0 p-0'>
+    <DialogHeader class='space-y-0 text-left'>
+      <DialogTitle
+        class='text-lg font-semibold font-pixel text-left border-b border-border px-3 py-2'
+        >{lang === 'es' ? 'Menú de Navegación' : 'Navigation Menu'}</DialogTitle
+      >
+      <DialogDescription class='sr-only'>
+        {
+          lang === 'es'
+            ? 'Menú de navegación móvil con enlaces a proyectos, blog y redes sociales'
+            : 'Mobile navigation menu with links to projects, blog and social media'
+        }
+      </DialogDescription>
+    </DialogHeader>
+    <nav class='flex-1 px-4 py-8 text-sm overflow-y-auto'>
+      <!-- Projects Section -->
+      <div class='mb-8'>
+        <h3
+          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge'
+        >
+          {lang === 'es' ? 'Proyectos' : 'Projects'}
+        </h3>
+        <ul class='space-y-3'>
+          {
+            projects.map(({ id, data: { comingSoon, title } }) => {
+              const projectLink = comingSoon
+                ? getRelativeLocaleUrl(lang, '/')
+                : getAbsoluteLocaleUrl(lang, `/projects${id}`)
+              const isActive = '/' + active === id
+              return (
+                <li>
+                  <a
+                    class={cn(
+                      'block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded-md hover:bg-muted/50',
+                      isActive && 'text-foreground underline'
+                    )}
+                    href={projectLink}
+                  >
+                    {title}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- Blog Section -->
+      <div>
+        <h3
+          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge'
+        >
+          Blog
+        </h3>
+        <ul class='space-y-3'>
+          {
+            posts.map(({ id, data: { title } }) => {
+              console.log('🚀 ~ id:', id)
+              const postHref = getRelativeLocaleUrl(lang, `/blog${id}`)
+              const isActive = '/' + active === id
+              return (
+                <li>
+                  <a
+                    class={cn(
+                      'block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded-md hover:bg-muted/50',
+                      isActive && 'text-foreground underline'
+                    )}
+                    href={postHref}
+                  >
+                    {title}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </nav>
+    <DialogFooter class='border-t border-border p-3'>
+      <!-- Social Links -->
+      <div class='flex items-center gap-4'>
+        {
+          userData.social.slice(0, 4).map(({ icon, href, title }) => {
+            const Icon = Icons[icon as keyof typeof Icons]
+            return (
+              <a
+                href={href}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='flex items-center justify-center size-6 bg-background'
+                aria-label={title}
+              >
+                <Icon class='size-full text-foreground fill-foreground' />
+              </a>
+            )
+          })
+        }
+
+        {
+          userData.overview.slice(2, 4).map(({ icon, href, content }) => {
+            const Icon = Icons[icon as keyof typeof Icons]
+            return (
+              <a
+                href={href}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='flex items-center justify-center size-6 bg-background'
+                aria-label={content as string}
+              >
+                <Icon class='size-full text-foreground' />
+              </a>
+            )
+          })
+        }
+      </div>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>

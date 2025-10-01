@@ -18,7 +18,6 @@ import { getPosts, getProjects } from '@/lib/fetchers'
 
 // CONST
 const active = Astro.url.pathname.split('/').filter(Boolean).pop()
-console.log('🚀 ~ active:', active)
 const lang = getLangFromLocale(Astro.currentLocale)
 
 // FETCH
@@ -95,7 +94,6 @@ const posts = await getPosts(lang, 5)
         <ul class='space-y-3'>
           {
             posts.map(({ id, data: { title } }) => {
-              console.log('🚀 ~ id:', id)
               const postHref = getRelativeLocaleUrl(lang, `/blog${id}`)
               const isActive = '/' + active === id
               return (

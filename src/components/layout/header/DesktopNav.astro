@@ -9,7 +9,7 @@ const active = Astro.url.pathname
 const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
-<nav class='flex items-center gap-4'>
+<nav class='md:flex items-center gap-4 hidden'>
   {
     navItems.map(({ title, href }) => {
       const isActive =

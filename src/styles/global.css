@@ -154,6 +154,7 @@
   --accent: oklch(0.274 0.006 286.033);
   --accent-foreground: oklch(0.7975 0.0951 268.35);
   --border: oklch(0.4824 0.0518 256.85);
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
   --input: oklch(0.274 0.006 286.033);
   --success: oklch(0.723 0.219 149.579);
   --destructive: oklch(0.505 0.213 27.518);

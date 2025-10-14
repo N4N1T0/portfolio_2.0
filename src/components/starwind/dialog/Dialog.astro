@@ -232,6 +232,7 @@ const { class: className, ...rest } = Astro.props
       this.dialog.showModal()
       document.body.classList.add('overflow-hidden')
       this.backdrop.classList.remove('hidden')
+      this.dialog.classList.remove('opacity-0', 'scale-95', 'hidden')
       this.backdrop.dataset.state = 'open'
       this.dialog.dataset.state = 'open'
     }

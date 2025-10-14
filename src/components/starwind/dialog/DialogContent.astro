@@ -22,9 +22,10 @@ export const dialogContent = tv({
   base: [
     'fixed top-16 left-[50%] z-50 translate-x-[-50%] sm:top-[50%] sm:translate-y-[-50%]',
     'bg-background w-full max-w-[90%] max-h-[75%] md:max-w-md border p-0 shadow-lg sm:rounded-lg',
-    'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fill-mode-forwards',
+    'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:hidden data-[state=closed]:fill-mode-forwards',
     'fade-in zoom-in-95 slide-in-from-bottom-2',
-    'fade-out zoom-out-95 slide-out-to-bottom-2'
+    'fade-out zoom-out-95 slide-out-to-bottom-2',
+    'opacity-0 scale-95'
   ]
 })
 

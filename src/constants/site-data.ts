@@ -246,6 +246,54 @@ export const techStack = [
 
 export const experiences = [
   {
+    id: 'doc-tech',
+    companyName: 'DocTech World',
+    isCurrentEmployer: true,
+    companyLogo:
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1763596800&v=beta&t=PXPOip3JIRe3Bu7AFc3Xgmrl0G8URPrLXhro42wvlXI', // If you have a logo, add it here
+    positions: [
+      {
+        id: 'doc-tech-tech-lead',
+        title: {
+          en: 'Technical Lead',
+          es: 'Líder Técnico'
+        },
+        employmentPeriod: {
+          start: '2024',
+          end: null
+        },
+        employmentType: 'Part-time',
+        icon: 'briefcase',
+        description: {
+          en: [
+            'Led technical architecture and development of personalized e-commerce and SaaS projects from concept to launch.',
+            'Designed and implemented scalable frontend solutions tailored to diverse client requirements and business goals.',
+            'Managed cross-functional teams and mentored junior developers while maintaining high code quality standards.',
+            'Delivered high-performance, SEO-optimized, and accessible web applications using modern frameworks.'
+          ],
+          es: [
+            'Lideré la arquitectura técnica y el desarrollo de proyectos personalizados de e-commerce y SaaS desde la concepción hasta el lanzamiento.',
+            'Diseñé e implementé soluciones frontend escalables adaptadas a diversos requisitos de clientes y objetivos de negocio.',
+            'Gestioné equipos multifuncionales y mentoré a desarrolladores junior manteniendo altos estándares de calidad de código.',
+            'Entregué aplicaciones web de alto rendimiento, optimizadas para SEO y accesibilidad utilizando frameworks modernos.'
+          ]
+        },
+        skills: [
+          'Next.js',
+          'React',
+          'Astro',
+          'Sanity',
+          'Shopify',
+          'Tailwind CSS',
+          'Node.js',
+          'Express',
+          'Typescript'
+        ],
+        isExpanded: true
+      }
+    ]
+  },
+  {
     id: '3dids',
     companyName: '3dids',
     isCurrentEmployer: false,

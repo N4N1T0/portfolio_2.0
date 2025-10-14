@@ -32,9 +32,12 @@ const next =
 <nav
   class='flex items-center justify-between px-2 py-3 container border-x border-edge mt-1'
 >
-  <a href='/blog' class={buttonVariants({ variant: 'link' })}>
+  <a
+    href={getRelativeLocaleUrl(lang, '/blog')}
+    class={buttonVariants({ variant: 'link' })}
+  >
     <Icons.arrowLeft />
-    {t('blogList').navigation}
+    {t('blogList').title}
   </a>
 
   <div class='flex items-center gap-2'>

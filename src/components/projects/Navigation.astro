@@ -4,6 +4,7 @@ import { Icons } from '@/components/icons/icons'
 import { buttonVariants } from '@/components/ui/utils'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
+
 // TYPES
 interface Props {
   projectId: string
@@ -31,7 +32,10 @@ const next =
 <nav
   class='flex items-center justify-between px-2 py-3 container border-x border-edge mt-1'
 >
-  <a href='/projects' class={buttonVariants({ variant: 'link' })}>
+  <a
+    href={getRelativeLocaleUrl(lang, '/projects')}
+    class={buttonVariants({ variant: 'link' })}
+  >
     <Icons.arrowLeft />
     {t('projects').title}
   </a>

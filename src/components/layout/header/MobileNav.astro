@@ -54,11 +54,12 @@ const posts = await getPosts(lang, 5)
     <nav class='flex-1 px-4 py-8 text-sm overflow-y-auto'>
       <!-- Projects Section -->
       <div class='mb-8'>
-        <h3
-          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge'
+        <a
+          href={getRelativeLocaleUrl(lang, '/projects')}
+          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge w-full inline-block'
         >
           {lang === 'es' ? 'Proyectos' : 'Projects'}
-        </h3>
+        </a>
         <ul class='space-y-3'>
           {
             projects.map(({ id, data: { comingSoon, title } }) => {
@@ -86,11 +87,12 @@ const posts = await getPosts(lang, 5)
 
       <!-- Blog Section -->
       <div>
-        <h3
-          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge'
+        <a
+          href={getRelativeLocaleUrl(lang, '/blog')}
+          class='text-sm font-semibold uppercase tracking-wider mb-4 px-2 border-b border-edge w-full inline-block'
         >
           Blog
-        </h3>
+        </a>
         <ul class='space-y-3'>
           {
             posts.map(({ id, data: { title } }) => {

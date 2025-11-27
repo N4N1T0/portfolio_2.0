@@ -4,11 +4,11 @@
   "excerpt": "High-end e-commerce platform for aerothermal product sales, built and powered with these technologies:",
   "images": [
     {
-      "src": "src/assets/projects/termogar-1.webp",
+      "src": "@/assets/projects/termogar-1.webp",
       "alt": "Termogar Website"
     },
     {
-      "src": "src/assets/projects/termogar-2.webp",
+      "src": "@/assets/projects/termogar-2.webp",
       "alt": "Termogar Website"
     }
   ],

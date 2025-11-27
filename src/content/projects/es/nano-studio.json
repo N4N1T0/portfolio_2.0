@@ -4,11 +4,11 @@
   "excerpt": "Portafolio de alta gama impulsado por Astro, que muestra sitios web premium y experiencias digitales con un diseño de movimiento refinado e interacción. Utiliza animaciones impulsadas por GSAP, un control de cursor personalizado y un flujo de contacto elegante para reflejar estéticas de marca de lujo.",
   "images": [
     {
-      "src": "src/assets/projects/nano-studio-1.png",
+      "src": "@/assets/projects/nano-studio-1.png",
       "alt": "NANO-9 Interactive Hero and Preloader"
     },
     {
-      "src": "src/assets/projects/nano-studio-2.png",
+      "src": "@/assets/projects/nano-studio-2.png",
       "alt": "NANO-9 Minimal Slider and Project Showcase"
     }
   ],

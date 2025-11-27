@@ -4,11 +4,11 @@
   "excerpt": "Rediseño completo de un ecommerce de aerotermia de alta gama con Next.js, Sanity y NextAuth. Una plataforma moderna, rápida y escalable, pensada para destacar productos técnicos con un diseño limpio y una experiencia de usuario optimizada para convertir.",
   "images": [
     {
-      "src": "src/assets/projects/termogar-1.webp",
+      "src": "@/assets/projects/termogar-1.webp",
       "alt": "Termogar Website"
     },
     {
-      "src": "src/assets/projects/termogar-2.webp",
+      "src": "@/assets/projects/termogar-2.webp",
       "alt": "Termogar Website"
     }
   ],

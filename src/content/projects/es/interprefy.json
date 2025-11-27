@@ -4,11 +4,11 @@
   "excerpt": "Renovación de marca y reconstrucción completa del sitio web usando el CMS de HubSpot y su site builder, con módulos personalizados desarrollados en HubL. Proyecto rápido enfocado en personalización del layout y mejoras de rendimiento.",
   "images": [
     {
-      "src": "src/assets/projects/interprefy-1.webp",
+      "src": "@/assets/projects/interprefy-1.webp",
       "alt": "Interprefy Website"
     },
     {
-      "src": "src/assets/projects/interprefy-2.webp",
+      "src": "@/assets/projects/interprefy-2.webp",
       "alt": "Interprefy Website"
     }
   ],

@@ -4,11 +4,11 @@
   "excerpt": "SaaS innovador para estudiantes y profesores de yoga que facilita la creación de eventos, clases y perfiles personalizados, con funcionalidades de pago y suscripciones para análisis y mejora continua.",
   "images": [
     {
-      "src": "src/assets/projects/yogin-1.webp",
+      "src": "@/assets/projects/yogin-1.webp",
       "alt": "Yogi Website"
     },
     {
-      "src": "src/assets/projects/yogin-2.webp",
+      "src": "@/assets/projects/yogin-2.webp",
       "alt": "Yogi Website"
     }
   ],

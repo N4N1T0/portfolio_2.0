@@ -4,11 +4,11 @@
   "excerpt": "Brand revamp and full website rebuild using HubSpot’s CMS and site builder, with custom modules developed in HubL. A fast-paced project focused on layout customization and performance enhancements.",
   "images": [
     {
-      "src": "src/assets/projects/interprefy-1.webp",
+      "src": "@/assets/projects/interprefy-1.webp",
       "alt": "Interprefy Website"
     },
     {
-      "src": "src/assets/projects/interprefy-2.webp",
+      "src": "@/assets/projects/interprefy-2.webp",
       "alt": "Interprefy Website"
     }
   ],

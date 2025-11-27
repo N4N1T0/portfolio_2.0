@@ -4,11 +4,11 @@
   "excerpt": "Ecommerce store for modern beauty and cosmetic products, created to enhance the user experience and built with the following technologies:",
   "images": [
     {
-      "src": "src/assets/projects/lola-barcelona-1.webp",
+      "src": "@/assets/projects/lola-barcelona-1.webp",
       "alt": "Lola Barcelona Website"
     },
     {
-      "src": "src/assets/projects/lola-barcelona-2.webp",
+      "src": "@/assets/projects/lola-barcelona-2.webp",
       "alt": "Lola Barcelona Website"
     }
   ],

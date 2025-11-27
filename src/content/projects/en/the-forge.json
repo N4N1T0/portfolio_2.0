@@ -4,11 +4,11 @@
   "excerpt": "Modern and modular boilerplate for managing workspaces, projects, and tasks. Designed to accelerate the development of collaborative SaaS applications using Next.js 15, Appwrite, and a focus on Edge architecture and role-based access.",
   "images": [
     {
-      "src": "src/assets/projects/the-forge-1.png",
+      "src": "@/assets/projects/the-forge-1.png",
       "alt": "The Forge Auth Screen"
     },
     {
-      "src": "src/assets/projects/the-forge-2.png",
+      "src": "@/assets/projects/the-forge-2.png",
       "alt": "The Forge Dashboard Overview"
     }
   ],

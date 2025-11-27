@@ -1,0 +1,48 @@
+{
+  "title": "The Forge (Boilerplate)",
+  "date": "2025-01-15",
+  "excerpt": "Modern and modular boilerplate for managing workspaces, projects, and tasks. Designed to accelerate the development of collaborative SaaS applications using Next.js 15, Appwrite, and a focus on Edge architecture and role-based access.",
+  "images": [
+    {
+      "src": "src/assets/projects/the-forge-1.png",
+      "alt": "The Forge Auth Screen"
+    },
+    {
+      "src": "src/assets/projects/the-forge-2.png",
+      "alt": "The Forge Dashboard Overview"
+    }
+  ],
+  "liveLink": "https://github.com/N4N1T0/forge",
+  "colors": "#EDEDED",
+  "techStack": [
+    {
+      "title": "Next.js 15",
+      "link": "https://nextjs.org/"
+    },
+    {
+      "title": "Appwrite (TablesDB)",
+      "link": "https://appwrite.io"
+    },
+    {
+      "title": "Hono (API)",
+      "link": "https://hono.dev"
+    },
+    {
+      "title": "Tailwind CSS v4",
+      "link": "https://tailwindcss.com"
+    },
+    {
+      "title": "React Query",
+      "link": "https://tanstack.com/query"
+    },
+    {
+      "title": "TypeScript",
+      "link": "https://www.typescriptlang.org"
+    }
+  ],
+  "testimonial": null,
+  "challenge": "To create a modern, modular codebase with high quality standards (ESLint, Prettier, Husky) for B2B project management applications. The challenge was integrating a robust membership system, secure session authentication, and Role-Based Access Control (RBAC) with a scalable data architecture.",
+  "solution": "A full-stack boilerplate was developed using Next.js 15 and Appwrite. The solution includes an API routes system on Edge Runtime (Hono), type safety (TypeScript, Zod), and an advanced data fetching system with React Query to optimize caching and provide 'optimistic updates', ensuring a fluid UX for collaborative task and project management.",
+  "comingSoon": false,
+  "counterpartId": "en/the-forge"
+}

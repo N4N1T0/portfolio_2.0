@@ -50,11 +50,13 @@ const projectCollection = defineCollection({
       ),
       challenge: z.string().optional(),
       solution: z.string().optional(),
-      testimonial: z.object({
-        name: z.string(),
-        quote: z.string(),
-        role: z.string()
-      }),
+      testimonial: z
+        .object({
+          name: z.string(),
+          quote: z.string(),
+          role: z.string()
+        })
+        .nullable(),
       comingSoon: z.boolean().optional(),
       counterpartId: z.string().optional()
     })

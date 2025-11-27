@@ -1,0 +1,44 @@
+{
+  "title": "NANO-9",
+  "date": "2025-01-10",
+  "excerpt": "A high-end portfolio powered by Astro, showcasing premium websites and digital experiences with refined motion design and interaction. It uses GSAP-driven animations, a custom cursor control, and an elegant contact workflow to reflect luxury brand aesthetics.",
+  "images": [
+    {
+      "src": "src/assets/projects/nano-studio-1.png",
+      "alt": "NANO-9 Interactive Hero and Preloader"
+    },
+    {
+      "src": "src/assets/projects/nano-studio-2.png",
+      "alt": "NANO-9 Minimal Slider and Project Showcase"
+    }
+  ],
+  "liveLink": "https://www.nanostudio.pro/",
+  "colors": "#98AEEB",
+  "techStack": [
+    {
+      "title": "Astro",
+      "link": "https://astro.build/"
+    },
+    {
+      "title": "GSAP (Motion Design)",
+      "link": "https://greensock.com/gsap/"
+    },
+    {
+      "title": "Tailwind CSS v4",
+      "link": "https://tailwindcss.com/"
+    },
+    {
+      "title": "TypeScript",
+      "link": "https://www.typescriptlang.org"
+    },
+    {
+      "title": "Resend (Email API)",
+      "link": "https://resend.com/"
+    }
+  ],
+  "testimonial": null,
+  "challenge": "To develop a user experience that simulates the luxury aesthetic and refined movement of high-end design agencies, while maintaining excellent performance. The key challenge was orchestrating complex GSAP-driven animations (preloader, slider, text reveal with SplitText) and managing a clean, secure email flow using Astro Actions.",
+  "solution": "The platform was built using Astro for static speed and integrated GSAP with `CustomEase` and `SplitText` to precisely handle all motion interactions. The design centered on a 'Minimal Slider' with wheel/touch navigation, and a clean contact flow was implemented using Astro Actions and the Resend API for secure email delivery.",
+  "comingSoon": false,
+  "counterpartId": "es/nano-studio"
+}

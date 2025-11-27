@@ -1,4 +1,4 @@
-import { Avatar } from '@/assets/images'
+import { Avatar } from '@/assets'
 
 export const navItems = [
   {
@@ -25,7 +25,7 @@ export const navItems = [
 ]
 
 export const userData = {
-  displayName: 'Adrian "Nano" Alvarez',
+  displayName: 'Adrian Alvarez',
   avatar: Avatar,
   sentences: {
     en: [
@@ -250,7 +250,7 @@ export const experiences = [
     companyName: 'DocTech World',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1763596800&v=beta&t=PXPOip3JIRe3Bu7AFc3Xgmrl0G8URPrLXhro42wvlXI', // If you have a logo, add it here
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1766016000&v=beta&t=Ll9zmalEsCtw5YhXrg7wQ6A8xDLxHJUjyRZzfuzTPYc',
     positions: [
       {
         id: 'doc-tech-tech-lead',

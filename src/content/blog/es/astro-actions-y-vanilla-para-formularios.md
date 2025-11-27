@@ -3,7 +3,7 @@ title: 'Astro Actions y JavaScript Vanilla para Formularios'
 date: 2025-08-20
 excerpt: 'Aprende a construir formularios de contacto potentes usando la API de Astro Actions con validación del lado del servidor y JavaScript vanilla para una experiencia de usuario fluida.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/Forms & Actions.webp'
+image: '@/assets/blog/Forms & Actions.webp'
 imageAlt: 'Ilustración de Astro Actions y Formularios'
 counterpartId: 'es/astro-actions-y-vanilla-para-formularios'
 ---

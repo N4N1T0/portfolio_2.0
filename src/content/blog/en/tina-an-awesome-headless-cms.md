@@ -3,7 +3,7 @@ title: 'TinaCMS: A Headless CMS with Git Version Control'
 date: 2025-01-25
 excerpt: 'Discover how TinaCMS revolutionizes content management with its headless approach, Git integration, and version control.'
 author: 'Adrián'
-image: 'src/assets/blog/TinaCMS - The Markdown CMS.webp'
+image: '@/assets/blog/TinaCMS - The Markdown CMS.webp'
 imageAlt: 'TinaCMS interface with live editing'
 counterpartId: 'es/tina-un-impresionante-headless-cms'
 ---

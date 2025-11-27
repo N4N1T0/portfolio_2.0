@@ -3,7 +3,7 @@ title: 'El Poder del Diseño Gráfico en el Marketing'
 date: 2023-08-17
 excerpt: 'Eleva tu presencia digital con un diseño gráfico estratégico. Desde identidad visual hasta contenido impactante, maximiza el potencial de tu marca.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
+image: '@/assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
 imageAlt: 'un setup de apple con una IMac y una AirBook'
 counterpartId: 'en/graphic-design-digital-marketing'
 ---

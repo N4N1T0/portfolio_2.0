@@ -3,7 +3,7 @@ title: 'Astro 5.0 el Futuro del Desarrollo Web'
 date: 2024-12-27
 excerpt: 'Explora Astro 5.0: rendimiento ultrarrápido, optimización para SEO y simplicidad para transformar tu desarrollo web. ¡Impulsa tu presencia en línea hoy!'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
+image: '@/assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
 imageAlt: 'Astro 5.0 Logo'
 counterpartId: 'en/astro-the-future-of-web-development'
 ---

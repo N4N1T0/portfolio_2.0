@@ -3,7 +3,7 @@ title: 'Estrategias Narrativas'
 date: 2023-09-15
 excerpt: 'Destaca en el mundo digital con una narrativa envolvente. Potencia la experiencia del usuario, lealtad a la marca y metas de marketing.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/scott-graham-OQMZwNd3ThU-unsplash.webp'
+image: '@/assets/blog/scott-graham-OQMZwNd3ThU-unsplash.webp'
 imageAlt: 'un escritor redactando una narrativa envolvente'
 counterpartId: 'en/narrative-strategies'
 ---

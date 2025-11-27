@@ -3,7 +3,7 @@ title: 'Responsive Design in Websites'
 date: 2023-06-19
 excerpt: 'How responsive design transforms user experience, boosts SEO, and optimizes your presence across all devices.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
+image: '@/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
 imageAlt: 'An Apple setup with an iMac and an AirBook'
 counterpartId: 'es/guia-diseño-responsive'
 ---

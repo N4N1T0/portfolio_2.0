@@ -3,7 +3,7 @@ title: 'Optimización SEO'
 date: 2023-07-20
 excerpt: 'Unifica diseño y SEO para un sitio web efectivo. Desde una estructura intuitiva hasta palabras clave estratégicas.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
+image: '@/assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
 imageAlt: 'una pantalla con código html y SEO'
 counterpartId: 'en/seo-optimization'
 ---

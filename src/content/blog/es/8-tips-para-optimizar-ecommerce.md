@@ -3,7 +3,7 @@ title: '8 Tips para optimizar tu Pagina de Productos'
 date: 2024-02-27
 excerpt: 'Transforma tus páginas de producto en potencias de ventas con estos 8 consejos esenciales. Eleva tu juego en el comercio electrónico.'
 author: 'Dayana Abuin'
-image: 'src/assets/blog/mark-konig-Tl8mDaue_II-unsplash.webp'
+image: '@/assets/blog/mark-konig-Tl8mDaue_II-unsplash.webp'
 imageAlt: 'Señal de calle de comercio electrónico'
 counterpartId: 'en/8-tips-to-optimize-your-ecommerce'
 ---

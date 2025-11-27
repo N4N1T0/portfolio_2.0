@@ -3,7 +3,7 @@ title: 'Automate Your Product Feed in Google Merchant Center with Node.js'
 date: 2025-08-17
 excerpt: 'Learn how to sync your eCommerce store directly with Google Merchant Center using the Content API—no plugins, fully scalable.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/automate-google-merchant-feed-nodejs.png'
+image: '@/assets/blog/automate-google-merchant-feed-nodejs.png'
 imageAlt: 'Illustration of product synchronization in Google Merchant Center'
 counterpartId: 'es/automatiza-tu-feed-google-merchant-nodejs'
 ---

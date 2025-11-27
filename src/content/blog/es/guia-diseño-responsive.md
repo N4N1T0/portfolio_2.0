@@ -3,7 +3,7 @@ title: 'Diseño Responsivo en Sitios Web'
 date: 2023-06-19
 excerpt: 'Cómo el diseño responsivo transforma la experiencia del usuario, impulsa el SEO y optimiza tu presencia en todos los dispositivos.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
+image: '@/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
 imageAlt: 'un setup de apple con una IMac y una AirBook'
 counterpartId: 'en/graphic-design-digital-marketing'
 ---

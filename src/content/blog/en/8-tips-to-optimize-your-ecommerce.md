@@ -3,7 +3,7 @@ title: '8 Tips to Optimize your Product Page'
 date: 2024-02-27
 excerpt: 'Transform your product pages into sales powerhouses with these 8 essential tips. Elevate your e-commerce game and boost conversions today'
 author: 'Dayana Abuin'
-image: 'src/assets/blog/mark-konig-Tl8mDaue_II-unsplash.webp'
+image: '@/assets/blog/mark-konig-Tl8mDaue_II-unsplash.webp'
 imageAlt: 'Ecommerce street sign'
 counterpartId: 'en/8-tips-para-optimizar-ecommerce'
 ---

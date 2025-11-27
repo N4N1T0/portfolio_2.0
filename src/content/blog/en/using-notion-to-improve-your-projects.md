@@ -3,7 +3,7 @@ title: 'Using Notion to Improve Your Projects'
 date: 2025-01-10
 excerpt: 'Discover how to stay organized and optimize your workflow as a freelance web developer with Notion.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/team-nocoloco-aFbs3cwlpZI-unsplash.webp'
+image: '@/assets/blog/team-nocoloco-aFbs3cwlpZI-unsplash.webp'
 imageAlt: 'Notion workspace for project management'
 counterpartId: 'es/usando-notion-para-mejorar-tus-royectos'
 ---

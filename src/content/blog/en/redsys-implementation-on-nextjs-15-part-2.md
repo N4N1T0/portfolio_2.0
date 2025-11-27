@@ -3,7 +3,7 @@ title: 'Integrating Redsys with Next.js 15 – Part 2'
 date: 2025-03-21
 excerpt: 'Learn how to handle payment notifications and improve performance when integrating Redsys with Next.js 15.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/pagos-redsys.webp'
+image: '@/assets/blog/pagos-redsys.webp'
 imageAlt: 'Redsys Logo on a gray background'
 counterpartId: 'es/introducion-a-redsys-en-nextjs-15-parte-2'
 ---

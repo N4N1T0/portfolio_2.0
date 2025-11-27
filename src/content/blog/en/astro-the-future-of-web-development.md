@@ -3,7 +3,7 @@ title: 'Astro 5.0 the Future of Web Development'
 date: 2024-12-27
 excerpt: 'Astro 5.0 redefines web development with speed, SEO optimization, and a minimalist design. Discover why it’s the future for developers and businesses alike.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
+image: '@/assets/blog/header_astro_5_beta.CfLWas8p_2mgeW.webp'
 imageAlt: 'Astro 5.0 Logo'
 counterpartId: 'en/astro-the-future-of-web-development'
 ---

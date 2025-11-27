@@ -3,7 +3,7 @@ title: 'Astro Actions and Vanilla JavaScript for Forms'
 date: 2025-08-20
 excerpt: 'Learn how to build powerful contact forms using Astro Actions API with server-side validation and vanilla JavaScript for smooth user experience.'
 author: 'Adrian "Nano" Alvarez'
-image: 'src/assets/blog/Forms & Actions.webp'
+image: '@/assets/blog/Forms & Actions.webp'
 imageAlt: 'Astro Actions and Forms illustration'
 counterpartId: 'en/astro-actions-and-vanilla-for-form'
 ---

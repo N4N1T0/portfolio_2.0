@@ -36,7 +36,7 @@ const {
 } = Astro.props
 
 // CONST
-const hasTestimonial = testimonial.quote && testimonial.name && testimonial.role
+const hasTestimonial = testimonial !== null
 const contentIndex = [
   { label: 'Challenge', id: 'challenge' },
   { label: 'Solutions', id: 'solutions' },

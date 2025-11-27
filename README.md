@@ -297,29 +297,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 📋 Development Todos
-
-- [x] Improve Experiences visual and animation
-- [x] Add BadgeList to the Experience
-- [x] Add more padding to the Headers
-- [x] Fix Astro toolbar issues
-- [x] Add my Comments
-- [x] Fix the Pixel Font
-- [x] Add li to lists
-- [x] Fix Button icon on show mores
-- [x] Fix the Project Navigation
-- [x] Add DMCA
-- [x] I18n implementation
-- [ ] Change the llms .txt
-- [ ] Delete unused fields from content
-- [ ] Delete unused Icons
-- [ ] Add SEO Component
-- [ ] Add JSONLD
-- [ ] Add OG Image
-- [ ] Additional Astro Integrations
-
----
-
 <div align="center">
   <p>Made with ❤️ by Adrian "Nano" Alvarez</p>
   <p>⭐ Star this repo if you found it helpful!</p>

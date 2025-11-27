@@ -1,9 +1,12 @@
 ---
 import { Icons } from '@/components/icons/icons'
+import { cn } from '@/lib/utils'
 import type { HTMLAttributes } from 'astro/types'
 import { tv } from 'tailwind-variants'
 
-type Props = HTMLAttributes<'button'>
+type Props = HTMLAttributes<'button'> & {
+  chevronClassName?: string
+}
 
 const accordionTrigger = tv({
   base: [
@@ -15,7 +18,7 @@ const accordionTrigger = tv({
   ]
 })
 
-const { class: className, ...rest } = Astro.props
+const { class: className, chevronClassName, ...rest } = Astro.props
 ---
 
 <button
@@ -26,6 +29,9 @@ const { class: className, ...rest } = Astro.props
 >
   <slot />
   <Icons.chevronDown
-    class='size-5 shrink-0 transition-transform duration-200 absolute right-5 top-5 z-50'
+    class={cn(
+      'size-5 shrink-0 transition-transform duration-200 absolute right-0 top-2.5 z-50',
+      chevronClassName
+    )}
   />
 </button>

@@ -245,12 +245,61 @@ export const techStack = [
 ]
 
 export const experiences = [
+   {
+    id: 'kreitech',
+    companyName: 'Kreitech',
+    isCurrentEmployer: true,
+    companyLogo:
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFfKiSZcVL_xw/company-logo_200_200/company-logo_200_200/0/1720116635363/kreitech_software_logo?e=1769644800&v=beta&t=iKQfZsH2L9NISy_ymWq4vvcxI-ECOhdq5P7Qqs5Prow',
+    positions: [
+      {
+        id: 'kreitech-frontend-developer',
+        title: {
+          en: 'Frontend Developer',
+          es: 'Desarrollador Frontend'
+        },
+        employmentPeriod: {
+          start: '2025',
+          end: null
+        },
+        employmentType: 'Part-time',
+        icon: 'briefcase',
+        description: {
+          en: [
+            'Collaborated as a full-stack developer within diverse teams, delivering projects focused on the US market.',
+            'Contributed to both frontend and backend development across a range of industry-focused web applications.',
+            'Worked in close coordination with product managers, designers, and engineers to achieve shared goals.',
+            'Participated in the centralization and optimization of workflows, ensuring maintainable and scalable solutions.'
+          ],
+          es: [
+            'Colaboré como desarrollador full-stack en equipos diversos, entregando proyectos enfocados en el mercado de EE.UU.',
+            'Contribuí tanto al desarrollo frontend como backend en una variedad de aplicaciones web para diferentes industrias.',
+            'Trabajé en estrecha coordinación con product managers, diseñadores e ingenieros para lograr objetivos comunes.',
+            'Participé en la centralización y optimización de flujos de trabajo, asegurando soluciones mantenibles y escalables.'
+          ]
+        },
+        skills: [
+          'Next.js',
+          'React',
+          'Astro',
+          'Tailwind CSS',
+          'Node.js',
+          'Typescript',
+          'Supabase',
+          'Deno',
+          'Hono',
+          'Vercel'
+        ],
+        isExpanded: true
+      }
+    ]
+  },
   {
     id: 'doc-tech',
     companyName: 'DocTech World',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1766016000&v=beta&t=Ll9zmalEsCtw5YhXrg7wQ6A8xDLxHJUjyRZzfuzTPYc',
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1769644800&v=beta&t=eKz41RaGVidRgx9EOFUKUExp04mAkBHutSgvxr7y6Vs',
     positions: [
       {
         id: 'doc-tech-tech-lead',
@@ -425,7 +474,7 @@ export const experiences = [
   {
     id: 'freelance',
     companyName: 'Freelance Projects',
-    companyLogo: 'https://www.adrian-alvarez.dev/favicon.ico',
+    companyLogo: 'https://www.adrian-alvarez.com/favicon.ico',
     isCurrentEmployer: true,
     positions: [
       {

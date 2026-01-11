@@ -9,14 +9,14 @@ import vercel from '@astrojs/vercel'
 
 export default defineConfig({
   site: process.env.CI
-    ? 'https://www.adrian-alvarez.dev'
+    ? 'https://www.adrian-alvarez.com'
     : 'http://localhost:4321',
 
   integrations: [
     sitemap(),
     robotsTxt({
-      sitemap: 'https://www.adrian-alvarez.dev/sitemap-0.xml',
-      host: 'adrian-alvarez.dev'
+      sitemap: 'https://www.adrian-alvarez.com/sitemap-0.xml',
+      host: 'adrian-alvarez.com'
     }),
     playformCompress(),
     preact()

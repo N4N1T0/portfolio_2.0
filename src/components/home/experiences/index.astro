@@ -1,5 +1,5 @@
 ---
-import { experiences } from '@/constants/site-data'
+import { EXPERIENCES } from '@/constants/site-data'
 import ExperiencesItem from './ExperiencesItem.astro'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
@@ -14,7 +14,7 @@ const t = useTranslations(lang)
   </h2>
   <div class='pr-2 pl-4'>
     {
-      experiences.map((experience) => (
+      EXPERIENCES.map((experience: (typeof EXPERIENCES)[0]) => (
         <ExperiencesItem experience={experience} />
       ))
     }

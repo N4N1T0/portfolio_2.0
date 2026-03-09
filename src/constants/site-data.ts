@@ -1,6 +1,6 @@
 import { Avatar } from '@/assets'
 
-export const navItems = [
+export const NAVIGATION_ITEMS = [
   {
     title: {
       en: 'Portfolio',
@@ -17,6 +17,13 @@ export const navItems = [
   },
   {
     title: {
+      en: 'Snippets',
+      es: 'Snippets'
+    },
+    href: '/snippets'
+  },
+  {
+    title: {
       en: 'Blog',
       es: 'Blog'
     },
@@ -24,7 +31,7 @@ export const navItems = [
   }
 ]
 
-export const userData = {
+export const USER_DATA = {
   displayName: 'Adrian Alvarez',
   avatar: Avatar,
   sentences: {
@@ -115,7 +122,7 @@ export const userData = {
   }
 }
 
-export const techStack = [
+export const TECH_STACK = [
   {
     key: 'typescript',
     title: 'TypeScript',
@@ -244,8 +251,8 @@ export const techStack = [
   }
 ]
 
-export const experiences = [
-   {
+export const EXPERIENCES = [
+  {
     id: 'kreitech',
     companyName: 'Kreitech',
     isCurrentEmployer: true,
@@ -521,7 +528,7 @@ export const experiences = [
   }
 ]
 
-export const certifications = [
+export const CERTIFICATIONS = [
   {
     title: {
       en: 'Javascript Algorithms and Data structure',

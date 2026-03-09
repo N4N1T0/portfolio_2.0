@@ -1,6 +1,6 @@
 ---
 import { cn } from '@/lib/utils'
-import { navItems } from '@/constants/site-data'
+import { NAVIGATION_ITEMS } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
@@ -11,7 +11,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
 
 <nav class='md:flex items-center gap-4 hidden'>
   {
-    navItems.map(({ title, href }) => {
+    NAVIGATION_ITEMS.map(({ title, href }) => {
       const isActive =
         href === '/'
           ? active === '/es/' || active === '/en/'

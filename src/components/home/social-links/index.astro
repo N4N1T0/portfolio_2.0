@@ -1,5 +1,5 @@
 ---
-import { userData } from '@/constants/site-data'
+import { USER_DATA } from '@/constants/site-data'
 import SocialLinksItem from './SocialLinksItem.astro'
 import { Icons } from '@/components/icons/icons'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
@@ -13,7 +13,7 @@ const t = useTranslations(lang)
   <h2 class='sr-only'>{t('socialLinks').title}</h2>
   <ul class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
     {
-      userData.social.map((link) => {
+      USER_DATA.social.map((link: (typeof USER_DATA)['social'][number]) => {
         const Icon = Icons[link.icon as keyof typeof Icons]
         return (
           <li class='col-span-1 odd:border-r even:border-l border-border/50'>

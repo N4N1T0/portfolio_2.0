@@ -1,5 +1,5 @@
 ---
-import { userData } from '@/constants/site-data'
+import { USER_DATA } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
 // I18N
@@ -8,7 +8,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
 
 <div
   class='flip-sentences text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
-  data-sentences={JSON.stringify(userData.sentences[lang])}
+  data-sentences={JSON.stringify(USER_DATA.sentences[lang])}
 >
 </div>
 

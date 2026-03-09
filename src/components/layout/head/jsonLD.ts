@@ -1,4 +1,4 @@
-import { userData } from '@/constants/site-data'
+import { USER_DATA } from '@/constants/site-data'
 import { getPosts } from '@/lib/fetchers'
 import type { CollectionEntry } from 'astro:content'
 
@@ -96,7 +96,7 @@ export const generateJsonLDForBlogPost = async (
         image: {
           '@id': 'https://www.adrian-alvarez.dev/favicon.ico'
         },
-        sameAs: [userData.social.map((media) => media.href)]
+        sameAs: [USER_DATA.social.map((media) => media.href)]
       }
     ]
   })

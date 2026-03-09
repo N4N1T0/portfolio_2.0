@@ -1,5 +1,5 @@
 ---
-import { userData } from '@/constants/site-data'
+import { USER_DATA } from '@/constants/site-data'
 import OverviewItem from './OverviewItem.astro'
 import { Icons } from '@/components/icons/icons'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
@@ -13,7 +13,7 @@ const t = useTranslations(lang)
   <h2 class='sr-only'>{t('overview').title}</h2>
   <ul class='p-2 space-y-2'>
     {
-      userData.overview.map((item) => {
+      USER_DATA.overview.map((item: (typeof USER_DATA)['overview'][number]) => {
         const Icon = Icons[item.icon as keyof typeof Icons]
         return (
           <li>

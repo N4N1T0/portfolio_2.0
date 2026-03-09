@@ -2,12 +2,12 @@
 import { Image } from 'astro:assets'
 import { formatDate } from '@/lib/utils'
 import { Icons } from '@/components/icons/icons'
-import type { certifications } from '@/constants/site-data'
+import type { CERTIFICATIONS } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
-  certification: (typeof certifications)[0]
+  certification: (typeof CERTIFICATIONS)[0]
 }
 
 // PROPS

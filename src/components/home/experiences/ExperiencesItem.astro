@@ -3,11 +3,11 @@ import { Image } from 'astro:assets'
 import ExperiencePositionItem from './ExperiencePositionItem.astro'
 import { Accordion } from '@/components/ui/accordion'
 import { Icons } from '@/components/icons/icons'
-import type { experiences } from '@/constants/site-data'
+import type { EXPERIENCES } from '@/constants/site-data'
 
 // TYPES
 interface Props {
-  experience: (typeof experiences)[0]
+  experience: (typeof EXPERIENCES)[0]
 }
 
 // PROPS

@@ -2,7 +2,7 @@
 import { buttonVariants } from '@/components/ui/utils'
 import { Icons } from '@/components/icons/icons'
 import CertificationItem from './CertificationItem.astro'
-import { certifications } from '@/constants/site-data'
+import { CERTIFICATIONS } from '@/constants/site-data'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
 // I18N
@@ -14,12 +14,12 @@ const t = useTranslations(lang)
   <h2 class='text-3xl font-pixel screen-line-after py-2 pl-4'>
     {t('certifications').title}
     <sup class='text-sm text-muted-foreground select-none'>
-      ({certifications.length})
+      ({CERTIFICATIONS.length})
     </sup>
   </h2>
   <ul class='last:border-b-none'>
     {
-      certifications.map((certification) => (
+      CERTIFICATIONS.map((certification: (typeof CERTIFICATIONS)[0]) => (
         <li class='border-b border-muted certification-item'>
           <CertificationItem certification={certification} />
         </li>

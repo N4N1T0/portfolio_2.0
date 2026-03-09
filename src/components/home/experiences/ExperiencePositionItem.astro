@@ -6,12 +6,12 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion'
 import BadgeList from '@/components/shared/BadgeList.astro'
-import type { experiences } from '@/constants/site-data'
+import type { EXPERIENCES } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
-  position: (typeof experiences)[0]['positions'][0]
+  position: (typeof EXPERIENCES)[0]['positions'][0]
   isMoreThanOne: boolean
 }
 

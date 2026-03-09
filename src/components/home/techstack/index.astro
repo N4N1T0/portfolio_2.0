@@ -4,7 +4,7 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import { techStack } from '@/constants/site-data'
+import { TECH_STACK } from '@/constants/site-data'
 import { Image } from 'astro:assets'
 ---
 
@@ -14,7 +14,7 @@ import { Image } from 'astro:assets'
   >
     <ul class='flex flex-wrap gap-4 select-none'>
       {
-        techStack.map(({ href, title, key }) => {
+        TECH_STACK.map(({ href, title, key }: (typeof TECH_STACK)[0]) => {
           return (
             <li class='flex'>
               <Tooltip>

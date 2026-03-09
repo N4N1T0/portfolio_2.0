@@ -1,7 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/typography';
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistPixel-Square';
+  src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -34,7 +57,8 @@
   --color-code-number: var(--code-number);
   --color-code-highlight: var(--code-highlight);
   --font-sans: 'Geist', sans-serif;
-  --font-pixel: 'Pixelify Sans', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-pixel: 'GeistPixel-Square', 'Pixelify Sans', sans-serif;
   --shadow-popover: var(--shadow-popover);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -83,7 +107,7 @@
 }
 
 @utility section {
-  @apply screen-line-before screen-line-after border-edge border-x;
+  @apply screen-line-before screen-line-after border-x border-edge;
 }
 
 @utility link {
@@ -91,17 +115,17 @@
 }
 
 @utility screen-line-before {
-  @apply before:bg-edge relative before:absolute before:top-0 before:-left-[100vw] before:-z-1 before:h-px before:w-[200vw];
+  @apply relative before:absolute before:top-0 before:-left-[100vw] before:-z-1 before:h-px before:w-[200vw] before:bg-edge;
 }
 
 @utility screen-line-after {
-  @apply after:bg-edge relative after:absolute after:bottom-0 after:-left-[100vw] after:-z-1 after:h-px after:w-[200vw];
+  @apply relative after:absolute after:bottom-0 after:-left-[100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-edge;
 }
 
 @utility step {
   counter-increment: step;
   &::before {
-    @apply bg-muted text-muted-foreground mr-2 inline-flex size-7 items-center justify-center rounded-full text-center -indent-px text-sm font-medium md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8;
+    @apply mr-2 inline-flex size-7 items-center justify-center rounded-full bg-muted text-center -indent-px text-sm font-medium text-muted-foreground md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8;
     content: counter(step);
   }
 }
@@ -181,7 +205,7 @@
   }
 
   body {
-    @apply bg-background text-foreground overscroll-y-none font-sans antialiased;
+    @apply overscroll-y-none bg-background font-sans text-foreground antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -206,13 +230,13 @@
   }
 
   .custom-prose {
-    @apply prose text-foreground prose-headings:font-pixel prose-headings:text-foreground prose-h2:text-3xl prose-h2:font-normal prose-h2:w-full prose-blockquote:text-foreground prose-strong:text-foreground prose-strong:font-bold prose-code:text-foreground prose-a:text-foreground;
+    @apply prose text-foreground prose-headings:font-pixel prose-headings:text-foreground prose-h2:w-full prose-h2:text-3xl prose-h2:font-normal prose-a:text-foreground prose-blockquote:text-foreground prose-strong:font-bold prose-strong:text-foreground prose-code:text-foreground;
   }
 }
 
 @layer components {
   [data-rehype-pretty-code-figure] {
-    @apply bg-code text-code-foreground relative my-6 rounded-lg;
+    @apply relative my-6 rounded-lg bg-code text-code-foreground;
 
     pre {
       @apply overflow-x-auto px-4 py-4 has-data-line-numbers:px-0;
@@ -232,7 +256,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply text-muted-foreground [&_svg]:text-muted-foreground flex items-center gap-2 border-b px-4 py-2.5 text-sm [&_svg]:size-4;
+    @apply flex items-center gap-2 border-b px-4 py-2.5 text-sm text-muted-foreground [&_svg]:size-4 [&_svg]:text-muted-foreground;
   }
 
   [data-line-numbers] {
@@ -246,7 +270,7 @@
   [data-line-numbers] > [data-line]::before {
     counter-increment: line;
     content: counter(line);
-    @apply bg-code text-code-number sticky left-0 inline-block w-16 pr-6 text-right text-sm;
+    @apply sticky left-0 inline-block w-16 bg-code pr-6 text-right text-sm text-code-number;
   }
 
   [data-line-numbers] [data-highlighted-line][data-line]::before {
@@ -254,6 +278,6 @@
   }
 
   [data-highlighted-line] {
-    @apply bg-code-highlight after:bg-border relative after:absolute after:top-0 after:left-0 after:h-full after:w-0.5;
+    @apply relative bg-code-highlight after:absolute after:top-0 after:left-0 after:h-full after:w-0.5 after:bg-border;
   }
 }

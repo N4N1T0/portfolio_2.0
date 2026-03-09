@@ -14,6 +14,7 @@
     "escalabilidad",
     "figma",
     "freecodecamp",
+    "geist",
     "github",
     "googlebot",
     "gtag",
@@ -29,6 +30,9 @@
     "ncdai",
     "nextdotjs",
     "nodedotjs",
+    "oklab",
+    "oklch",
+    "overscroll",
     "partytown",
     "Pixelify",
     "playform",
@@ -37,15 +41,22 @@
     "reactrouter",
     "Redsys",
     "rehype",
+    "rgba",
     "shadcnui",
     "shiki",
     "spanish",
     "starwind",
+    "Stylesheet",
     "Supabase",
     "techstack",
     "tipado",
     "Turbopack",
     "wght",
     "Zalo"
-  ]
+  ],
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

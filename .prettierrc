@@ -1,0 +1,13 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxSingleQuote": true,
+  "organizeImportsSkipDestructiveCodeActions": true,
+  "tailwindStylesheet": "./src/styles/global.css",
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro"
+  ]
+}

@@ -4,13 +4,10 @@
   "version": "1.2.0",
   "scripts": {
     "dev": "astro dev",
+    "sync": "astro sync && astro dev",
     "build": "astro build",
-    "sync": "astro sync",
-    "preview": "astro preview",
-    "astro": "astro",
     "lint": "astro check",
-    "prepare": "husky",
-    "typecheck": "tsc --noEmit"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.astro": [

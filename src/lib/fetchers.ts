@@ -132,3 +132,33 @@ export async function getCounterpartById(
 
   return counterpartBlog.id
 }
+
+/**
+ * Retrieves an array of snippets in a specified language.
+ *
+ * @param {string} lang - The language of the snippets to retrieve.
+ * @return {Promise<Array<CollectionEntry<'snippets'>>>} A promise that resolves to an array of snippets.
+ */
+export async function getSnippets(
+  lang: string,
+  limit?: number | undefined
+): Promise<Array<CollectionEntry<'snippets'>>> {
+  const snippets = await getCollection('snippets', ({ id }) => {
+    return id.startsWith(lang)
+  })
+
+  const formattedSnippets = snippets
+    .slice(0, limit || snippets.length)
+    .map((snippet) => {
+      const refactoredId =
+        lang === 'es'
+          ? snippet.id.replace(/es\//g, '/')
+          : snippet.id.replace(/en\//g, '/')
+      return {
+        ...snippet,
+        id: refactoredId
+      }
+    })
+
+  return formattedSnippets
+}

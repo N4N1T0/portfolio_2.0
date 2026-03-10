@@ -62,7 +62,19 @@ const projectCollection = defineCollection({
     })
 })
 
+// Typescript for the Snippets
+const snippetCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/snippets' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+      icon: z.enum(['code', 'block']),
+      isNew: z.boolean().optional()
+    })
+})
+
 export const collections = {
   blog: blogCollection,
-  projects: projectCollection
+  projects: projectCollection,
+  snippets: snippetCollection
 }

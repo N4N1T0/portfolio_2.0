@@ -1,7 +1,10 @@
 ---
 import { Image } from 'astro:assets'
 import { USER_DATA } from '@/constants/site-data'
-import FlipSentences from '@/components/ui/FlipSentences.astro'
+import { getLangFromLocale } from '@/i18n/utils'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <div class='screen-line-after flex border-x border-edge container'>
@@ -38,7 +41,11 @@ import FlipSentences from '@/components/ui/FlipSentences.astro'
       <div
         class='h-16 border-t border-edge py-1 pl-4 sm:h-auto overflow-hidden'
       >
-        <FlipSentences />
+        <span
+          class='hero-flip-sentences text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
+        >
+          {USER_DATA.sentences[lang]}
+        </span>
       </div>
     </div>
   </div>

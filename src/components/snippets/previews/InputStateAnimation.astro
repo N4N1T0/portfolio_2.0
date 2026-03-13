@@ -1,0 +1,74 @@
+---
+import { Icons } from '@/components/icons/icons'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
+---
+
+<form class='flex flex-col gap-2 max-w-lg w-full'>
+  <p class='text-xs text-muted-foreground'>
+    Check correct and incorrect values for different states
+  </p>
+
+  <fieldset class='flex gap-2 flex-wrap'>
+    <input
+      type='text'
+      class='rounded-sm border border-edge px-3 py-1 aria-invalid:animate-shake-x aria-valid:animate-border-success flex-1'
+      id='input-state-animation'
+      placeholder='Enter a valid email address'
+      pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
+      required
+    />
+    <button
+      id='button-state-animation'
+      class='rounded-sm border border-edge px-3 py-1 hover:bg-accent hover:text-accent-foreground'
+      >Submit</button
+    >
+  </fieldset>
+
+  <Tooltip
+    class='absolute top-0 right-0 aspect-square border border-edge rounded-full p-2'
+  >
+    <TooltipTrigger>
+      <a
+        href='https://github.com/shadcn/ui/blob/main/components/tooltip/Tooltip.astro'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <Icons.info className='size-4' />
+      </a>
+    </TooltipTrigger>
+    <TooltipContent> Link to the component code on GitHub </TooltipContent>
+  </Tooltip>
+</form>
+
+<script>
+  function isValidEmail(email: string) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
+  const input = document.getElementById(
+    'input-state-animation'
+  ) as HTMLInputElement
+  const button = document.getElementById(
+    'button-state-animation'
+  ) as HTMLButtonElement
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    if (!isValidEmail(input.value)) {
+      input.removeAttribute('aria-valid')
+      input.setAttribute('aria-invalid', 'true')
+
+      setTimeout(() => {
+        input.removeAttribute('aria-invalid')
+      }, 500)
+    } else {
+      input.removeAttribute('aria-invalid')
+      input.setAttribute('aria-valid', 'true')
+    }
+  })
+</script>

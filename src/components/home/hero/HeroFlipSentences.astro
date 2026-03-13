@@ -1,22 +1,21 @@
 ---
-import { USER_DATA } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
-<div
-  class='flip-sentences text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
-  data-sentences={JSON.stringify(USER_DATA.sentences[lang])}
+<span
+  class='hero-flip-sentences text-[200px] font-pixel'
+  data-sentences={JSON.stringify(['A3', 'N-9'])}
 >
-</div>
+</span>
 
 <script>
   import { animate } from 'animejs'
 
   const initFlipSentences = () => {
-    const el = document.querySelector('.flip-sentences') as HTMLDivElement
+    const el = document.querySelector('.hero-flip-sentences') as HTMLDivElement
     if (!el) return
 
     const sentences = JSON.parse(el.dataset.sentences || '[]')
@@ -38,7 +37,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
       intervalId = window.setInterval(() => {
         current = (current + 1) % sentences.length
         updateSentence()
-      }, 3500)
+      }, 4500)
     }
 
     const stop = () => {

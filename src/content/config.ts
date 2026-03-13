@@ -1,3 +1,4 @@
+import { Previews } from '@/lib/previews'
 import { glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
 
@@ -68,8 +69,12 @@ const snippetCollection = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
+      excerpt: z.string(),
+      preview: z.nativeEnum(Previews),
+      comingSoon: z.boolean().optional(),
       icon: z.enum(['code', 'block']),
-      isNew: z.boolean().optional()
+      isNew: z.boolean().optional(),
+      counterpartId: z.string().optional()
     })
 })
 

@@ -1,79 +1,106 @@
 ---
 title: 'Input state animation'
+excerpt: 'Small animation for input state in relation to invalid and valid values'
+preview: 'input-state-animation'
 icon: 'code'
 isNew: true
+comingSoon: false
+counterpartId: es/animacion-de-estado-para-inputs
 ---
 
-Small animations can greatly improve UX when used correctly. One common pattern is the **“shake” animation on invalid inputs**, which gives users a quick visual signal that something went wrong.
+Small animations can greatly improve UX when used correctly. One common pattern is the **"shake" animation on invalid inputs** and a **success feedback on valid inputs**, which give users quick visual signals about the field state.
 
-In this article we’ll implement a **lightweight, accessible input shake animation** using **Tailwind + `aria-invalid` state**.
+In this article we'll implement **lightweight, accessible input animations** using **Tailwind + `aria-invalid` and `aria-valid` states**.
 
 The goal:
 
-- Trigger animation **only when the input becomes invalid**
+- Trigger animations **only when the input becomes invalid or valid**
 - Keep the implementation **accessible**
-- Ensure the animation is **performant**
+- Ensure the animations are **performant**
 
 ---
 
-## 1. Creating the Shake Animation
+## 1. Creating the Animations
 
-First, define a simple `shake-x` animation.
+Define the animations inside `@layer utilities` so they work with your Tailwind setup.
+
+**Shake (invalid state):**
 
 ```css
-@keyframes shake-x {
-  0%,
-  100% {
-    transform: translateX(0);
+@layer utilities {
+  @keyframes shake-x {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-4px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(4px);
+    }
   }
 
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translateX(-4px);
+  .aria-invalid\:animate-shake-x[aria-invalid='true'] {
+    @apply border-destructive;
+    animation: shake-x 0.5s ease-in-out;
   }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(4px);
-  }
-}
-
-.animate-shake-x {
-  animation: shake-x 0.4s ease-in-out;
-}
-
-.aria-invalid\:animate-shake-x[aria-invalid='true'] {
-  animation: shake-x 0.5s ease-in-out;
 }
 ```
 
-This animation is **very lightweight** because it uses:
+**Success pop (valid state):**
 
-- `transform`
-- short duration
-- no layout-triggering properties
+```css
+  @keyframes success-pop {
+    0% {
+      border-color: #d1fae5;
+      box-shadow: 0 0 0px transparent;
+    }
+    50% {
+      border-color: #22c55e;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); /* soft green glow */
+    }
+    100% {
+      border-color: #22c55e;
+      box-shadow: 0 0 0px transparent;
+    }
+  }
 
-Modern browsers can run `transform` animations on the **GPU**, which keeps them smooth and avoids layout recalculations.
+  .aria-valid\:animate-border-success[aria-valid='true'] {
+    animation: success-pop 0.8s ease-out forwards;
+  }
+```
+
+These animations are **lightweight** because they use:
+
+- `transform` and `box-shadow` (GPU-friendly)
+- Short durations
+- No layout-triggering properties
 
 ---
 
-## 2. Using `aria-invalid` Instead of Extra State Classes
+## 2. Using ARIA Attributes Instead of Extra State Classes
 
-Instead of adding custom state classes like `error` or `invalid`, we can rely on the **ARIA attribute**:
+Instead of custom state classes like `error` or `invalid`, we rely on **ARIA attributes**:
 
 ```html
 aria-invalid="true"
+aria-valid="true"
 ```
 
-This attribute is important because:
+These attributes are important because:
 
-- it **communicates errors to assistive technologies**
-- it allows us to **style based on accessibility state**
+- they **communicate state to assistive technologies**
+- they allow us to **style and animate based on accessibility state**
 
 Example input component:
 
@@ -84,8 +111,8 @@ Example input component:
   className={cn(
     "h-12 w-full rounded-lg border border-opacity-neutral-800-60 bg-opacity-neutral-white-6 px-4 py-3 text-base text-neutrals-white shadow-xs outline-none transition-[color,box-shadow]",
     "focus:border-primary-100",
-    "aria-invalid:border-feedback-error-500",
     "aria-invalid:animate-shake-x",
+    "aria-valid:animate-border-success",
     className
   )}
   {...props}
@@ -100,10 +127,20 @@ When the input becomes invalid:
 
 It will:
 
-- turn the border red
+- turn the border red (`border-destructive`)
 - play the shake animation
 
-No extra state class needed.
+When the input is valid:
+
+```html
+<input aria-valid="true" />
+```
+
+It will:
+
+- play the success-pop animation (green border and soft glow)
+
+No extra state classes needed.
 
 ---
 
@@ -121,13 +158,19 @@ That means Tailwind won't generate something like:
 
 ```html
 aria-invalid:animate-shake-x
+aria-valid:animate-border-success
 ```
 
-for your custom animation unless you **explicitly define the selector**:
+for your custom animations unless you **explicitly define the selectors** in your CSS:
 
 ```css
 .aria-invalid\:animate-shake-x[aria-invalid='true'] {
+  @apply border-destructive;
   animation: shake-x 0.5s ease-in-out;
+}
+
+.aria-valid\:animate-border-success[aria-valid='true'] {
+  animation: success-pop 0.8s ease-out forwards;
 }
 ```
 
@@ -137,22 +180,23 @@ This small workaround lets you keep using the **Tailwind variant syntax** in you
 
 ## 4. Accessibility Benefits
 
-Using `aria-invalid` improves accessibility in several ways.
+Using `aria-invalid` and `aria-valid` improves accessibility in several ways.
 
-Screen readers can detect when an input is invalid and announce it to users.
+Screen readers can detect when an input is invalid or valid and announce it to users.
 
 Example:
 
 ```html
 <input aria-invalid="true" />
+<input aria-valid="true" />
 ```
 
-Assistive technologies understand that the field **contains an error**.
+Assistive technologies understand the **field state**.
 
 Combined with:
 
 - `aria-describedby`
-- inline error messages
+- inline error or success messages
 
 you create a **much better experience for keyboard and screen reader users**.
 
@@ -164,9 +208,10 @@ Animations should never hurt performance.
 
 This implementation is efficient because:
 
-✔ It uses `transform` instead of `margin` or `left`
-✔ The animation runs only **when the invalid state appears**
-✔ It lasts **less than half a second**
+✔ The shake uses `transform` instead of `margin` or `left`
+✔ The success pop uses `border-color` and `box-shadow` (composited)
+✔ Animations run only **when the state appears**
+✔ They last **less than a second**
 
 Avoid animating properties like:
 
@@ -177,7 +222,7 @@ Avoid animating properties like:
 
 These trigger layout recalculations and can cause jank.
 
-`transform` and `opacity` are the safest choices.
+`transform`, `opacity`, and `box-shadow` are safer choices.
 
 ---
 
@@ -185,15 +230,17 @@ These trigger layout recalculations and can cause jank.
 
 With this setup:
 
-- your input **shakes when invalid**
-- the animation is **GPU-friendly**
+- your input **shakes when invalid** and shows a **red border**
+- your input **pops with a green glow when valid**
+- the animations are **GPU-friendly**
 - the state is **accessible**
 - the API stays **clean and semantic**
 
-All triggered by a single attribute:
+All triggered by ARIA attributes:
 
 ```html
 aria-invalid="true"
+aria-valid="true"
 ```
 
 ---

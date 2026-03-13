@@ -1,0 +1,60 @@
+---
+import SnippetsLayout from '@/layout/SnippetsLayout.astro'
+import { getSnippets } from '@/lib/fetchers'
+import type { GetStaticPaths } from 'astro'
+import { generateSnippetJsonLD } from '@/components/layout/head/jsonLD'
+import Separator from '@/components/shared/Separator.astro'
+import { getPreviewComponent } from '@/lib/previews'
+
+// STATIC
+export const getStaticPaths = (async () => {
+  const snippets = await getSnippets('en')
+
+  return snippets.map((snippet) => ({
+    params: { id: snippet.id },
+    props: snippet
+  }))
+}) satisfies GetStaticPaths
+
+// CONST
+const {
+  id,
+  rendered,
+  data: { title, excerpt }
+} = Astro.props
+const content = rendered
+const PreviewComponent = getPreviewComponent(Astro.props)
+
+// SEO
+const ld = generateSnippetJsonLD(Astro.props, 'en')
+---
+
+<SnippetsLayout snippet={Astro.props} ld={ld}>
+  <section
+    class='min-h-[50dvh] container mb-6 flex justify-center items-center relative'
+  >
+    <PreviewComponent />
+  </section>
+
+  <section
+    id={id}
+    class='screen-line-before screen-line-after py-2 text-5xl font-pixel flex justify-between items-center'
+  >
+    <h1>
+      {title}
+    </h1>
+  </section>
+
+  <section
+    id='excerpt'
+    class='screen-line-after mb-6 py-2 font-pixel text-muted-foreground'
+  >
+    <p>
+      {excerpt}
+    </p>
+  </section>
+
+  <section class='custom-prose max-w-none px-4 pb-4'>
+    <div set:html={content?.html} />
+  </section>
+</SnippetsLayout>

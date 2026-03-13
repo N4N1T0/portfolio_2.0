@@ -60,6 +60,7 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
       {title}
       <time class='text-xs' datetime={date}>({date})</time>
     </h1>
+
     <a
       href={liveLink}
       target='_blank'
@@ -73,16 +74,20 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
       <span class='sr-only'>See the project live</span>
     </a>
   </section>
-  <p class='lead mb-6'>{excerpt}</p>
+
+  <p class='mb-6'>{excerpt}</p>
   <ContentIndex items={formattedContentIndex} />
+
   <section id='challenge' class='custom-prose mb-6'>
     <h2 style={{ borderBottom: `1px solid ${colors}` }}>Challenge</h2>
     <p>{challenge}</p>
   </section>
+
   <section id='solutions' class='custom-prose mb-6'>
     <h2 style={{ borderBottom: `1px solid ${colors}` }}>Solutions</h2>
     {solution}
   </section>
+
   <section id='techstack' class='custom-prose mb-6'>
     <h2 style={{ borderBottom: `1px solid ${colors}` }}>TechStack</h2>
     <ul class='flex flex-wrap gap-1.5'>
@@ -103,6 +108,7 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
       }
     </ul>
   </section>
+
   {
     hasTestimonial && (
       <section id='testimonial' class='custom-prose pb-6'>

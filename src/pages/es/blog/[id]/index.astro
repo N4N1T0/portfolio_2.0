@@ -49,14 +49,17 @@ const ld = await generateJsonLDForBlogPost(Astro.props, 'en')
 <BlogLayout post={Astro.props} ld={ld}>
   <section
     id={id}
-    class='screen-line-before screen-line-after mb-3 py-2 text-5xl font-pixel flex justify-between items-center'
+    class='screen-line-before screen-line-after py-2 text-5xl font-pixel flex justify-between items-center'
   >
     <h1>
       {title}
       <time class='text-xs' datetime={formattedDate}>({formattedDate})</time>
     </h1>
   </section>
-  <section id='excerpt' class='screen-line-after mb-6 py-2'>
+  <section
+    id='excerpt'
+    class='screen-line-after mb-6 py-2 font-pixel text-muted-foreground'
+  >
     <p>
       {excerpt}
     </p>

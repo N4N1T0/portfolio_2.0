@@ -55,7 +55,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
         </dd>
       </div>
 
-      <div class='h-4 w-[1px] bg-edge' aria-hidden='true'></div>
+      <div class='h-4 w-px bg-edge' aria-hidden='true'></div>
 
       <div>
         <dt class='sr-only'>Issued on</dt>
@@ -70,7 +70,10 @@ const lang = getLangFromLocale(Astro.currentLocale)
 
   {
     credentialURL && (
-      <Icons.arrowUpRight class='size-5 text-foreground' aria-hidden='true' />
+      <Icons.arrowUpRight
+        class='size-4 text-foreground rotate-315'
+        aria-hidden='true'
+      />
     )
   }
 </a>

@@ -154,6 +154,28 @@ export const generateProjectListJsonLD = (
   })
 }
 
+export const generateSnippetJsonLD = (
+  snippet: CollectionEntry<'snippets'>,
+  lang: 'es' | 'en'
+) => {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    '@id': `https://www.adrian-alvarez.dev/${lang}/snippets/${snippet.id}/`,
+    url: `https://www.adrian-alvarez.dev/${lang}/snippets/${snippet.id}/`,
+    name: snippet.data.title,
+    description: snippet.data.excerpt,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Adrian Alvarez Portfolio',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.adrian-alvarez.dev/favicon.ico'
+      }
+    }
+  })
+}
+
 export const generateProjectJsonLD = (
   project: CollectionEntry<'projects'>,
   lang: 'es' | 'en'

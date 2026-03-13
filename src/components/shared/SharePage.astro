@@ -1,0 +1,121 @@
+---
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger
+} from '@/components/starwind/popover'
+import { Icons } from '@/components/icons/icons'
+import { buttonVariants } from '@/components/ui/utils'
+
+const urlEncoded = encodeURIComponent(Astro.url.toString())
+---
+
+<Popover>
+  <PopoverTrigger asChild>
+    <button
+      class={buttonVariants({
+        variant: 'outline',
+        size: 'icon',
+        className: 'hover:bg-muted'
+      })}
+    >
+      <Icons.share class='size-4' />
+      <span class='sr-only'>Copy Page</span>
+    </button>
+  </PopoverTrigger>
+  <PopoverContent class='w-fit bg-background border border-edge p-1'>
+    <PopoverHeader class='sr-only'>
+      <PopoverTitle>Share this page</PopoverTitle>
+      <PopoverDescription>
+        Share this page on your favorite social media platform.
+      </PopoverDescription>
+    </PopoverHeader>
+
+    <ul
+      id='share-actions-list'
+      class='flex flex-col gap-1 [&>li]:hover:bg-muted [&>li]:rounded-md [&>li]:pl-2'
+    >
+      <li>
+        <button class='flex items-center gap-2' id='copy-link'>
+          <Icons.link class='size-4' />
+          <span>Copy link</span>
+        </button>
+      </li>
+
+      <li>
+        <a
+          href={`https://x.com/intent/tweet?url=${urlEncoded}`}
+          target='_blank'
+          rel='noopener'
+          class='flex items-center gap-2'
+        >
+          <Icons.x class='size-4' />
+          <span>Share on X</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}
+          target='_blank'
+          rel='noopener'
+          class='flex items-center gap-2'
+        >
+          <Icons.linkedIn class='size-4' />
+          <span>Share on LinkedIn</span>
+        </a>
+      </li>
+
+      <li>
+        <button class='flex items-center gap-2' id='share-page'>
+          <Icons.ellipsis class='size-4' />
+          <span>Other apps</span>
+        </button>
+      </li>
+    </ul>
+  </PopoverContent>
+</Popover>
+
+<script>
+  const copyLinkBtn = document.getElementById('copy-link') as HTMLButtonElement
+  const sharePageBtn = document.getElementById(
+    'share-page'
+  ) as HTMLButtonElement
+  const shareList = document.getElementById('share-actions-list')
+
+  const absoluteUrl = window.location.href
+  const title = document?.title || 'Check this out!'
+
+  function closePopover() {
+    const popover = document.querySelector('.starwind-popover')
+    popover?.dispatchEvent(
+      new CustomEvent('starwind-popover:close', {
+        detail: { focusTrigger: false }
+      })
+    )
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(absoluteUrl)
+    closePopover()
+  }
+
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({ title, url: absoluteUrl }).catch(() => {})
+    }
+    closePopover()
+  }
+
+  copyLinkBtn?.addEventListener('click', copyLink)
+  sharePageBtn?.addEventListener('click', sharePage)
+
+  shareList?.addEventListener('click', (e) => {
+    if ((e.target as Element).closest('a')) {
+      closePopover()
+    }
+  })
+</script>

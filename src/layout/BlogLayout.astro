@@ -3,6 +3,7 @@ import MainLayout from './MainLayout.astro'
 import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import Navigation from '@/components/blog/Navigation.astro'
+import Separator from '@/components/shared/Separator.astro'
 
 interface Props {
   post: CollectionEntry<'blog'>
@@ -17,7 +18,10 @@ const {
 ---
 
 <MainLayout title={title} description={excerpt} ld={ld} image={image}>
+  <Separator className='screen-line-after' />
   <Navigation blogPostId={id} />
+  <Separator />
+
   <section class='screen-line-before aspect-3/2 group container'>
     <div class='size-full overflow-hidden relative'>
       <Image

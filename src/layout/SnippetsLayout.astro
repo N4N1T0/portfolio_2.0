@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import MainLayout from './MainLayout.astro'
+import Separator from '@/components/shared/Separator.astro'
+import Navigation from '@/components/snippets/Navigation.astro'
+
+interface Props {
+  snippet: CollectionEntry<'snippets'>
+  ld: string
+}
+
+const { snippet, ld } = Astro.props
+const {
+  id,
+  data: { title, excerpt }
+} = snippet
+---
+
+<MainLayout title={title} description={excerpt} ld={ld}>
+  <Separator className='screen-line-after' />
+  <Navigation snippetId={id} />
+  <Separator />
+  <section class='section px-4 container pt-3'>
+    <slot />
+  </section>
+</MainLayout>

@@ -1,5 +1,5 @@
 ---
-import { getProjects } from '@/lib/fetchers'
+import { getSnippets } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
 import { buttonVariants } from '@/components/ui/utils'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
@@ -8,26 +8,27 @@ import SharePage from '@/components/shared/SharePage.astro'
 
 // TYPES
 interface Props {
-  projectId: string
+  snippetId: string
 }
 
 // PROPS
-const { projectId } = Astro.props
+const { snippetId } = Astro.props
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 const t = useTranslations(lang)
 
 // FETCHERS
-const projects = await getProjects(lang).then((projects) => {
-  return projects.filter((project) => !project.data.comingSoon)
+const snippets = await getSnippets(lang).then((snippets) => {
+  return snippets.filter((snippet) => !snippet.data.comingSoon)
 })
-const actualProject = projects.findIndex((project) => project.id === projectId)
+
+const actualSnippet = snippets.findIndex((snippet) => snippet.id === snippetId)
 
 // CONSTS
-const previous = actualProject > 0 ? projects[actualProject - 1] : null
+const previous = actualSnippet > 0 ? snippets[actualSnippet - 1] : null
 const next =
-  actualProject < projects.length - 1 ? projects[actualProject + 1] : null
+  actualSnippet < snippets.length - 1 ? snippets[actualSnippet + 1] : null
 ---
 
 <nav
@@ -38,7 +39,7 @@ const next =
     class={buttonVariants({ variant: 'link' })}
   >
     <Icons.arrowLeft />
-    {t('projects').title}
+    {t('snippets').title}
   </a>
 
   <div class='flex items-center gap-2'>

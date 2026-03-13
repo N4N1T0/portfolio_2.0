@@ -13,6 +13,11 @@ export const defaultLang = 'es'
 
 export const ui = {
   en: {
+    snippets: {
+      title: 'Snippets',
+      subtitle:
+        'Explore a compilation of my finest endeavors spanning Web Design and Development. In a dynamic digital landscape'
+    },
     blogList: {
       showMore: 'Show More',
       published: 'Published on',
@@ -60,7 +65,7 @@ export const ui = {
       builtBy: ` <p
         class='mb-4 text-center font-pixel text-sm text-balance text-muted-foreground'
       >
-        Built by{' '}
+        Built by
         <a
           class='link'
           href='https://x.com/iamncdai'
@@ -69,7 +74,7 @@ export const ui = {
         >
           Adrian "Nano" Alvarez
         </a>
-        . The source code is available on{' '}
+        . The source code is available on
         <a
           class='link'
           href='https://github.com/N4N1T0'
@@ -86,6 +91,11 @@ export const ui = {
     }
   },
   es: {
+    snippets: {
+      title: 'Snippets',
+      subtitle:
+        'Explora una recopilación de mis mejores esfuerzos en Diseño y Desarrollo Web. En un panorama digital dinámico'
+    },
     blogList: {
       showMore: 'Mostrar Más',
       published: 'Publicado el',

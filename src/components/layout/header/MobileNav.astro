@@ -12,9 +12,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription
-} from '@/components/starwind/dialog'
+} from '@/components/ui/dialog'
 import { buttonVariants } from '@/components/ui/utils'
-import { getPosts, getProjects } from '@/lib/fetchers'
+import { getPosts, getProjects, getSnippets } from '@/lib/fetchers'
 
 // CONST
 const active = Astro.url.pathname.split('/').filter(Boolean).pop()
@@ -23,6 +23,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
 // FETCH
 const projects = await getProjects(lang, 5)
 const posts = await getPosts(lang, 5)
+const snippets = await getSnippets(lang, 5)
 ---
 
 <Dialog>
@@ -51,8 +52,9 @@ const posts = await getPosts(lang, 5)
         }
       </DialogDescription>
     </DialogHeader>
+
     <nav class='flex-1 px-4 py-8 text-sm overflow-y-auto'>
-      <!-- Projects Section -->
+      <!-- PORTFOLIO SECTION -->
       <div class='mb-8'>
         <a
           href={getRelativeLocaleUrl(lang, '/projects')}
@@ -85,7 +87,7 @@ const posts = await getPosts(lang, 5)
         </ul>
       </div>
 
-      <!-- Blog Section -->
+      <!-- BLOG SECTION -->
       <div>
         <a
           href={getRelativeLocaleUrl(lang, '/blog')}
@@ -106,6 +108,38 @@ const posts = await getPosts(lang, 5)
                       isActive && 'text-foreground underline'
                     )}
                     href={postHref}
+                  >
+                    {title}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- SNIPPETS SECTION -->
+      <div>
+        <a
+          href={getRelativeLocaleUrl(lang, '/snippets')}
+          class='text-sm font-semibold uppercase tracking-wider my-4 px-2 border-b border-edge w-full inline-block'
+        >
+          Snippets
+        </a>
+
+        <ul class='space-y-3'>
+          {
+            snippets.map(({ id, data: { title } }) => {
+              const snippetHref = getRelativeLocaleUrl(lang, `/snippets${id}`)
+              const isActive = '/' + active === id
+              return (
+                <li>
+                  <a
+                    class={cn(
+                      'block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded-md hover:bg-muted/50',
+                      isActive && 'text-foreground underline'
+                    )}
+                    href={snippetHref}
                   >
                     {title}
                   </a>

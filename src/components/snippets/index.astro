@@ -1,0 +1,35 @@
+---
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import { getSnippets } from '@/lib/fetchers'
+import SnippetsCards from './SnippetsCards.astro'
+import { Icons } from '../icons/icons'
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+
+// FETCHERS
+const snippets = await getSnippets(lang, 10)
+---
+
+<section class='section container px-4'>
+  <h2 class='text-3xl font-pixel screen-line-after py-2'>
+    {t('snippets').title}
+  </h2>
+  <p class='text-muted-foreground py-1 font-pixel'>
+    {t('snippets').subtitle}
+  </p>
+
+  <div class='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3'>
+    {
+      snippets.map((snippet) => {
+        const Icon = Icons[snippet.data.icon as keyof typeof Icons]
+        return (
+          <SnippetsCards snippet={snippet}>
+            <Icon class='size-4' />
+          </SnippetsCards>
+        )
+      })
+    }
+  </div>
+</section>

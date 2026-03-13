@@ -1,0 +1,46 @@
+---
+import { getLangFromLocale } from '@/i18n/utils'
+import { cn } from '@/lib/utils'
+import type { CollectionEntry } from 'astro:content'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+interface Props {
+  snippet: CollectionEntry<'snippets'>
+}
+
+// PROPS
+const { snippet } = Astro.props
+const { title, isNew } = snippet.data
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const snippetLink = getRelativeLocaleUrl(lang, `/snippets${snippet.id}`)
+---
+
+<a
+  href={snippetLink}
+  class={cn(
+    'group flex items-center gap-4 p-4 pr-2 hover:underline',
+    'max-sm:screen-line-before max-sm:screen-line-after',
+    'sm:max-md:nth-[2n+1]:screen-line-before sm:max-md:nth-[2n+1]:screen-line-after',
+    'md:nth-[3n+1]:screen-line-before md:nth-[3n+1]:screen-line-after'
+  )}
+>
+  <div
+    class='relative flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted ring-1 ring-edge ring-offset-1 ring-offset-background'
+  >
+    <slot />
+    {
+      isNew && (
+        <span class='absolute -top-1 -right-1 flex items-center justify-center'>
+          <span class='flex size-2 rounded-sm bg-info ring-1 ring-background' />
+          <span class='sr-only'>New</span>
+        </span>
+      )
+    }
+  </div>
+
+  <h2 class='line-clamp-1 leading-snug font-medium text-balance'>
+    {title}
+  </h2>
+</a>

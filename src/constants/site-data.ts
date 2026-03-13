@@ -32,23 +32,11 @@ export const NAVIGATION_ITEMS = [
 ]
 
 export const USER_DATA = {
-  displayName: 'Adrian Alvarez',
+  displayName: 'Adrian "Nano" Alvarez',
   avatar: Avatar,
   sentences: {
-    en: [
-      'Transforming ideas into functional web products.',
-      'Focused on performance, UX and scalability.',
-      'Full stack developer with strong frontend foundation.',
-      'Developing agile, clean and maintainable solutions.',
-      'Passionate about technology and impact.'
-    ],
-    es: [
-      'Transformando ideas en productos web funcionales.',
-      'Enfocado en rendimiento, UX y escalabilidad.',
-      'Desarrollador full stack con sólida base frontend.',
-      'Desarrollando soluciones ágiles, limpias y mantenibles.',
-      'Apasionado por la tecnología y el impacto.'
-    ]
+    en: 'Full stack developer with strong frontend foundation.',
+    es: 'Desarrollador full stack con sólida base frontend.'
   },
   overview: [
     {
@@ -257,7 +245,7 @@ export const EXPERIENCES = [
     companyName: 'Kreitech',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFfKiSZcVL_xw/company-logo_200_200/company-logo_200_200/0/1720116635363/kreitech_software_logo?e=1769644800&v=beta&t=iKQfZsH2L9NISy_ymWq4vvcxI-ECOhdq5P7Qqs5Prow',
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFfKiSZcVL_xw/company-logo_200_200/company-logo_200_200/0/1720116635363/kreitech_software_logo?e=1775088000&v=beta&t=Hjogg5QSX1gUkF9gGagmxKsOGb2f6777bhiaZ3LjUls',
     positions: [
       {
         id: 'kreitech-frontend-developer',
@@ -306,7 +294,7 @@ export const EXPERIENCES = [
     companyName: 'DocTech World',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1769644800&v=beta&t=eKz41RaGVidRgx9EOFUKUExp04mAkBHutSgvxr7y6Vs',
+      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1775088000&v=beta&t=WvZ3VpuoNR6XrgDZ74l1RzrGAqKbpAAJOoDmhg7RGj0',
     positions: [
       {
         id: 'doc-tech-tech-lead',

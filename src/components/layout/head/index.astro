@@ -12,7 +12,7 @@ interface Props {
 const { title, description, image, ld, lang } = Astro.props
 
 const newLangUrl = changeLangFromUrl(Astro.url, lang || 'es')
-const ogImage = image ? image.src : `${Astro.site}${lang}/og-image.jpg`
+const ogImage = image ? image.src : `${Astro.site}/og-image.jpg`
 ---
 
 <head>

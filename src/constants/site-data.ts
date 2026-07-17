@@ -32,7 +32,7 @@ export const NAVIGATION_ITEMS = [
 ]
 
 export const USER_DATA = {
-  displayName: 'Adrian "Nano" Alvarez',
+  displayName: 'Adrian Alvarez',
   avatar: Avatar,
   sentences: {
     en: 'Full stack developer with strong frontend foundation.',

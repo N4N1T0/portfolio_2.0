@@ -42,7 +42,7 @@ export const USER_DATA = {
     {
       content: {
         en: 'Senior Full-Stack Developer',
-        es: 'Desarrollador Full-Stack Senior
+        es: 'Desarrollador Full-Stack Senior'
       },
       icon: 'code'
     },

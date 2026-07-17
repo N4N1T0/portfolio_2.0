@@ -93,9 +93,9 @@ export const USER_DATA = {
   about: {
     en: [
       "Hi! I'm Adrián Álvarez — a Senior Full-Stack Developer with a frontend heart and a strong focus on performance, CRO, and user-centered design.",
-      'I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.',
-      'Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools. I’ve also implemented CI/CD pipelines (e.g., GitHub Actions) to streamline development workflows, automate testing, and enable consistent, reliable deployments.',
-      'Whether it's building a custom storefront, designing a dynamic content structure, or improving search and SEO, I love turning complex challenges into elegant digital experiences.',
+      "I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.",
+      "Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools. I’ve also implemented CI/CD pipelines (e.g., GitHub Actions) to streamline development workflows, automate testing, and enable consistent, reliable deployments.",
+      "Whether it's building a custom storefront, designing a dynamic content structure, or improving search and SEO, I love turning complex challenges into elegant digital experiences.",
       'Beyond the code, I bring a strategic mindset — every decision I make aims to support business goals, user needs, and long-term maintainability.',
       "Let's build something impactful."
     ],

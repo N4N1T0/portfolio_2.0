@@ -41,8 +41,8 @@ export const USER_DATA = {
   overview: [
     {
       content: {
-        en: 'Mid-Level Front-end Developer',
-        es: 'Desarrollador Front-end Nivel Medio'
+        en: 'Senior Full-Stack Developer',
+        es: 'Desarrollador Full-Stack Senior
       },
       icon: 'code'
     },
@@ -92,18 +92,18 @@ export const USER_DATA = {
   ],
   about: {
     en: [
-      "Hi! I'm Adrián Álvarez — a full-stack developer with a frontend heart and a strong focus on performance, CRO, and user-centered design.",
-      ' I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity.',
-      " Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools.",
+      "Hi! I'm Adrián Álvarez — a Senior Full-Stack Developer with a frontend heart and a strong focus on performance, CRO, and user-centered design.",
+      ' I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.',
+      "Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools. I’ve also implemented CI/CD pipelines (e.g., GitHub Actions) to streamline development workflows, automate testing, and enable consistent, reliable deployments.",
       " Whether it's building a custom storefront, designing a dynamic content structure, or improving search and SEO, I love turning complex challenges into elegant digital experiences.",
       'Beyond the code, I bring a strategic mindset — every decision I make aims to support business goals, user needs, and long-term maintainability.',
       "Let's build something impactful."
     ],
     es: [
-      '¡Hola! Soy Adrián Álvarez — un desarrollador full-stack con corazón frontend y un fuerte enfoque en rendimiento, CRO y diseño centrado en el usuario.',
-      ' Me especializo en construir sitios web y plataformas SaaS rápidas, accesibles y orientadas a la conversión usando tecnologías como React, Next.js, Astro y Sanity.',
-      ' Durante los últimos años, he trabajado con agencias y startups en Europa y Estados Unidos, liderando y desarrollando proyectos de eCommerce, automatizando pipelines de contenido e integrando herramientas de búsqueda inteligente y AI.',
-      ' Ya sea construyendo una tienda personalizada, diseñando una estructura de contenido dinámico o mejorando la búsqueda y SEO, me encanta convertir desafíos complejos en experiencias digitales elegantes.',
+      '¡Hola! Soy Adrián Álvarez — Senior Full-Stack Developer con alma de frontend y un fuerte enfoque en performance, CRO y diseño centrado en el usuario.',
+      'Me especializo en construir sitios web y plataformas SaaS rápidas, accesibles y orientadas a la conversión, utilizando tecnologías como React, Next.js, Astro y Sanity. Además, cuento con sólida experiencia en testing y aseguramiento de calidad, trabajando con herramientas como Jest, React Testing Library y Cypress para garantizar aplicaciones robustas y escalables.',
+      "En los últimos años, he trabajado con agencias y startups en Europa y Estados Unidos, liderando y desarrollando proyectos eCommerce, automatizando pipelines de contenido e integrando motores de búsqueda inteligentes y herramientas impulsadas por IA. También he implementado pipelines de CI/CD (por ejemplo, con GitHub Actions) para optimizar flujos de desarrollo, automatizar tests y asegurar despliegues consistentes y fiables.',
+      'Ya sea construyendo una tienda personalizada, diseñando una estructura de contenido dinámico o mejorando la búsqueda y SEO, me encanta convertir desafíos complejos en experiencias digitales elegantes.',
       'Más allá del código, aporto una mentalidad estratégica — cada decisión que tomo busca apoyar los objetivos del negocio, las necesidades del usuario y la mantenibilidad a largo plazo.',
       'Construyamos algo impactante.'
     ]
@@ -140,6 +140,20 @@ export const TECH_STACK = [
     color: '#5FA04E'
   },
   {
+    key: 'hono',
+    title: 'Hono',
+    href: 'https://hono.dev/',
+    categories: ['Framework'],
+    color: '#E36002'
+  },
+  {
+    key: 'nestjs',
+    title: 'NestJS',
+    href: 'https://nestjs.com/',
+    categories: ['Framework'],
+    color: '#E0234E'
+  },
+  {
     key: 'express',
     title: 'Express',
     href: 'https://expressjs.com/',
@@ -155,7 +169,7 @@ export const TECH_STACK = [
   },
   {
     key: 'preact',
-    title: 'React',
+    title: 'Preact',
     href: 'https://preactjs.com/',
     categories: ['Library', 'UI Library'],
     color: '#673AB8'
@@ -202,6 +216,46 @@ export const TECH_STACK = [
     categories: ['Library', 'Navigation'],
     color: '#CA4245'
   },
+
+  // 🧪 Testing
+  {
+    key: 'jest',
+    title: 'Jest',
+    href: 'https://jestjs.io/',
+    categories: ['Testing'],
+    color: '#C21325'
+  },
+  {
+    key: 'reacttestinglibrary',
+    title: 'React Testing Library',
+    href: 'https://testing-library.com/docs/react-testing-library/intro/',
+    categories: ['Testing'],
+    color: '#E33332'
+  },
+
+  // ⚙️ CI/CD & Tooling
+  {
+    key: 'githubactions',
+    title: 'GitHub Actions',
+    href: 'https://github.com/features/actions',
+    categories: ['CI/CD'],
+    color: '#2088FF'
+  },
+  {
+    key: 'turborepo',
+    title: 'Turborepo',
+    href: 'https://turbo.build/repo',
+    categories: ['Build Tool', 'Monorepo'],
+    color: '#EF4444'
+  },
+  {
+    key: 'webpack',
+    title: 'Webpack',
+    href: 'https://webpack.js.org/',
+    categories: ['Build Tool'],
+    color: '#8DD6F9'
+  },
+
   {
     key: 'git',
     title: 'Git',

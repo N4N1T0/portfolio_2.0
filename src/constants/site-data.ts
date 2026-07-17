@@ -225,13 +225,6 @@ export const TECH_STACK = [
     categories: ['Testing'],
     color: '#C21325'
   },
-  {
-    key: 'reacttestinglibrary',
-    title: 'React Testing Library',
-    href: 'https://testing-library.com/docs/react-testing-library/intro/',
-    categories: ['Testing'],
-    color: '#E33332'
-  },
 
   // ⚙️ CI/CD & Tooling
   {

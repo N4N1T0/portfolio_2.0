@@ -2,7 +2,6 @@ import { Previews } from '@/lib/previews'
 import { glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
 
-// Typescript for the Blog Content
 const blogCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: ({ image }) =>
@@ -22,7 +21,6 @@ const blogCollection = defineCollection({
     })
 })
 
-// Typescript for the Projects
 const projectCollection = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/projects' }),
   schema: ({ image }) =>
@@ -63,7 +61,6 @@ const projectCollection = defineCollection({
     })
 })
 
-// Typescript for the Snippets
 const snippetCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/snippets' }),
   schema: () =>

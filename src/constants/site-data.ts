@@ -93,7 +93,7 @@ export const USER_DATA = {
   about: {
     en: [
       "Hi! I'm Adrián Álvarez — a Senior Full-Stack Developer with a frontend heart and a strong focus on performance, CRO, and user-centered design.",
-      "I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.",
+      'I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.',
       "Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools. I’ve also implemented CI/CD pipelines (e.g., GitHub Actions) to streamline development workflows, automate testing, and enable consistent, reliable deployments.",
       "Whether it's building a custom storefront, designing a dynamic content structure, or improving search and SEO, I love turning complex challenges into elegant digital experiences.",
       'Beyond the code, I bring a strategic mindset — every decision I make aims to support business goals, user needs, and long-term maintainability.',
@@ -287,8 +287,7 @@ export const EXPERIENCES = [
     id: 'kreitech',
     companyName: 'Kreitech',
     isCurrentEmployer: true,
-    companyLogo:
-      '/companies/642d7dcd6e06eeed7fc7951e_favico_GIF_32x32.gif',
+    companyLogo: '/companies/642d7dcd6e06eeed7fc7951e_favico_GIF_32x32.gif',
     positions: [
       {
         id: 'kreitech-frontend-developer',
@@ -336,8 +335,7 @@ export const EXPERIENCES = [
     id: 'doc-tech',
     companyName: 'DocTech World',
     isCurrentEmployer: false,
-    companyLogo:
-      '/companies/doctor_tecnolgico_logo.jpg',
+    companyLogo: '/companies/doctor_tecnolgico_logo.jpg',
     positions: [
       {
         id: 'doc-tech-tech-lead',
@@ -346,7 +344,7 @@ export const EXPERIENCES = [
           es: 'Líder Técnico'
         },
         employmentPeriod: {
-          start: '2024',
+          start: '2025',
           end: '2026'
         },
         employmentType: 'Part-time',
@@ -384,17 +382,16 @@ export const EXPERIENCES = [
     id: '3dids',
     companyName: '3dids',
     isCurrentEmployer: false,
-    companyLogo:
-      '/companies/logo3DIDS.webp',
+    companyLogo: '/companies/logo3DIDS.webp',
     positions: [
       {
-        id: '3dids-2024',
+        id: '3dids-2023',
         title: {
           en: 'Digital Business Consultant',
           es: 'Consultor de Negocios Digitales'
         },
         employmentPeriod: {
-          start: '2024',
+          start: '2023',
           end: '2025'
         },
         employmentType: 'Full-time',
@@ -430,8 +427,7 @@ export const EXPERIENCES = [
     id: 'desoft',
     companyName: 'Desoft',
     isCurrentEmployer: false,
-    companyLogo:
-      '/companies/favicon-14.svg',
+    companyLogo: '/companies/favicon-14.svg',
     positions: [
       {
         id: 'desoft-2022',

@@ -23,7 +23,7 @@ const {
   <Navigation projectId={id} />
   <Separator />
 
-  <section class='screen-line-before aspect-square group container'>
+  <section class='screen-line-before aspect-square group max-container'>
     <div class='size-full overflow-hidden relative'>
       {
         images.map(({ alt, src }, index) => {
@@ -49,7 +49,7 @@ const {
       }
     </div>
   </section>
-  <section class='section px-4 container'>
+  <section class='section px-4 max-container'>
     <slot />
   </section>
 </MainLayout>

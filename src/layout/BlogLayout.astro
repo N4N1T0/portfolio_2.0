@@ -22,7 +22,7 @@ const {
   <Navigation blogPostId={id} />
   <Separator />
 
-  <section class='screen-line-before aspect-3/2 group container'>
+  <section class='screen-line-before aspect-3/2 group max-container'>
     <div class='size-full overflow-hidden relative'>
       <Image
         src={image as ImageMetadata}
@@ -35,7 +35,7 @@ const {
       />
     </div>
   </section>
-  <section class='section px-4 container'>
+  <section class='section px-4 max-container'>
     <slot />
   </section>
 </MainLayout>

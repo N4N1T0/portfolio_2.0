@@ -23,7 +23,7 @@ const t = useTranslations(lang)
 const projects = await getProjects(lang)
 ---
 
-<section class='section container px-4' data-show-more={showAll}>
+<section class='section max-container px-4' data-show-more={showAll}>
   <h2 class='text-3xl font-pixel screen-line-after py-2'>
     {t('projects').title}
     <sup class='text-sm text-muted-foreground select-none'>

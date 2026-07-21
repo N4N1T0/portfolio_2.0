@@ -98,7 +98,7 @@
   }
 }
 
-@utility container {
+@utility max-container {
   @apply mx-auto md:max-w-3xl;
 }
 

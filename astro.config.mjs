@@ -1,6 +1,5 @@
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
-import playformCompress from '@playform/compress'
 import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
@@ -18,7 +17,6 @@ export default defineConfig({
       sitemap: 'https://www.adrian-alvarez.com/sitemap-0.xml',
       host: 'adrian-alvarez.com'
     }),
-    playformCompress(),
     preact()
   ],
 

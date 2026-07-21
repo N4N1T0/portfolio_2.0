@@ -216,8 +216,6 @@ export const TECH_STACK = [
     categories: ['Library', 'Navigation'],
     color: '#CA4245'
   },
-
-  // 🧪 Testing
   {
     key: 'jest',
     title: 'Jest',
@@ -225,8 +223,6 @@ export const TECH_STACK = [
     categories: ['Testing'],
     color: '#C21325'
   },
-
-  // ⚙️ CI/CD & Tooling
   {
     key: 'githubactions',
     title: 'GitHub Actions',
@@ -292,7 +288,7 @@ export const EXPERIENCES = [
     companyName: 'Kreitech',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFfKiSZcVL_xw/company-logo_200_200/company-logo_200_200/0/1720116635363/kreitech_software_logo?e=1775088000&v=beta&t=Hjogg5QSX1gUkF9gGagmxKsOGb2f6777bhiaZ3LjUls',
+      '/companies/642d7dcd6e06eeed7fc7951e_favico_GIF_32x32.gif',
     positions: [
       {
         id: 'kreitech-frontend-developer',
@@ -341,7 +337,7 @@ export const EXPERIENCES = [
     companyName: 'DocTech World',
     isCurrentEmployer: true,
     companyLogo:
-      'https://media.licdn.com/dms/image/v2/D4D0BAQFk6urKZ3Wr3g/company-logo_200_200/B4DZb89xbhGkAM-/0/1748000774221/doctor_tecnolgico_logo?e=1775088000&v=beta&t=WvZ3VpuoNR6XrgDZ74l1RzrGAqKbpAAJOoDmhg7RGj0',
+      '/companies/doctor_tecnolgico_logo.jpg',
     positions: [
       {
         id: 'doc-tech-tech-lead',
@@ -351,7 +347,7 @@ export const EXPERIENCES = [
         },
         employmentPeriod: {
           start: '2024',
-          end: null
+          end: '2026'
         },
         employmentType: 'Part-time',
         icon: 'briefcase',
@@ -389,7 +385,7 @@ export const EXPERIENCES = [
     companyName: '3dids',
     isCurrentEmployer: false,
     companyLogo:
-      'https://3dids.com/cdn/shop/files/logo3DIDS.png?v=1721725590&width=120', // If you have a logo, add it here
+      '/companies/logo3DIDS.webp',
     positions: [
       {
         id: '3dids-2024',
@@ -435,7 +431,7 @@ export const EXPERIENCES = [
     companyName: 'Desoft',
     isCurrentEmployer: false,
     companyLogo:
-      'https://www.desoft.cu/themes/custom/buildframetheme/img/favicon-14.svg',
+      '/companies/favicon-14.svg',
     positions: [
       {
         id: 'desoft-2022',

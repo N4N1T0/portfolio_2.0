@@ -335,7 +335,7 @@ export const EXPERIENCES = [
   {
     id: 'doc-tech',
     companyName: 'DocTech World',
-    isCurrentEmployer: true,
+    isCurrentEmployer: false,
     companyLogo:
       '/companies/doctor_tecnolgico_logo.jpg',
     positions: [

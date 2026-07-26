@@ -10,9 +10,9 @@ import { Image } from 'astro:assets'
 
 <section id='techstack' class='section max-container'>
   <div
-    class='[--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75 px-4 py-6'
+    class='[--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75 px-5 py-10'
   >
-    <ul class='flex flex-wrap gap-4 select-none'>
+    <ul class='flex flex-wrap gap-5 select-none'>
       {
         TECH_STACK.map(({ href, title, key }: (typeof TECH_STACK)[0]) => {
           return (
@@ -28,8 +28,8 @@ import { Image } from 'astro:assets'
                     <Image
                       src={`https://cdn.simpleicons.org/${key}`}
                       alt={`${title} icon`}
-                      width={32}
-                      height={32}
+                      width={40}
+                      height={40}
                     />
                     <span class='sr-only'>{title}</span>
                   </a>

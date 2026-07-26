@@ -1,7 +1,7 @@
 {
   "title": "Lola Barcelona",
   "date": "2024-11-10",
-  "excerpt": "Ecommerce store for modern beauty and cosmetic products, created to enhance the user experience and built with the following technologies:",
+  "excerpt": "Enterprise e-commerce platform with Shopify backend customization, custom API integrations for inventory management, and optimized checkout flow with server-side business logic.",
   "images": [
     {
       "src": "@/assets/projects/lola-barcelona-1.webp",
@@ -16,20 +16,32 @@
   "colors": "#ff28ab",
   "techStack": [
     {
-      "title": "Shopify",
+      "title": "Shopify (Backend Platform)",
       "link": "https://www.shopify.com/"
     },
     {
-      "title": "Liquid",
+      "title": "Liquid (Server-side Templating)",
       "link": "https://shopify.github.io/liquid/"
+    },
+    {
+      "title": "Node.js (Custom Apps)",
+      "link": "https://nodejs.org/"
+    },
+    {
+      "title": "Redis (Caching Layer)",
+      "link": "https://redis.io/"
+    },
+    {
+      "title": "Docker",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "title": "Shopify API",
+      "link": "https://shopify.dev/apps"
     },
     {
       "title": "JavaScript",
       "link": "https://www.javascript.com/"
-    },
-    {
-      "title": "Shopify Custom Apps",
-      "link": "https://shopify.dev/apps"
     }
   ],
   "testimonial": {
@@ -37,8 +49,8 @@
     "quote": "Working with Adrian on this project was an excellent experience. I appreciate all of his support and will always be open to collaborating again on future projects.",
     "role": "CMO of Lola Barcelona"
   },
-  "challenge": "Develop a customized Shopify store that enhances user experience and optimizes sales",
-  "solution": "Created a base Shopify theme with customized design and added upselling/cross-selling components",
+  "challenge": "Develop a high-performing e-commerce backend with custom business logic for inventory management, dynamic pricing, and personalized recommendations",
+  "solution": "Built a custom Shopify theme with backend Liquid logic for server-side rendering of product recommendations and inventory management. Developed custom Shopify Apps using Node.js for API integrations with third-party fulfillment and analytics services. Implemented server-side A/B testing logic and upselling/cross-selling algorithms. Integrated Redis caching layer for cart optimization and session management.",
   "comingSoon": false,
   "counterpartId": "es/lola-barcelona"
 }

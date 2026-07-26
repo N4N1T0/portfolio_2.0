@@ -1,7 +1,7 @@
 {
   "title": "Termogar",
   "date": "2024-12-20",
-  "excerpt": "High-end e-commerce platform for aerothermal product sales, built and powered with these technologies:",
+  "excerpt": "Enterprise e-commerce platform with robust backend authentication (NextAuth), headless CMS integration (Sanity), and server-side API data fetching for scalable product management and customer analytics.",
   "images": [
     {
       "src": "@/assets/projects/termogar-1.webp",
@@ -16,19 +16,23 @@
   "colors": "#ff0000",
   "techStack": [
     {
-      "title": "Next.js",
+      "title": "Next.js (API Routes & SSR)",
       "link": "https://nextjs.org/"
     },
     {
-      "title": "Sanity",
-      "link": "https://www.sanity.io/"
-    },
-    {
-      "title": "NextAuth",
+      "title": "NextAuth (Authentication)",
       "link": "https://authjs.dev/"
     },
     {
-      "title": "Resend & React Email",
+      "title": "Sanity (Headless CMS)",
+      "link": "https://www.sanity.io/"
+    },
+    {
+      "title": "Docker",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "title": "Resend (Transactional Email)",
       "link": "https://resend.com/"
     }
   ],
@@ -38,7 +42,7 @@
     "role": "CEO of Termogar"
   },
   "challenge": "Completely overhaul an outdated WordPress website with modern technologies",
-  "solution": "Built a new website using Next.js with static and dynamic rendering capabilities",
+  "solution": "Architected a modern e-commerce backend using Next.js API routes with NextAuth for secure session-based authentication and role-based user management. Integrated Sanity CMS as the data warehouse for product inventory, pricing, and content management with real-time synchronization via webhooks. Implemented server-side rendering (SSR) and incremental static regeneration (ISR) for SEO optimization and performance. Built transactional email infrastructure using Resend for order confirmations and customer notifications.",
   "comingSoon": false,
   "counterpartId": "es/termogar"
 }

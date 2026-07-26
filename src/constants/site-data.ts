@@ -35,14 +35,14 @@ export const USER_DATA = {
   displayName: 'Adrian Alvarez',
   avatar: Avatar,
   sentences: {
-    en: 'Full stack developer with strong frontend foundation.',
-    es: 'Desarrollador full stack con sólida base frontend.'
+    en: 'Fullstack Developer specializing in backend systems, APIs, and data architecture.',
+    es: 'Desarrollador Fullstack especializado en sistemas backend, APIs y arquitectura de datos.'
   },
   overview: [
     {
       content: {
-        en: 'Senior Full-Stack Developer',
-        es: 'Desarrollador Full-Stack Senior'
+        en: 'Senior Backend-Focused Fullstack Developer',
+        es: 'Desarrollador Fullstack Senior con Enfoque Backend'
       },
       icon: 'code'
     },
@@ -92,20 +92,20 @@ export const USER_DATA = {
   ],
   about: {
     en: [
-      "Hi! I'm Adrián Álvarez — a Senior Full-Stack Developer with a frontend heart and a strong focus on performance, CRO, and user-centered design.",
-      'I specialize in building fast, accessible, and conversion-driven websites and SaaS platforms using technologies like React, Next.js, Astro, and Sanity. I also bring solid experience in testing and quality assurance, working with tools like Jest, React Testing Library, and Cypress to ensure reliability and scalability.',
-      "Over the last few years, I've worked with agencies and startups across Europe and the US, leading and developing eCommerce projects, automating content pipelines, and integrating intelligent search and AI-powered tools. I’ve also implemented CI/CD pipelines (e.g., GitHub Actions) to streamline development workflows, automate testing, and enable consistent, reliable deployments.",
-      "Whether it's building a custom storefront, designing a dynamic content structure, or improving search and SEO, I love turning complex challenges into elegant digital experiences.",
-      'Beyond the code, I bring a strategic mindset — every decision I make aims to support business goals, user needs, and long-term maintainability.',
-      "Let's build something impactful."
+      'Hi! I’m Adrián Álvarez — a Senior Fullstack Developer with deep expertise in backend systems, API architecture, and data engineering.',
+      'I specialize in designing and building scalable server-side solutions using Node.js, Express, and NestJS. I architect robust data pipelines with MongoDB and Redis, optimize database performance, containerize applications with Docker, and implement production-grade CI/CD workflows with GitHub Actions. My experience spans building RESTful APIs, microservice architectures, and data-driven applications that handle complex business logic and high-volume data processing.',
+      'Over the last few years, I’ve worked with agencies and startups across Europe and the US, leading backend infrastructure development for eCommerce platforms, automating data pipelines, and integrating AI-powered tools into production systems. I’ve designed database schemas for scalability, implemented caching strategies, and optimized API performance. I also leverage AI tools in my engineering workflow to accelerate development and maintain high code quality standards.',
+      'I combine backend engineering rigor with fullstack capability, ensuring seamless integration between server and client layers. Whether architecting APIs, optimizing databases, or deploying containerized services, I focus on building systems that are reliable, performant, and maintainable.',
+      'Beyond the code, I bring a strategic mindset — every architecture decision I make considers scalability, data integrity, security, and business objectives.',
+      'Let’s build backend systems that scale.'
     ],
     es: [
-      '¡Hola! Soy Adrián Álvarez — Senior Full-Stack Developer con alma de frontend y un fuerte enfoque en performance, CRO y diseño centrado en el usuario.',
-      'Me especializo en construir sitios web y plataformas SaaS rápidas, accesibles y orientadas a la conversión, utilizando tecnologías como React, Next.js, Astro y Sanity. Además, cuento con sólida experiencia en testing y aseguramiento de calidad, trabajando con herramientas como Jest, React Testing Library y Cypress para garantizar aplicaciones robustas y escalables.',
-      'En los últimos años, he trabajado con agencias y startups en Europa y Estados Unidos, liderando y desarrollando proyectos eCommerce, automatizando pipelines de contenido e integrando motores de búsqueda inteligentes y herramientas impulsadas por IA. También he implementado pipelines de CI/CD (por ejemplo, con GitHub Actions) para optimizar flujos de desarrollo, automatizar tests y asegurar despliegues consistentes y fiables.',
-      'Ya sea construyendo una tienda personalizada, diseñando una estructura de contenido dinámico o mejorando la búsqueda y SEO, me encanta convertir desafíos complejos en experiencias digitales elegantes.',
-      'Más allá del código, aporto una mentalidad estratégica — cada decisión que tomo busca apoyar los objetivos del negocio, las necesidades del usuario y la mantenibilidad a largo plazo.',
-      'Construyamos algo impactante.'
+      '¡Hola! Soy Adrián Álvarez — Desarrollador Fullstack Senior con profunda experiencia en sistemas backend, arquitectura de APIs e ingeniería de datos.',
+      'Me especializo en diseñar e implementar soluciones escalables del lado del servidor utilizando Node.js, Express y NestJS. Arquitecto pipelines de datos robustos con MongoDB y Redis, optimizo rendimiento de bases de datos, containerizo aplicaciones con Docker e implemento workflows de CI/CD de nivel producción con GitHub Actions. Mi experiencia abarca construcción de APIs REST, arquitecturas de microservicios y aplicaciones impulsadas por datos que manejan lógica empresarial compleja y procesamiento de datos de alto volumen.',
+      'En los últimos años, he trabajado con agencias y startups en Europa y Estados Unidos, liderando desarrollo de infraestructura backend para plataformas eCommerce, automatizando pipelines de datos e integrando herramientas impulsadas por IA en sistemas de producción. He diseñado esquemas de bases de datos para escalabilidad, implementado estrategias de caché y optimizado rendimiento de APIs. También aprovecho herramientas de IA en mi flujo de trabajo de ingeniería para acelerar desarrollo y mantener altos estándares de calidad de código.',
+      'Combino el rigor de la ingeniería backend con capacidad fullstack, asegurando integración perfecta entre capas de servidor y cliente. Ya sea arquitectando APIs, optimizando bases de datos o desplegando servicios containerizados, me enfoco en construir sistemas confiables, performantes y mantenibles.',
+      'Más allá del código, aporto una mentalidad estratégica — cada decisión de arquitectura que tomo considera escalabilidad, integridad de datos, seguridad y objetivos empresariales.',
+      'Construyamos sistemas backend que escalen.'
     ]
   }
 }
@@ -292,8 +292,8 @@ export const EXPERIENCES = [
       {
         id: 'kreitech-frontend-developer',
         title: {
-          en: 'Frontend Developer',
-          es: 'Desarrollador Frontend'
+          en: 'Fullstack Developer (Backend Focus)',
+          es: 'Desarrollador Fullstack (Enfoque Backend)'
         },
         employmentPeriod: {
           start: '2025',
@@ -303,28 +303,32 @@ export const EXPERIENCES = [
         icon: 'briefcase',
         description: {
           en: [
-            'Collaborated as a full-stack developer within diverse teams, delivering projects focused on the US market.',
-            'Contributed to both frontend and backend development across a range of industry-focused web applications.',
-            'Worked in close coordination with product managers, designers, and engineers to achieve shared goals.',
-            'Participated in the centralization and optimization of workflows, ensuring maintainable and scalable solutions.'
+            'Architected and implemented backend APIs using Node.js, Hono, and Deno, supporting diverse web applications across multiple markets.',
+            'Designed RESTful API endpoints and server-side logic to handle complex business requirements for US market-focused projects.',
+            'Optimized database queries and implemented caching strategies for improved API performance and scalability.',
+            'Collaborated with cross-functional teams to align backend architecture with product requirements and system performance goals.',
+            'Integrated frontend frameworks (Next.js, React, Astro) with robust backend systems, ensuring seamless end-to-end functionality.',
+            'Leveraged AI tools to accelerate backend development and code quality automation.'
           ],
           es: [
-            'Colaboré como desarrollador full-stack en equipos diversos, entregando proyectos enfocados en el mercado de EE.UU.',
-            'Contribuí tanto al desarrollo frontend como backend en una variedad de aplicaciones web para diferentes industrias.',
-            'Trabajé en estrecha coordinación con product managers, diseñadores e ingenieros para lograr objetivos comunes.',
-            'Participé en la centralización y optimización de flujos de trabajo, asegurando soluciones mantenibles y escalables.'
+            'Arquitectué e implementé APIs backend usando Node.js, Hono y Deno, soportando diversas aplicaciones web en múltiples mercados.',
+            'Diseñé endpoints REST y lógica del lado del servidor para manejar requisitos empresariales complejos en proyectos enfocados en el mercado estadounidense.',
+            'Optimicé consultas de bases de datos e implementé estrategias de caché para mejorar rendimiento y escalabilidad de APIs.',
+            'Colaboré con equipos multifuncionales para alinear arquitectura backend con requisitos de productos y objetivos de rendimiento del sistema.',
+            'Integré frameworks frontend (Next.js, React, Astro) con sistemas backend robustos, asegurando funcionalidad end-to-end perfecta.',
+            'Utilicé herramientas de IA para acelerar desarrollo backend y automatización de calidad de código.'
           ]
         },
         skills: [
+          'Node.js',
+          'Hono',
+          'Deno',
+          'TypeScript',
+          'API Design',
+          'Database Optimization',
           'Next.js',
           'React',
           'Astro',
-          'Tailwind CSS',
-          'Node.js',
-          'Typescript',
-          'Supabase',
-          'Deno',
-          'Hono',
           'Vercel'
         ],
         isExpanded: true
@@ -340,8 +344,8 @@ export const EXPERIENCES = [
       {
         id: 'doc-tech-tech-lead',
         title: {
-          en: 'Technical Lead',
-          es: 'Líder Técnico'
+          en: 'Technical Lead (Backend Architecture)',
+          es: 'Líder Técnico (Arquitectura Backend)'
         },
         employmentPeriod: {
           start: '2025',
@@ -351,28 +355,35 @@ export const EXPERIENCES = [
         icon: 'briefcase',
         description: {
           en: [
-            'Led technical architecture and development of personalized e-commerce and SaaS projects from concept to launch.',
-            'Designed and implemented scalable frontend solutions tailored to diverse client requirements and business goals.',
-            'Managed cross-functional teams and mentored junior developers while maintaining high code quality standards.',
-            'Delivered high-performance, SEO-optimized, and accessible web applications using modern frameworks.'
+            'Led technical architecture and backend infrastructure design for personalized e-commerce and SaaS platforms from concept to production.',
+            'Architected scalable API layers using Node.js and Express, handling complex data workflows and business logic.',
+            'Designed database schemas and implemented MongoDB-based data models optimized for e-commerce and SaaS use cases.',
+            'Containerized applications using Docker and orchestrated deployment pipelines for consistent, reliable releases.',
+            'Managed technical teams and mentored junior developers on backend best practices, microservice patterns, and system design.',
+            'Integrated headless CMS solutions (Sanity) with custom backend APIs, creating flexible content delivery systems.',
+            'Optimized API performance and implemented caching strategies using Redis for high-traffic platforms.'
           ],
           es: [
-            'Lideré la arquitectura técnica y el desarrollo de proyectos personalizados de e-commerce y SaaS desde la concepción hasta el lanzamiento.',
-            'Diseñé e implementé soluciones frontend escalables adaptadas a diversos requisitos de clientes y objetivos de negocio.',
-            'Gestioné equipos multifuncionales y mentoré a desarrolladores junior manteniendo altos estándares de calidad de código.',
-            'Entregué aplicaciones web de alto rendimiento, optimizadas para SEO y accesibilidad utilizando frameworks modernos.'
+            'Lideré la arquitectura técnica y el diseño de infraestructura backend para plataformas personalizadas de e-commerce y SaaS desde concepción hasta producción.',
+            'Arquitectué capas de API escalables usando Node.js y Express, manejando flujos de datos complejos y lógica empresarial.',
+            'Diseñé esquemas de bases de datos e implementé modelos de datos basados en MongoDB optimizados para casos de uso de e-commerce y SaaS.',
+            'Containerizé aplicaciones usando Docker y orquesté pipelines de despliegue para lanzamientos consistentes y confiables.',
+            'Gestioné equipos técnicos y mentoré a desarrolladores junior sobre mejores prácticas backend, patrones de microservicios y diseño de sistemas.',
+            'Integré soluciones de CMS headless (Sanity) con APIs backend personalizadas, creando sistemas flexibles de entrega de contenido.',
+            'Optimicé rendimiento de APIs e implementé estrategias de caché usando Redis para plataformas de alto tráfico.'
           ]
         },
         skills: [
-          'Next.js',
-          'React',
-          'Astro',
-          'Sanity',
-          'Shopify',
-          'Tailwind CSS',
           'Node.js',
           'Express',
-          'Typescript'
+          'TypeScript',
+          'MongoDB',
+          'Redis',
+          'Docker',
+          'API Architecture',
+          'Sanity',
+          'Shopify',
+          'System Design'
         ],
         isExpanded: true
       }
@@ -387,8 +398,8 @@ export const EXPERIENCES = [
       {
         id: '3dids-2023',
         title: {
-          en: 'Digital Business Consultant',
-          es: 'Consultor de Negocios Digitales'
+          en: 'E-Commerce Backend Developer',
+          es: 'Desarrollador Backend de E-Commerce'
         },
         employmentPeriod: {
           start: '2023',
@@ -398,26 +409,34 @@ export const EXPERIENCES = [
         icon: 'briefcase',
         description: {
           en: [
-            'Development of custom web solutions using Liquid, with emphasis on performance, SEO, and accessibility.',
-            'Creation of online stores and modular components tailored to complex client needs and Shopify ecosystems.',
-            'Engineered Liquid-based web solutions optimized for speed, SEO, and accessibility standards.',
-            'Developed flexible e-commerce features and interactive UX tailored to specific client requirements.'
+            'Engineered custom backend solutions and server-side logic for Shopify e-commerce platforms using Liquid and JavaScript.',
+            'Built modular, reusable API endpoints and webhooks integrating Shopify with external systems and business workflows.',
+            'Optimized data retrieval and rendering performance for high-traffic e-commerce stores, ensuring sub-second response times.',
+            'Developed complex e-commerce features including custom checkout flows, inventory management, and payment processing integrations.',
+            'Implemented JavaScript-based automation scripts to streamline data synchronization and operational workflows.',
+            'Integrated third-party services and maintained technical documentation for scalable, maintainable solutions.',
+            'Used AI tools to optimize code performance and accelerate feature development cycles.'
           ],
           es: [
-            'Desarrollo de soluciones web personalizadas usando Liquid, con énfasis en rendimiento, SEO y accesibilidad.',
-            'Creación de tiendas online y componentes modulares adaptados a necesidades complejas de clientes y ecosistemas Shopify.',
-            'Ingeniería de soluciones web basadas en Liquid optimizadas para velocidad, SEO y estándares de accesibilidad.',
-            'Desarrollo de características de e-commerce flexibles y UX interactiva adaptada a requisitos específicos de clientes.'
+            'Ingeniería de soluciones backend personalizadas y lógica del lado del servidor para plataformas e-commerce Shopify usando Liquid y JavaScript.',
+            'Construcción de endpoints API modulares y reutilizables y webhooks integrando Shopify con sistemas externos y flujos de trabajo empresariales.',
+            'Optimización de recuperación de datos y rendimiento de renderizado para tiendas e-commerce de alto tráfico, asegurando tiempos de respuesta sub-segundo.',
+            'Desarrollo de características e-commerce complejas incluyendo flujos de checkout personalizados, gestión de inventario e integraciones de procesamiento de pagos.',
+            'Implementación de scripts de automatización basados en JavaScript para optimizar sincronización de datos y flujos de trabajo operacionales.',
+            'Integración de servicios de terceros y mantenimiento de documentación técnica para soluciones escalables y mantenibles.',
+            'Uso de herramientas de IA para optimizar rendimiento de código y acelerar ciclos de desarrollo de características.'
           ]
         },
         skills: [
           'Shopify',
           'Liquid',
-          'Javascript',
-          'JQuery',
-          'Tailwind CSS',
-          'Accessibility',
-          'SEO'
+          'JavaScript',
+          'API Integration',
+          'Webhooks',
+          'E-Commerce',
+          'Data Optimization',
+          'Payment Integration',
+          'Node.js'
         ],
         isExpanded: true
       }
@@ -432,8 +451,8 @@ export const EXPERIENCES = [
       {
         id: 'desoft-2022',
         title: {
-          en: 'Junior Front-End Developer',
-          es: 'Desarrollador Front-End Junior'
+          en: 'Junior Fullstack Developer',
+          es: 'Desarrollador Fullstack Junior'
         },
         employmentPeriod: {
           start: '2022',
@@ -443,35 +462,41 @@ export const EXPERIENCES = [
         icon: 'code',
         description: {
           en: [
-            'Development of interactive and optimized interfaces with React and TypeScript.',
-            'Implementation of design patterns and software architecture to improve code scalability.',
-            'Maintenance and optimization of web applications',
-            'Implemented reusable React components and integrated third-party libraries',
-            'Collaborated with UI/UX team to build responsive layouts'
+            'Developed interactive and optimized interfaces using React and TypeScript, with focus on performance and maintainability.',
+            'Implemented server-side logic and API integrations to support frontend functionality.',
+            'Applied design patterns and software architecture principles to improve code scalability and reusability.',
+            'Optimized application performance through bundle analysis, code splitting, and build tool configuration (Webpack, Turbopack).',
+            'Maintained and refactored existing web applications, improving code quality and reducing technical debt.',
+            'Collaborated with backend engineers to design efficient APIs and data flows for complex features.',
+            'Gained foundational knowledge in full-stack development practices and system design.'
           ],
           es: [
-            'Desarrollo de interfaces interactivas y optimizadas con React y TypeScript.',
-            'Implementación de patrones de diseño y arquitectura de software para mejorar la escalabilidad del código.',
-            'Mantenimiento y optimización de aplicaciones web',
-            'Implementación de componentes React reutilizables e integración de librerías de terceros',
-            'Colaboración con el equipo de UI/UX para construir layouts responsivos'
+            'Desarrollo de interfaces interactivas y optimizadas usando React y TypeScript, con enfoque en rendimiento y mantenibilidad.',
+            'Implementación de lógica del lado del servidor e integraciones de API para soportar funcionalidad frontend.',
+            'Aplicación de patrones de diseño y principios de arquitectura de software para mejorar escalabilidad y reutilización de código.',
+            'Optimización del rendimiento de aplicaciones mediante análisis de bundles, code splitting y configuración de herramientas de construcción (Webpack, Turbopack).',
+            'Mantenimiento y refactorización de aplicaciones web existentes, mejorando calidad de código y reduciendo deuda técnica.',
+            'Colaboración con ingenieros backend para diseñar APIs eficientes y flujos de datos para características complejas.',
+            'Adquisición de conocimiento fundamental en prácticas fullstack y diseño de sistemas.'
           ]
         },
         skills: [
           'React',
           'TypeScript',
-          'Turbopack',
+          'API Integration',
           'Webpack',
+          'Turbopack',
           'Software Architecture',
-          'Performance'
+          'Performance Optimization',
+          'Fullstack Development'
         ],
         isExpanded: true
       },
       {
         id: 'desoft-2021',
         title: {
-          en: 'Trainee Front-End Developer',
-          es: 'Desarrollador Front-End en Prácticas'
+          en: 'Trainee Fullstack Developer',
+          es: 'Desarrollador Fullstack en Prácticas'
         },
         employmentPeriod: {
           start: '2021',
@@ -481,25 +506,33 @@ export const EXPERIENCES = [
         icon: 'code',
         description: {
           en: [
-            'Built responsive user interfaces using React components and hooks',
-            'Learned and implemented basic TypeScript types and interfaces',
-            'Assisted in maintaining existing React applications and fixing bugs',
-            'Collaborated with senior developers to understand React best practices and patterns'
+            'Built responsive user interfaces using React components, hooks, and TypeScript for type safety.',
+            'Learned and implemented TypeScript types, interfaces, and generic types for better code maintainability.',
+            'Assisted in maintaining production React applications, debugging issues, and implementing bug fixes.',
+            'Worked with build tools (Webpack, Turbopack) to understand bundling, module resolution, and performance optimization.',
+            'Collaborated with senior developers to learn software architecture patterns and best practices in full-stack development.',
+            'Participated in code reviews and gained exposure to API integration and backend workflows.',
+            'Developed foundational understanding of the full software development lifecycle.'
           ],
           es: [
-            'Construcción de interfaces de usuario responsivas usando componentes y hooks de React',
-            'Aprendizaje e implementación de tipos e interfaces básicas de TypeScript',
-            'Asistencia en el mantenimiento de aplicaciones React existentes y corrección de errores',
-            'Colaboración con desarrolladores senior para entender las mejores prácticas y patrones de React'
+            'Construcción de interfaces de usuario responsivas usando componentes React, hooks y TypeScript para seguridad de tipos.',
+            'Aprendizaje e implementación de tipos TypeScript, interfaces y tipos genéricos para mejor mantenibilidad de código.',
+            'Asistencia en el mantenimiento de aplicaciones React de producción, depuración de problemas e implementación de correcciones.',
+            'Trabajo con herramientas de construcción (Webpack, Turbopack) para comprender bundling, resolución de módulos y optimización de rendimiento.',
+            'Colaboración con desarrolladores senior para aprender patrones de arquitectura de software y mejores prácticas en desarrollo fullstack.',
+            'Participación en revisiones de código y exposición a integración de APIs y flujos de trabajo backend.',
+            'Desarrollo de comprensión fundamental del ciclo de vida completo del desarrollo de software.'
           ]
         },
         skills: [
           'React',
           'TypeScript',
-          'Turbopack',
           'Webpack',
+          'Turbopack',
           'Software Architecture',
-          'Performance'
+          'API Integration',
+          'Performance Optimization',
+          'Code Review'
         ],
         isExpanded: true
       }
@@ -514,8 +547,8 @@ export const EXPERIENCES = [
       {
         id: 'freelance-2019',
         title: {
-          en: 'Freelance Web Developer',
-          es: 'Desarrollador Web Freelance'
+          en: 'Fullstack Web Developer & Technical Lead',
+          es: 'Desarrollador Web Fullstack y Líder Técnico'
         },
         employmentPeriod: {
           start: '2019',
@@ -525,35 +558,70 @@ export const EXPERIENCES = [
         icon: 'globe',
         description: {
           en: [
-            'Development and implementation of custom solutions for e-commerce clients and web platforms.',
-            'Integration of technologies like React, Next.js, Tailwind CSS and Node.js to improve user experience and web performance.',
-            'Collaboration with Liquid Developer Group team to improve project quality and optimization.',
-            'Led technical architecture decisions and implementation of scalable frontend solutions for multiple client projects.',
-            'Mentored junior developers and provided technical guidance while maintaining high code quality standards.'
+            'Architected and developed custom end-to-end solutions for e-commerce platforms and SaaS applications, from backend infrastructure to client interfaces.',
+            'Designed and built scalable Node.js backends, REST APIs, and microservices handling complex business logic and high-volume data processing.',
+            'Implemented database design and optimization strategies using MongoDB and Redis, ensuring performance at scale.',
+            'Containerized applications with Docker and established CI/CD pipelines for automated, reliable deployments.',
+            'Integrated frontend frameworks (React, Next.js) with robust backend systems, ensuring seamless fullstack functionality.',
+            'Led technical architecture decisions for client projects, balancing scalability, performance, and business requirements.',
+            'Mentored junior developers on backend engineering practices, system design, and code quality standards.',
+            'Leveraged AI tools to enhance development efficiency and maintain high standards across projects.'
           ],
           es: [
-            'Desarrollo e implementación de soluciones personalizadas para clientes de e-commerce y plataformas web.',
-            'Integración de tecnologías como React, Next.js, Tailwind CSS y Node.js para mejorar la experiencia de usuario y el rendimiento web.',
-            'Colaboración con el equipo de Liquid Developer Group para mejorar la calidad y optimización de proyectos.',
-            'Liderazgo en decisiones de arquitectura técnica e implementación de soluciones frontend escalables para múltiples proyectos de clientes.',
-            'Mentoría a desarrolladores junior y provisión de guía técnica manteniendo altos estándares de calidad de código.'
+            'Arquitectura y desarrollo de soluciones end-to-end personalizadas para plataformas e-commerce y aplicaciones SaaS, desde infraestructura backend hasta interfaces de cliente.',
+            'Diseño e implementación de backends Node.js escalables, APIs REST y microservicios manejando lógica empresarial compleja y procesamiento de datos de alto volumen.',
+            'Implementación de diseño de bases de datos y estrategias de optimización usando MongoDB y Redis, asegurando rendimiento a escala.',
+            'Containerización de aplicaciones con Docker y establecimiento de pipelines de CI/CD para despliegues automatizados y confiables.',
+            'Integración de frameworks frontend (React, Next.js) con sistemas backend robustos, asegurando funcionalidad fullstack perfecta.',
+            'Liderazgo en decisiones de arquitectura técnica para proyectos de clientes, equilibrando escalabilidad, rendimiento y requisitos empresariales.',
+            'Mentoría a desarrolladores junior en prácticas de ingeniería backend, diseño de sistemas y estándares de calidad de código.',
+            'Uso de herramientas de IA para mejorar eficiencia de desarrollo y mantener altos estándares en proyectos.'
           ]
         },
         skills: [
+          'Node.js',
+          'Express',
           'React',
           'Next.js',
-          'Tailwind CSS',
-          'Node.js',
-          'eCommerce',
+          'MongoDB',
+          'Redis',
+          'Docker',
+          'CI/CD',
+          'API Design',
+          'System Architecture',
+          'E-Commerce',
           'Performance',
-          'UX',
-          'Liquid'
+          'Tailwind CSS',
+          'TypeScript'
         ],
         isExpanded: true
       }
     ]
   }
 ]
+
+export const PORTFOLIO_HIGHLIGHTS = {
+  en: [
+    'Backend-Focused Fullstack Developer with 5+ years experience in API design, microservices, and data architecture',
+    'Expert in Node.js, Express, and NestJS; designed and deployed production-grade REST APIs handling high-volume data processing',
+    'Database Architecture & Optimization: Experienced with MongoDB schema design, Redis caching strategies, and query optimization for enterprise applications',
+    'DevOps & Infrastructure: Containerized applications with Docker, established CI/CD pipelines with GitHub Actions for automated, reliable deployments',
+    'Demonstrated AI Integration: Leveraged AI tools in development workflows to accelerate backend development and maintain high code quality standards',
+    'Technical Leadership: Led architecture decisions for multiple e-commerce and SaaS platforms; mentored junior developers on backend best practices and system design',
+    'Performance-Driven: Optimized API response times, implemented caching strategies, and engineered solutions achieving sub-second latency at scale',
+    'Fullstack Capability: Seamlessly integrate robust backend systems with modern frontend frameworks (React, Next.js, Astro) for cohesive end-to-end solutions'
+  ],
+  es: [
+    'Desarrollador Fullstack orientado al Backend con 5+ años de experiencia en diseño de APIs, microservicios y arquitectura de datos',
+    'Experto en Node.js, Express y NestJS; diseñó e implementó APIs REST de nivel producción manejando procesamiento de datos de alto volumen',
+    'Arquitectura y Optimización de Bases de Datos: Experimentado en diseño de esquemas MongoDB, estrategias de caché Redis y optimización de consultas para aplicaciones empresariales',
+    'DevOps e Infraestructura: Containerización de aplicaciones con Docker, establecimiento de pipelines de CI/CD con GitHub Actions para despliegues automatizados y confiables',
+    'Integración de IA Demostrada: Aprovechó herramientas de IA en flujos de trabajo de desarrollo para acelerar desarrollo backend y mantener altos estándares de calidad de código',
+    'Liderazgo Técnico: Lideró decisiones de arquitectura para múltiples plataformas de e-commerce y SaaS; mentoró a desarrolladores junior en mejores prácticas backend y diseño de sistemas',
+    'Impulsado por Rendimiento: Optimizó tiempos de respuesta de API, implementó estrategias de caché e ingeniería de soluciones logrando latencia sub-segundo a escala',
+    'Capacidad Fullstack: Integración perfecta de sistemas backend robustos con frameworks frontend modernos (React, Next.js, Astro) para soluciones end-to-end cohesivas'
+  ]
+}
 
 export const CERTIFICATIONS = [
   {

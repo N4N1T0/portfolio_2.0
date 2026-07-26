@@ -1,7 +1,7 @@
 {
   "title": "YogIN",
   "date": "2025-04-10",
-  "excerpt": "SaaS innovador para estudiantes y profesores de yoga que facilita la creación de eventos, clases y perfiles personalizados, con funcionalidades de pago y suscripciones para análisis y mejora continua.",
+  "excerpt": "Plataforma SaaS full-stack con robusto backend en Node.js/Express, gestión de eventos y clases, facturación de suscripciones, análisis avanzados y control de acceso basado en roles (RBAC) para instructores y estudiantes de yoga.",
   "images": [
     {
       "src": "@/assets/projects/yogin-1.webp",
@@ -16,20 +16,28 @@
   "colors": "#d2944a",
   "techStack": [
     {
-      "title": "React",
-      "link": "https://reactjs.org/"
-    },
-    {
-      "title": "Bit",
-      "link": "https://bit.dev/"
-    },
-    {
       "title": "Node.js & Express",
       "link": "https://nodejs.org/, https://expressjs.com/"
     },
     {
-      "title": "Passport",
+      "title": "MongoDB",
+      "link": "https://www.mongodb.com/"
+    },
+    {
+      "title": "Passport.js (JWT Auth)",
       "link": "http://www.passportjs.org/"
+    },
+    {
+      "title": "Docker",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "title": "React",
+      "link": "https://reactjs.org/"
+    },
+    {
+      "title": "TanStack Query",
+      "link": "https://tanstack.com/query"
     },
     {
       "title": "Tailwind CSS",
@@ -42,7 +50,7 @@
     "role": "Propietaria de Yog-IN"
   },
   "challenge": "Crear una plataforma SaaS moderna para estudiantes y profesores de yoga que permita gestionar eventos, clases, perfiles y pagos, con funcionalidades avanzadas de filtrado y suscripciones para análisis de desempeño, manteniendo una arquitectura segura y escalable.",
-  "solution": "Utilizamos React con Bit para construir una interfaz modular y reutilizable, junto con Node.js y Express en el backend para una API robusta. Implementamos Passport para autenticación segura, Tailwind CSS para un diseño limpio y responsive, y ChatGM para mejorar la experiencia UI. También integramos Tankstack para optimizar las llamadas API, garantizando rendimiento y escalabilidad.",
+  "solution": "Arquitectura backend escalable con Node.js y Express API RESTful para gestión de eventos, horarios de clases y facturación de suscripciones. Implementación de autenticación JWT con Passport.js, control de acceso basado en roles (RBAC) y gestión de datos con MongoDB. Modelos de datos optimizados con índices para análisis eficientes. Frontend React con TanStack Query para caché de APIs y sincronización de datos en tiempo real. Containerización Docker para deployments multi-entorno y escalado horizontal.",
   "comingSoon": false,
   "counterpartId": "en/yogin"
 }

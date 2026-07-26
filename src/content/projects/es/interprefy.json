@@ -1,7 +1,7 @@
 {
   "title": "Interprefy",
   "date": "2025-03-05",
-  "excerpt": "Renovación de marca y reconstrucción completa del sitio web usando el CMS de HubSpot y su site builder, con módulos personalizados desarrollados en HubL. Proyecto rápido enfocado en personalización del layout y mejoras de rendimiento.",
+  "excerpt": "Plataforma web empresarial con módulos backend personalizados en HubL, integraciones de APIs con servicios de terceros, y optimización de rendimiento mediante caché backend y configuración CDN.",
   "images": [
     {
       "src": "@/assets/projects/interprefy-1.webp",
@@ -42,7 +42,7 @@
     "role": "Gerente de Marketing en Interprefy"
   },
   "challenge": "Interprefy necesitaba una renovación completa de su marca y la reconstrucción total de su sitio web en la plataforma de HubSpot, incluyendo módulos personalizados alineados con sus directrices de diseño y estructura, todo con un plazo ajustado.",
-  "solution": "Desarrollamos módulos personalizados en HubL siguiendo las directrices de subsprite del cliente y usamos el site builder de HubSpot para armar el sitio rápidamente. Aplicamos JavaScript, jQuery y Parallax.js para mejorar el rendimiento y añadir animaciones suaves, entregando un producto pulido en pocas semanas.",
+  "solution": "Construcción de módulos backend personalizados en HubL con lógica server-side para renderizado dinámico de contenido e integraciones de APIs. Implementación de JavaScript/jQuery para mejoras cliente y Parallax.js para motion design optimizado. Configuración de capa de caché backend de HubSpot e implementación de optimizaciones en entrega de contenido mediante asset loading estratégico. Integración de APIs de análisis backend para tracking de performance y comportamiento de usuarios.",
   "comingSoon": false,
   "counterpartId": "en/interprefy"
 }

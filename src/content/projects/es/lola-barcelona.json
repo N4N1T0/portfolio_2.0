@@ -1,7 +1,7 @@
 {
   "title": "Lola Barcelona",
   "date": "2024-11-10",
-  "excerpt": "Modern cosmetics e-commerce based in Barcelona, rebuilt with a custom Shopify theme to better reflect the brand identity and improve UX. Technologies used include Liquid, JavaScript, and CRO techniques.",
+  "excerpt": "Plataforma e-commerce empresarial con personalización backend de Shopify, integraciones de APIs personalizadas para gestión de inventario, y optimización de flujo de checkout con lógica de negocio server-side.",
   "images": [
     {
       "src": "@/assets/projects/lola-barcelona-1.webp",
@@ -16,20 +16,32 @@
   "colors": "#ff28ab",
   "techStack": [
     {
-      "title": "Shopify",
+      "title": "Shopify (Backend Platform)",
       "link": "https://www.shopify.com/"
     },
     {
-      "title": "Liquid",
+      "title": "Liquid (Server-side Templating)",
       "link": "https://shopify.github.io/liquid/"
+    },
+    {
+      "title": "Node.js (Custom Apps)",
+      "link": "https://nodejs.org/"
+    },
+    {
+      "title": "Redis (Caching Layer)",
+      "link": "https://redis.io/"
+    },
+    {
+      "title": "Docker",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "title": "Shopify API",
+      "link": "https://shopify.dev/apps"
     },
     {
       "title": "JavaScript",
       "link": "https://www.javascript.com/"
-    },
-    {
-      "title": "Shopify Custom Apps",
-      "link": "https://shopify.dev/apps"
     }
   ],
   "testimonial": {
@@ -37,8 +49,8 @@
     "quote": "Working with Adrian on this project was an excellent experience. I appreciate all his support and I’d gladly collaborate again on future projects.",
     "role": "CMO of Lola Barcelona"
   },
-  "challenge": "Redesign an outdated Shopify store with a generic theme into a tailored, performance-optimized e-commerce aligned with Lola Barcelona’s modern brand identity and user base. The solution needed to support marketing strategies and customer retention techniques.",
-  "solution": "Develop a custom Shopify theme using Liquid and JavaScript, with carefully crafted UI components and styling aligned with the brand. Integrated upselling and cross-selling strategies were implemented to boost AOV and improve retention.",
+  "challenge": "Rediseñar un backend e-commerce con lógica de negocio personalizada, gestión de inventario dinámico y recomendaciones personalizadas integradas",
+  "solution": "Construcción de tema Shopify personalizado con lógica Liquid server-side para renderizado de recomendaciones de productos y gestión de inventario. Desarrollo de Shopify Apps personalizadas usando Node.js para integraciones de APIs con servicios de fulfillment y analytics. Implementación de lógica de A/B testing server-side y algoritmos de upselling/cross-selling. Integración de capa de caché Redis para optimización de carrito y gestión de sesiones.",
   "comingSoon": false,
   "counterpartId": "es/lola-barcelona"
 }

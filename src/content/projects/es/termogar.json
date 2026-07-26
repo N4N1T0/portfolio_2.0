@@ -1,7 +1,7 @@
 {
   "title": "Termogar",
   "date": "2024-12-20",
-  "excerpt": "Rediseño completo de un ecommerce de aerotermia de alta gama con Next.js, Sanity y NextAuth. Una plataforma moderna, rápida y escalable, pensada para destacar productos técnicos con un diseño limpio y una experiencia de usuario optimizada para convertir.",
+  "excerpt": "Plataforma e-commerce empresarial con robusta autenticación backend (NextAuth), integración headless CMS (Sanity) y data fetching desde servidor para gestión escalable de productos y análisis de clientes.",
   "images": [
     {
       "src": "@/assets/projects/termogar-1.webp",
@@ -16,19 +16,23 @@
   "colors": "#ff0000",
   "techStack": [
     {
-      "title": "Next.js",
+      "title": "Next.js (API Routes & SSR)",
       "link": "https://nextjs.org/"
     },
     {
-      "title": "Sanity",
-      "link": "https://www.sanity.io/"
-    },
-    {
-      "title": "NextAuth",
+      "title": "NextAuth (Authentication)",
       "link": "https://authjs.dev/"
     },
     {
-      "title": "Resend & React Email",
+      "title": "Sanity (Headless CMS)",
+      "link": "https://www.sanity.io/"
+    },
+    {
+      "title": "Docker",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "title": "Resend (Transactional Email)",
       "link": "https://resend.com/"
     }
   ],
@@ -37,8 +41,8 @@
     "quote": "Ha sido un placer trabajar con Adrian, su dedicación y profesionalismo son ejemplares en el desarrollo de Termogar.",
     "role": "CEO de Termogar"
   },
-  "challenge": "Renovar por completo una antigua página web en WordPress con tecnologías modernas",
-  "solution": "Desarrollar una nueva web con Next.js con capacidades de renderizado estático y dinámico",
+  "challenge": "Reemplazar una plataforma WordPress desactualizada con una arquitectura backend moderna escalable y optimizada para conversiones de e-commerce",
+  "solution": "Backend e-commerce moderno usando Next.js API routes con NextAuth para autenticación segura basada en sesiones y gestión de usuarios con roles. Integración de Sanity CMS como warehouse de datos para inventario de productos, precios y contenido con sincronización en tiempo real mediante webhooks. Implementación de Server-Side Rendering (SSR) e Incremental Static Regeneration (ISR) para optimización SEO y rendimiento. Infraestructura de email transaccional con Resend para confirmaciones de pedidos y notificaciones de clientes.",
   "comingSoon": false,
   "counterpartId": "en/termogar"
 }

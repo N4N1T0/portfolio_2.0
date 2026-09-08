@@ -1,0 +1,99 @@
+---
+import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+
+// TYPES
+interface Props {
+  timeZone?: string
+}
+
+// PROPS
+const { timeZone = 'Europe/Madrid' } = Astro.props
+
+// I18N
+const lang = getLangFromLocale(Astro.currentLocale)
+const t = useTranslations(lang)
+
+// CONST
+const locale = lang === 'es' ? 'es-ES' : 'en-US'
+const labels = {
+  ahead: t('overview').ahead,
+  behind: t('overview').behind,
+  same: t('overview').sameTime
+}
+---
+
+<span class='flex flex-wrap items-center gap-x-2'>
+  <span data-local-time>--:--</span>
+  <span class='text-muted-foreground' data-local-time-diff></span>
+</span>
+
+<script define:vars={{ timeZone, locale, labels }}>
+  // ponytail: one instance per page, so the two attributes are looked up on the
+  // document rather than scoped to this component's own subtree.
+  const timeElement = document.querySelector('[data-local-time]')
+  const diffElement = document.querySelector('[data-local-time-diff]')
+
+  const timeFormatter = new Intl.DateTimeFormat(locale, {
+    timeZone,
+    hour: 'numeric',
+    minute: '2-digit'
+  })
+
+  const partsFormatter = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hourCycle: 'h23'
+  })
+
+  function zoneOffsetMinutes(date) {
+    const parts = partsFormatter.formatToParts(date)
+    const get = (type) => Number(parts.find((p) => p.type === type)?.value ?? 0)
+
+    const asUTC = Date.UTC(
+      get('year'),
+      get('month') - 1,
+      get('day'),
+      get('hour'),
+      get('minute'),
+      get('second')
+    )
+
+    return (asUTC - date.getTime()) / 60000
+  }
+
+  function formatDifference(minutes) {
+    const rounded = Math.round(minutes)
+
+    if (rounded === 0) return `// ${labels.same}`
+
+    const absolute = Math.abs(rounded)
+    const hours = Math.floor(absolute / 60)
+    const remainder = absolute % 60
+
+    const span = [hours && `${hours}h`, remainder && `${remainder}m`]
+      .filter(Boolean)
+      .join(' ')
+
+    return `// ${span} ${rounded > 0 ? labels.ahead : labels.behind}`
+  }
+
+  function updateTime() {
+    const now = new Date()
+
+    timeElement.textContent = timeFormatter.format(now)
+    // The viewer's own offset comes from the native API — no second Intl pass.
+    diffElement.textContent = formatDifference(
+      zoneOffsetMinutes(now) + now.getTimezoneOffset()
+    )
+  }
+
+  updateTime()
+  // ponytail: a fixed minute tick, so the label can lag the clock by up to 59s.
+  // Align to the next minute boundary if that ever reads as a bug.
+  setInterval(updateTime, 60000)
+</script>

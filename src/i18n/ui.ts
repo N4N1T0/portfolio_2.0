@@ -46,7 +46,10 @@ export const ui = {
       title: 'Table of Content'
     },
     overview: {
-      title: 'Overview'
+      title: 'Overview',
+      ahead: 'ahead',
+      behind: 'behind',
+      sameTime: 'same time'
     },
     socialLinks: {
       title: 'Social Links'
@@ -125,7 +128,10 @@ export const ui = {
       title: 'Experiencias'
     },
     overview: {
-      title: 'Resumen'
+      title: 'Resumen',
+      ahead: 'por delante',
+      behind: 'por detrás',
+      sameTime: 'misma hora'
     },
     socialLinks: {
       title: 'Redes Sociales'

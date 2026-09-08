@@ -1,10 +1,13 @@
 ---
-import type { USER_DATA } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
 // TYPES
 interface Props {
-  item: (typeof USER_DATA)['overview'][number]
+  item: {
+    content?: string | Record<'en' | 'es', string>
+    href?: string
+    icon: string
+  }
 }
 
 // PROPS
@@ -27,7 +30,9 @@ const formattedContent = typeof content === 'object' ? content[lang] : content
 
   <p class='text-balance'>
     {
-      href ? (
+      Astro.slots.has('content') ? (
+        <slot name='content' />
+      ) : href ? (
         <a
           class='underline-offset-4 hover:underline'
           href={href}

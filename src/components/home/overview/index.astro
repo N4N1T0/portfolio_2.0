@@ -1,6 +1,7 @@
 ---
 import { USER_DATA } from '@/constants/site-data'
 import OverviewItem from './OverviewItem.astro'
+import LocalTime from './LocalTime.astro'
 import { Icons } from '@/components/icons/icons'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
@@ -24,5 +25,11 @@ const t = useTranslations(lang)
         )
       })
     }
+    <li>
+      <OverviewItem item={{ icon: 'clock' }}>
+        <Icons.clock class='size-4' />
+        <LocalTime slot='content' />
+      </OverviewItem>
+    </li>
   </ul>
 </section>

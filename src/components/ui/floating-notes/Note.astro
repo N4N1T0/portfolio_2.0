@@ -1,0 +1,21 @@
+---
+import { cn } from '@/lib/utils'
+import type { HTMLAttributes } from 'astro/types'
+
+interface NoteProps extends HTMLAttributes<'div'> {
+  text?: string
+}
+
+const { class: className, text, ...props } = Astro.props as NoteProps
+---
+
+<div
+  data-slot='pixel-note'
+  class={cn(
+    'pointer-events-none font-pixel text-base/none tracking-normal text-muted-foreground select-none max-w-32 text-balance',
+    className
+  )}
+  {...props}
+>
+  {text}
+</div>

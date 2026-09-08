@@ -61,7 +61,6 @@
     "wght",
     "Zalo"
   ],
-  "typescript.inlayHints.parameterNames.enabled": "all",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

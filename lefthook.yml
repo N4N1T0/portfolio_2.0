@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - run: pnpm check:lint:fix {staged_files}
+      glob: '*.{jsx,tsx,astro}'
+
+    - run: pnpm check:format {staged_files}
+      glob: '*.{js,jsx,ts,tsx,astro,json,md,yml,yaml}'
+
+pre-push:
+  parallel: true
+  jobs:
+    - run: pnpm check:types
+    - run: pnpm check:deps

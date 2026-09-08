@@ -10,9 +10,9 @@ const lang = getLangFromLocale(Astro.currentLocale)
 const t = useTranslations(lang)
 ---
 
-<section id='overview' class='section max-container'>
+<section id='overview' class='section max-container py-2 px-1'>
   <h2 class='sr-only'>{t('overview').title}</h2>
-  <ul class='p-2 space-y-2'>
+  <ul class='p-2 space-y-2 grid grid-cols-1 sm:grid-cols-2'>
     {
       USER_DATA.overview.map((item: (typeof USER_DATA)['overview'][number]) => {
         const Icon = Icons[item.icon as keyof typeof Icons]

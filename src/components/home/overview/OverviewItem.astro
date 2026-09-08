@@ -22,10 +22,14 @@ const formattedContent = typeof content === 'object' ? content[lang] : content
 
 <div class='flex items-center gap-4 text-sm'>
   <div
-    class='flex size-6 shrink-0 items-center justify-center bg-muted rounded-sm'
+    class='flex size-7 shrink-0 items-center justify-center bg-muted rounded-sm'
     aria-hidden='true'
   >
-    <slot />
+    <div
+      class='size-6 border-[0.2px] flex justify-center items-center border-muted-foreground/50 rounded-sm'
+    >
+      <slot />
+    </div>
   </div>
 
   <p class='text-balance'>
@@ -34,7 +38,7 @@ const formattedContent = typeof content === 'object' ? content[lang] : content
         <slot name='content' />
       ) : href ? (
         <a
-          class='underline-offset-4 hover:underline'
+          class='underline-offset-4 link-underline'
           href={href}
           target='_blank'
           rel='noopener noreferrer'

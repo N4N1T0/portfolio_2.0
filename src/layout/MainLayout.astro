@@ -40,5 +40,12 @@ const lang = Astro.currentLocale
       <slot />
     </main>
     <Footer />
+    <div class='pointer-events-none fixed inset-x-0 bottom-0 z-50' aria-hidden>
+      <div
+        class='h-20 bg-linear-to-b from-transparent to-background mask-linear-[to_top,var(--background)_25%,transparent] backdrop-blur-[1px]'
+      >
+      </div>
+      <div class='bg-background pb-[env(safe-area-inset-bottom,0)]'></div>
+    </div>
   </body>
 </html>

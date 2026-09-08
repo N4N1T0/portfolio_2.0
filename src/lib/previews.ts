@@ -7,7 +7,7 @@ export enum Previews {
   INPUT_STATE_ANIMATION = 'input-state-animation'
 }
 
-export const PREVIEWS_COMPONENTS: Record<Previews, PreviewComponent> = {
+const PREVIEWS_COMPONENTS: Record<Previews, PreviewComponent> = {
   [Previews.INPUT_STATE_ANIMATION]: InputStateAnimation
 }
 

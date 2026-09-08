@@ -608,29 +608,6 @@ export const EXPERIENCES = [
   }
 ]
 
-export const PORTFOLIO_HIGHLIGHTS = {
-  en: [
-    'Backend-Focused Fullstack Developer with 5+ years experience in API design, microservices, and data architecture',
-    'Expert in Node.js, Express, and NestJS; designed and deployed production-grade REST APIs handling high-volume data processing',
-    'Database Architecture & Optimization: Experienced with MongoDB schema design, Redis caching strategies, and query optimization for enterprise applications',
-    'DevOps & Infrastructure: Containerized applications with Docker, established CI/CD pipelines with GitHub Actions for automated, reliable deployments',
-    'Demonstrated AI Integration: Leveraged AI tools in development workflows to accelerate backend development and maintain high code quality standards',
-    'Technical Leadership: Led architecture decisions for multiple e-commerce and SaaS platforms; mentored junior developers on backend best practices and system design',
-    'Performance-Driven: Optimized API response times, implemented caching strategies, and engineered solutions achieving sub-second latency at scale',
-    'Fullstack Capability: Seamlessly integrate robust backend systems with modern frontend frameworks (React, Next.js, Astro) for cohesive end-to-end solutions'
-  ],
-  es: [
-    'Desarrollador Fullstack orientado al Backend con 5+ años de experiencia en diseño de APIs, microservicios y arquitectura de datos',
-    'Experto en Node.js, Express y NestJS; diseñó e implementó APIs REST de nivel producción manejando procesamiento de datos de alto volumen',
-    'Arquitectura y Optimización de Bases de Datos: Experimentado en diseño de esquemas MongoDB, estrategias de caché Redis y optimización de consultas para aplicaciones empresariales',
-    'DevOps e Infraestructura: Containerización de aplicaciones con Docker, establecimiento de pipelines de CI/CD con GitHub Actions para despliegues automatizados y confiables',
-    'Integración de IA Demostrada: Aprovechó herramientas de IA en flujos de trabajo de desarrollo para acelerar desarrollo backend y mantener altos estándares de calidad de código',
-    'Liderazgo Técnico: Lideró decisiones de arquitectura para múltiples plataformas de e-commerce y SaaS; mentoró a desarrolladores junior en mejores prácticas backend y diseño de sistemas',
-    'Impulsado por Rendimiento: Optimizó tiempos de respuesta de API, implementó estrategias de caché e ingeniería de soluciones logrando latencia sub-segundo a escala',
-    'Capacidad Fullstack: Integración perfecta de sistemas backend robustos con frameworks frontend modernos (React, Next.js, Astro) para soluciones end-to-end cohesivas'
-  ]
-}
-
 export const CERTIFICATIONS = [
   {
     title: {

@@ -73,7 +73,7 @@ export async function getProjects(
  * @param {string} id - The ID of the blog post to retrieve.
  * @return {Promise<CollectionEntry<'blog'> | undefined>} A promise that resolves to the blog post or undefined if not found.
  */
-export async function getPostById(
+async function getPostById(
   id: string
 ): Promise<CollectionEntry<'blog'> | undefined> {
   const posts = await getCollection('blog')
@@ -90,7 +90,7 @@ export async function getPostById(
  * @param {string} id - The ID of the project to retrieve.
  * @return {Promise<CollectionEntry<'projects'> | undefined>} A promise that resolves to the project or undefined if not found.
  */
-export async function getProjectById(
+async function getProjectById(
   id: string
 ): Promise<CollectionEntry<'projects'> | undefined> {
   const projects = await getCollection('projects')

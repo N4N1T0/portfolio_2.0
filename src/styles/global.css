@@ -122,6 +122,10 @@
   @apply relative after:absolute after:bottom-0 after:left-[-100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-edge;
 }
 
+@utility link-underline {
+  @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
+}
+
 @utility step {
   counter-increment: step;
   &::before {

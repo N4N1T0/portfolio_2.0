@@ -1,11 +1,18 @@
 ---
+import { Note, NoteArrow } from '@/components/ui/floating-notes'
 import HeroFlipSentences from './HeroFlipSentences.astro'
 ---
 
-<div class='aspect-2/1 select-none sm:aspect-5/1 text-foreground'>
+<div class='aspect-square select-none sm:aspect-3/1 text-foreground relative'>
   <div
     class='max-container mx-auto screen-line-after screen-line-before before:-top-px size-full flex justify-center items-center border-x border-edge dotted-bg'
   >
     <HeroFlipSentences />
+  </div>
+  <div
+    class='bottom-1/6 left-1/2 translate-x-96 ml-2 absolute md:flex gap-2 items-start justify-center hidden'
+  >
+    <NoteArrow class='size-4 text-foreground rotate-24' />
+    <Note text='(N-9) because nano is my nickname' />
   </div>
 </div>

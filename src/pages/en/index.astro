@@ -11,6 +11,7 @@ import Experience from '@/components/home/experiences/index.astro'
 import Projects from '@/components/projects/index.astro'
 import Certifications from '@/components/home/certifications/index.astro'
 import GithubContributions from '@/components/home/github-contributions/index.astro'
+import { Note, NoteArrow } from '@/components/ui/floating-notes'
 ---
 
 <MainLayout
@@ -33,7 +34,14 @@ import GithubContributions from '@/components/home/github-contributions/index.as
   <Separator />
   <Experience />
   <Separator />
-  <Projects />
+  <Projects>
+    <div
+      class='bottom-1/6 right-1/2 -translate-x-96 mr-2 absolute md:flex gap-2 items-start hidden'
+    >
+      <Note text='a few more coming soon' />
+      <NoteArrow class='size-4 text-foreground rotate-132' />
+    </div>
+  </Projects>
   <Separator />
   <Certifications />
   <Separator className='screen-line-after' />

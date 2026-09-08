@@ -3,13 +3,14 @@ import { USER_DATA } from '@/constants/site-data'
 import SocialLinksItem from './SocialLinksItem.astro'
 import { Icons } from '@/components/icons/icons'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import { Note, NoteArrow } from '@/components/ui/floating-notes'
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 const t = useTranslations(lang)
 ---
 
-<section id='social-links' class='section max-container'>
+<section id='social-links' class='section max-container relative'>
   <h2 class='sr-only'>{t('socialLinks').title}</h2>
   <ul class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
     {
@@ -25,4 +26,10 @@ const t = useTranslations(lang)
       })
     }
   </ul>
+  <div
+    class='bottom-5/6 right-1/2 -translate-x-96 mr-2 absolute md:flex gap-2 items-start hidden'
+  >
+    <Note text='Follow please' />
+    <NoteArrow class='size-4 text-foreground rotate-200' />
+  </div>
 </section>

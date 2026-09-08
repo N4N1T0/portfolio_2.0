@@ -1,60 +1,165 @@
 ---
-import { Icons } from '@/components/icons/icons'
-import { data } from '@/constants/site-config'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import Field from './FooterField.astro'
+import Separator from '@/components/shared/Separator.astro'
+import { getSnippetCounts } from '@/lib/fetchers'
+import { Icons } from '@/components/icons/icons'
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 const t = useTranslations(lang)
+
+// CONST
+const date =
+  lang === 'en'
+    ? new Date().toLocaleDateString('en-US', { dateStyle: 'short' })
+    : new Date().toLocaleDateString('es-ES', { dateStyle: 'short' })
+
+const snippetsCounts = await getSnippetCounts(lang)
+
+const stack = ['astro@7.3.1', 'tailwindcss@4.3.3', 'preact@10.29.8']
+const analytics = ['Vercel Analytics', 'Google Analytics']
 ---
 
-<footer class='max-w-screen overflow-x-hidden px-2'>
-  <div class='mx-auto border-x border-edge pt-4 md:max-w-3xl'>
-    <p set:html={t('footer').inspired} />
-    <p set:html={t('footer').builtBy} />
+<footer class='max-w-screen overflow-x-clip px-2 group'>
+  <div
+    class='mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl'
+  >
+    <div class='relative'>
+      <div
+        class='screen-line-after flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3 font-mono text-sm'
+      >
+        <span class='font-bold font-pixel text-xl'>AAA</span>
+        <span class='font-sans text-muted-foreground'>
+          Adrian alvarez Alonso Portfolio 2024. All rights reserved.
+        </span>
+      </div>
+
+      <dl class='grid grid-cols-2 gap-px font-mono md:grid-cols-4'>
+        <Field label='Crafted by' className='border-r'>
+          <a
+            class='link-underline'
+            href='https://www.linkedin.com/in/adrian-nano-alvarez'
+            target='_blank'
+            rel='noopener'
+          >
+            @adrian
+          </a>
+        </Field>
+
+        <Field label='Build' className='border-r line-clamp-1'>
+          <div class='flex items-center gap-2'>
+            <div
+              class='bg-green-600 size-3 rounded-full animate-pulse flex items-center justify-center'
+            >
+              <div class='bg-green-400 size-1.5 rounded-full'></div>
+            </div>
+            1dd603981...
+          </div>
+        </Field>
+
+        <Field label='Date' className='border-r'>
+          <time datetime={date}>{date}</time>
+        </Field>
+
+        <Field label='Registry'>{snippetsCounts} snippets</Field>
+
+        <Field label='Deployed on' className='border-r'>
+          <span class='font-sans' aria-hidden> ▲ </span>
+          <span>Vercel</span>
+        </Field>
+
+        <Field label='Source code' className='border-r'>
+          <a
+            class='link-underline'
+            href='https://github.com/N4N1T0/portfolio_2.0'
+            target='_blank'
+            rel='noopener'
+          >
+            GitHub
+          </a>
+        </Field>
+
+        <Field label='License' className='border-r'>
+          <a
+            class='link-underline'
+            href='https://github.com/N4N1T0/portfolio_2.0'
+            target='_blank'
+            rel='noopener'
+          >
+            MIT License
+          </a>
+        </Field>
+
+        <Field label='Typeface'>
+          <a
+            class='link-underline'
+            href='https://vercel.com/blog/introducing-geist-pixel'
+            target='_blank'
+            rel='noopener'
+          >
+            Geist Pixel
+          </a></Field
+        >
+
+        <Field className='col-span-2 border-r border-b-0' label='Stack'>
+          <ul class='flex flex-col gap-0.5'>
+            {stack.map((entry) => <li>{entry}</li>)}
+          </ul>
+        </Field>
+
+        <Field className='col-span-2 border-b-0' label='Analytics'>
+          <ul class='flex flex-col gap-0.5'>
+            {analytics.map((entry) => <li>{entry}</li>)}
+          </ul>
+        </Field>
+      </dl>
+    </div>
+
+    <div class='screen-line-after screen-line-before h-4'></div>
 
     <div
-      class='screen-line-before screen-line-after flex w-full before:z-1 after:z-1 bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56'
+      class='flex items-center gap-3 px-4 py-3 text-muted-foreground screen-line-after'
     >
-      <div
-        class='mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4'
+      <a
+        href='/'
+        class='mr-auto text-muted-foreground transition-[color] hover:text-foreground'
+        aria-label='Home'
       >
+        AAA
+      </a>
+
+      <div class='divide-x flex items-center gap-3'>
         <a
-          class='flex font-pixel text-xs font-medium text-muted-foreground'
-          href={`${data.url}/llms.txt`}
+          class='flex items-center transition-[color] hover:text-foreground pr-4'
+          href='https://www.linkedin.com/in/adrian-nano-alvarez/'
           target='_blank'
-          rel='noopener noreferrer'
+          rel='noopener'
+          aria-label='LinkedIn Profile'
         >
-          llms.txt
+          <Icons.linkedIn class='size-5' />
         </a>
-
-        <div class='flex h-11 w-px bg-edge'></div>
-
         <a
-          class='flex items-center text-muted-foreground transition-colors hover:text-foreground'
-          href={`${data.url}/rss.xml`}
+          class='flex items-center transition-[color] hover:text-foreground'
+          href='https://www.dmca.com/ProtectionPro.aspx'
           target='_blank'
-          rel='noopener noreferrer'
+          rel='noopener'
+          aria-label='DMCA.com Protection Status'
         >
-          <Icons.rss class='size-4' />
-          <span class='sr-only'>RSS</span>
-        </a>
-
-        <div class='flex h-11 w-px bg-edge'></div>
-
-        <a
-          class='flex text-muted-foreground transition-colors hover:text-foreground'
-          href='https://www.dmca.com/r/wkek193'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Icons.dmca class='h-5 w-auto' />
-          <span class='sr-only'>DMCA.com Protection Status</span>
+          <Icons.dmca class='w-12 h-5' />
         </a>
       </div>
     </div>
   </div>
-  <div class='pb-[env(safe-area-inset-bottom,0px)]'>
-    <div class='flex h-2'></div>
+
+  <h2
+    class='mb-[-2vw] text-[16vw] leading-none font-black tracking-tighter select-none md:text-[12vw] font-pixel uppercase text-muted-foreground opacity-10 mx-auto w-fit group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none'
+  >
+    AAA / N-9
+  </h2>
+
+  <div
+    class='h-20 screen-line-before border-t-[0.5px] border-edge bg-background'
+  >
   </div>
 </footer>

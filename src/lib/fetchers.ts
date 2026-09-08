@@ -162,3 +162,15 @@ export async function getSnippets(
 
   return formattedSnippets
 }
+
+/**
+ * Retrieves the count of snippets in a specified language.
+ * @param {string} lang - The language of the snippets to count.
+ * @return {Promise<number>} A promise that resolves to the count of snippets.
+ */
+export async function getSnippetCounts(lang: string): Promise<number> {
+  const snippets = await getCollection('snippets', ({ id }) => {
+    return id.startsWith(lang)
+  })
+  return snippets.length
+}

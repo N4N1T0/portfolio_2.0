@@ -14,14 +14,14 @@ interface Props {
 const { companyLogo, companyName, positions, isCurrentEmployer } =
   Astro.props.experience
 
-// CONST
-const isMoreThanOne = positions.length > 1
+// CONSTS
+const skills = positions.flatMap((position) => position.skills || [])
 ---
 
-<div class='screen-line-after space-y-4 py-4'>
+<div class='screen-line-after space-y-4 pt-4 pb-6'>
   <div class='flex items-center gap-3'>
     <div
-      class='flex size-7 shrink-0 items-center justify-center bg-muted rounded-full'
+      class='flex size-7 shrink-0 items-center justify-center bg-muted rounded-lg'
     >
       {
         companyLogo ? (
@@ -31,11 +31,11 @@ const isMoreThanOne = positions.length > 1
             width={24}
             height={24}
             quality={100}
-            class='rounded-full'
+            class='rounded-lg'
             aria-hidden='true'
           />
         ) : (
-          <span class='flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600' />
+          <span class='flex size-2 rounded-lg bg-zinc-300 dark:bg-zinc-600' />
         )
       }
     </div>
@@ -60,10 +60,7 @@ const isMoreThanOne = positions.length > 1
       positions.map((position) => {
         const Icon = Icons[position.icon as keyof typeof Icons]
         return (
-          <ExperiencePositionItem
-            position={position}
-            isMoreThanOne={isMoreThanOne}
-          >
+          <ExperiencePositionItem position={position}>
             <Icon class='size-4 text-foreground' />
           </ExperiencePositionItem>
         )

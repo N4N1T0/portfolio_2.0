@@ -12,26 +12,25 @@ import { getLangFromLocale } from '@/i18n/utils'
 // TYPES
 interface Props {
   position: (typeof EXPERIENCES)[0]['positions'][0]
-  isMoreThanOne: boolean
 }
 
 // PROPS
-const { position, isMoreThanOne } = Astro.props
+const { position } = Astro.props
 const { employmentType, employmentPeriod, description, skills, id, title } =
   position
 
 // CONSTS
 const { start, end } = employmentPeriod
 const isOnGoing = end === null
-const lineBeforeClassname = isMoreThanOne
-  ? 'relative space-y-4 first:before:absolute first:before:left-3 first:before:top-3 first:before:h-full first:before:w-px first:before:bg-border'
-  : ''
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
-<AccordionItem value={id} class={lineBeforeClassname}>
+<AccordionItem
+  value={id}
+  class='before:absolute before:left-3 before:h-full before:w-px before:bg-border relative before:mt-2'
+>
   <AccordionTrigger
     class='group/experience block w-full text-left select-none p-0 pt-2'
   >
@@ -89,11 +88,15 @@ const lang = getLangFromLocale(Astro.currentLocale)
         ))
       }
     </ul>
+  </AccordionContent>
 
+  <div
+    class='before:absolute before:left-0 before:-bottom-2 before:translate-x-full before:w-3 before:h-px before:bg-border relative z-1'
+  >
     {
       Array.isArray(skills) && skills.length > 0 && (
-        <BadgeList items={skills} className='p-3 md:pl-9' />
+        <BadgeList items={skills} className='p-3 pl-9' />
       )
     }
-  </AccordionContent>
+  </div>
 </AccordionItem>

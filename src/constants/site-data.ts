@@ -42,10 +42,17 @@ export const USER_DATA = {
   overview: [
     {
       content: {
-        en: 'Senior Backend-Focused Fullstack Developer',
-        es: 'Desarrollador Fullstack Senior con Enfoque Backend'
+        en: 'Senior Frontend-Focused Fullstack Developer',
+        es: 'Desarrollador Fullstack Senior con Enfoque Frontend'
       },
       icon: 'code'
+    },
+    {
+      content: {
+        en: 'Fullstack Engineer at Kreitech',
+        es: 'Ingeniero Fullstack en Kreitech'
+      },
+      icon: 'link'
     },
     {
       content: {

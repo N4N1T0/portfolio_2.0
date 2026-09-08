@@ -199,25 +199,3 @@ export const generateProjectJsonLD = (
     }
   })
 }
-
-export const generateContactJsonLD = (lang: 'es' | 'en') => {
-  return JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    '@id': 'https://www.adrian-alvarez.dev/contact/',
-    url: 'https://www.adrian-alvarez.dev/contact/',
-    name: 'Contact - Adrian Alvarez Portfolio',
-    description:
-      lang === 'en'
-        ? 'Get in touch with Me for inquiries, support, and collaborations.'
-        : 'Contacto para consultas, soporte y colaboraciones.',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Adrian Alvarez Portfolio',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.adrian-alvarez.dev/logo.webp'
-      }
-    }
-  })
-}

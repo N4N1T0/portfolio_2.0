@@ -14,7 +14,7 @@ export {
   ContributionGraphTotalCount
 }
 
-export { THEME, buildContributionGraph, formatTotalCount } from './graph'
+export { buildContributionGraph } from './graph'
 export type {
   Activity,
   ContributionGraph as ContributionGraphData,

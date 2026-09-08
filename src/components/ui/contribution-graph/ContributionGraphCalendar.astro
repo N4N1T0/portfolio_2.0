@@ -1,0 +1,55 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { tv } from 'tailwind-variants'
+import type { ContributionGraph } from './graph'
+
+type Props = HTMLAttributes<'div'> & {
+  graph: ContributionGraph
+  /** Accessible name for the calendar's `<svg>`. */
+  title?: string
+  hideMonthLabels?: boolean
+}
+
+const contributionGraphCalendar = tv({
+  base: 'scroll-fade-x no-scrollbar max-w-full overflow-x-auto overflow-y-hidden'
+})
+
+const {
+  graph,
+  title = 'Contribution Graph',
+  hideMonthLabels = false,
+  class: className,
+  ...rest
+} = Astro.props
+
+const { width, height, blockSize, blockMargin, monthLabels } = graph
+---
+
+<div class={contributionGraphCalendar({ class: className })} {...rest}>
+  <svg
+    class='block overflow-visible'
+    height={height}
+    viewBox={`0 0 ${width} ${height}`}
+    width={width}
+  >
+    <title>{title}</title>
+    {
+      !hideMonthLabels && (
+        <g
+          data-slot='month-labels'
+          class='selection:fill-selection-foreground fill-current'
+        >
+          {monthLabels.map(({ label, weekIndex }) => (
+            <text
+              dominant-baseline='hanging'
+              x={(blockSize + blockMargin) * weekIndex}
+            >
+              {label}
+            </text>
+          ))}
+        </g>
+      )
+    }
+    <slot />
+  </svg>
+</div>

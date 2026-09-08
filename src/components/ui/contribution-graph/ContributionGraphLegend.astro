@@ -1,0 +1,45 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { tv } from 'tailwind-variants'
+import type { ContributionGraph } from './graph'
+import { THEME } from './graph'
+
+type Props = HTMLAttributes<'div'> & {
+  graph: ContributionGraph
+}
+
+const contributionGraphLegend = tv({ base: 'ml-auto flex items-center' })
+
+const { graph, class: className, ...rest } = Astro.props
+
+const { labels, maxLevel, blockSize, blockRadius, blockMargin } = graph
+const levels = Array.from({ length: maxLevel + 1 }, (_, level) => level)
+---
+
+<div
+  class={contributionGraphLegend({ class: className })}
+  style={{ gap: `${blockMargin}px` }}
+  {...rest}
+>
+  <span class='mr-1 text-muted-foreground'>{labels.legend?.less || 'Less'}</span
+  >
+
+  {
+    levels.map((level) => (
+      <svg height={blockSize} width={blockSize}>
+        <title>{`${level} contributions`}</title>
+        <rect
+          class={THEME}
+          data-level={level}
+          height={blockSize}
+          rx={blockRadius}
+          ry={blockRadius}
+          width={blockSize}
+        />
+      </svg>
+    ))
+  }
+
+  <span class='ml-1 text-muted-foreground'>{labels.legend?.more || 'More'}</span
+  >
+</div>

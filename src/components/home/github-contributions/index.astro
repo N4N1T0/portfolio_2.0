@@ -1,0 +1,135 @@
+---
+import { cn } from '@/lib/utils'
+import {
+  buildContributionGraph,
+  ContributionGraph,
+  ContributionGraphBlock,
+  ContributionGraphCalendar,
+  ContributionGraphFooter,
+  ContributionGraphLegend,
+  ContributionGraphTotalCount
+} from '@/components/ui/contribution-graph'
+import { GITHUB_CONTRIBUTIONS, USER_DATA } from '@/constants/site-data'
+
+const graph = buildContributionGraph({
+  data: GITHUB_CONTRIBUTIONS,
+  blockSize: 11,
+  blockMargin: 3,
+  blockRadius: 2
+})
+
+const days = graph.weeks.flatMap((week, weekIndex) =>
+  week.flatMap((activity, dayIndex) =>
+    activity ? [{ activity, dayIndex, weekIndex }] : []
+  )
+)
+---
+
+<div class='relative section max-container py-3' data-contribution-graph>
+  <ContributionGraph class='mx-auto py-2' graph={graph}>
+    <ContributionGraphCalendar
+      class='no-scrollbar px-2'
+      graph={graph}
+      title='GitHub Contributions'
+    >
+      {
+        days.map(({ activity, dayIndex, weekIndex }) => (
+          <ContributionGraphBlock
+            activity={activity}
+            dayIndex={dayIndex}
+            graph={graph}
+            weekIndex={weekIndex}
+          />
+        ))
+      }
+    </ContributionGraphCalendar>
+
+    <ContributionGraphFooter class='px-2'>
+      <ContributionGraphTotalCount graph={graph}>
+        <div class='text-muted-foreground'>
+          {graph.totalCount.toLocaleString('en')} contributions in {graph.year} on{
+            ' '
+          }
+          <a
+            class='text-foreground link-underline'
+            href={USER_DATA.social.find((social) => social.icon === 'github')
+              ?.href}
+            target='_blank'
+            rel='noopener'
+          >
+            GitHub
+          </a>
+          .
+        </div>
+      </ContributionGraphTotalCount>
+
+      <ContributionGraphLegend graph={graph} />
+    </ContributionGraphFooter>
+  </ContributionGraph>
+
+  <div
+    class='bg-background text-popover-foreground pointer-events-none fixed z-50 hidden border px-3 py-1.5 font-sans text-sm whitespace-nowrap shadow-sm'
+    data-contribution-tooltip
+    role='tooltip'
+  >
+  </div>
+</div>
+
+<script>
+  const setupContributionTooltip = () => {
+    document
+      .querySelectorAll<HTMLElement>('[data-contribution-graph]')
+      .forEach((root) => {
+        const tooltip = root.querySelector<HTMLElement>(
+          '[data-contribution-tooltip]'
+        )
+        if (!tooltip) return
+
+        const hide = () => tooltip.classList.add('hidden')
+
+        const show = (block: SVGRectElement) => {
+          const date = block.dataset.date
+          const count = Number(block.dataset.count ?? 0)
+          if (!date) return
+
+          const [year, month, day] = date.split('-')
+          tooltip.textContent = `${count} contribution${
+            count === 1 ? '' : 's'
+          } on ${day}.${month}.${year}`
+
+          tooltip.classList.remove('hidden')
+          const cell = block.getBoundingClientRect()
+          const self = tooltip.getBoundingClientRect()
+          const gap = 8
+          const left = Math.min(
+            Math.max(gap, cell.left + cell.width / 2 - self.width / 2),
+            window.innerWidth - self.width - gap
+          )
+          const above = cell.top - self.height - gap
+          tooltip.style.left = `${left}px`
+          tooltip.style.top = `${above >= gap ? above : cell.bottom + gap}px`
+        }
+
+        root.addEventListener('mouseover', (event) => {
+          const block = (event.target as Element).closest<SVGRectElement>(
+            'rect[data-date]'
+          )
+          if (block) show(block)
+        })
+
+        root.addEventListener('mouseout', (event) => {
+          const block = (event.target as Element).closest('rect[data-date]')
+          if (block) hide()
+        })
+
+        window.addEventListener('scroll', hide, { passive: true })
+        window.addEventListener('resize', hide, { passive: true })
+        root
+          .querySelector('[data-slot="calendar-scroller"], .no-scrollbar')
+          ?.addEventListener('scroll', hide, { passive: true })
+      })
+  }
+
+  setupContributionTooltip()
+  document.addEventListener('astro:after-swap', setupContributionTooltip)
+</script>

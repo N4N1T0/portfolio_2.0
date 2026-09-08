@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { tv } from 'tailwind-variants'
+import type { Activity, ContributionGraph } from './graph'
+import { THEME } from './graph'
+
+type Props = HTMLAttributes<'rect'> & {
+  graph: ContributionGraph
+  activity: Activity
+  dayIndex: number
+  weekIndex: number
+}
+
+const contributionGraphBlock = tv({ base: THEME })
+
+const {
+  graph,
+  activity,
+  dayIndex,
+  weekIndex,
+  class: className,
+  ...rest
+} = Astro.props
+
+const { blockSize, blockMargin, blockRadius, labelHeight, maxLevel } = graph
+
+if (activity.level < 0 || activity.level > maxLevel) {
+  throw new RangeError(
+    `Provided activity level ${activity.level} for ${activity.date} is out of range. It must be between 0 and ${maxLevel}.`
+  )
+}
+---
+
+<rect
+  class={contributionGraphBlock({ class: className })}
+  fill='#000000'
+  data-count={activity.count}
+  data-date={activity.date}
+  data-level={activity.level}
+  height={blockSize}
+  rx={blockRadius}
+  ry={blockRadius}
+  width={blockSize}
+  x={(blockSize + blockMargin) * weekIndex}
+  y={labelHeight + (blockSize + blockMargin) * dayIndex}
+  {...rest}></rect>

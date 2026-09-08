@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { tv } from 'tailwind-variants'
+
+type Props = HTMLAttributes<'div'>
+
+const contributionGraphFooter = tv({
+  base: 'flex flex-wrap gap-1 whitespace-nowrap sm:gap-x-4'
+})
+
+const { class: className, ...rest } = Astro.props
+---
+
+<div class={contributionGraphFooter({ class: className })} {...rest}>
+  <slot />
+</div>

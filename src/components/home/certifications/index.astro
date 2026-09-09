@@ -17,90 +17,13 @@ const t = useTranslations(lang)
       ({CERTIFICATIONS.length})
     </sup>
   </h2>
-  <ul class='last:border-b-none'>
+  <ul class='last:border-b-none grid grid-cols-1 md:grid-cols-2'>
     {
       CERTIFICATIONS.map((certification: (typeof CERTIFICATIONS)[0]) => (
-        <li class='border-b border-muted certification-item'>
+        <li class='border-b border-muted certification-item odd:border-r'>
           <CertificationItem certification={certification} />
         </li>
       ))
     }
   </ul>
-  <div class='screen-line-before flex justify-center py-2'>
-    <button
-      id='show-more-certifications'
-      class={buttonVariants({ variant: 'default' })}
-    >
-      {t('certifications').showMore}
-      <Icons.chevronUp class='rotate-180' id='show-more-icon-certifications' />
-    </button>
-  </div>
 </section>
-
-<script>
-  import { animate, stagger } from 'animejs'
-  import { getLangFromLocale, useTranslations } from '@/i18n/utils'
-
-  const locale = window.location.href.split('/')[3]
-  const lang = getLangFromLocale(locale)
-  const t = useTranslations(lang)
-
-  const showMore = document.getElementById(
-    'show-more-certifications'
-  ) as HTMLButtonElement
-  const showMoreIcon = document.getElementById(
-    'show-more-icon-certifications'
-  ) as HTMLElement
-  const certificationItems = document.querySelectorAll('.certification-item')
-
-  let isExpanded = false
-
-  const toggleItems = () => {
-    const hiddenItems = Array.from(certificationItems).slice(3)
-
-    if (!isExpanded) {
-      hiddenItems.forEach((item) => {
-        item.classList.remove('hidden')
-      })
-
-      animate(hiddenItems, {
-        opacity: [0, 1],
-        scale: [0.95, 1],
-        easing: 'easeOutExpo',
-        duration: 500,
-        delay: stagger(100, { start: 0 })
-      })
-
-      showMore.textContent = t('certifications').showLess
-      showMoreIcon.classList.remove('rotate-180')
-      isExpanded = true
-    } else {
-      animate(hiddenItems, {
-        opacity: [1, 0],
-        scale: [1, 0.95],
-        easing: 'easeInExpo',
-        duration: 300,
-        delay: stagger(80, { reversed: true }),
-        onComplete: () => {
-          hiddenItems.forEach((item) => {
-            item.classList.add('hidden')
-          })
-        }
-      })
-
-      showMore.textContent = t('certifications').showMore
-      showMoreIcon.classList.add('rotate-180')
-      isExpanded = false
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    certificationItems.forEach((item, index) => {
-      if (index > 2) item.classList.add('hidden')
-    })
-  })
-
-  showMore.addEventListener('click', () => {
-    toggleItems()
-  })
-</script>

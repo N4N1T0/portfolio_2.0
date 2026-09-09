@@ -3,8 +3,8 @@ title: 'Puntuar una liga fantasy con datos que aún no han llegado'
 date: 2026-09-09
 excerpt: 'Una liga fantasy de música puntúa según el crecimiento en streaming de una API externa. Esa API es escasa, llega tarde y se corrige, y casi cada decisión del backend sale de ahí.'
 author: 'Adrian "Nano" Alvarez'
-image: '@/assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
-imageAlt: 'Un escritorio con analíticas de streaming musical en pantalla'
+image: '@/assets/blog/scoring-on-data-that-has-not-arrived.png'
+imageAlt: 'Portada oscura con el texto ''Scoring on data that has not arrived yet'' sobre una retícula técnica'
 counterpartId: 'en/scoring-on-data-that-has-not-arrived'
 ---
 

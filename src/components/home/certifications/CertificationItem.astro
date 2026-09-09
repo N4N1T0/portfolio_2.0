@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 import { formatDate } from '@/lib/utils'
-import { Icons } from '@/components/icons/icons'
 import type { CERTIFICATIONS } from '@/constants/site-data'
 import { getLangFromLocale } from '@/i18n/utils'
 
@@ -22,7 +21,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <a
-  class='group/cert flex items-center pr-2'
+  class='group/cert flex items-center pr-2 h-full'
   href={credentialURL}
   target='_blank'
   rel='noopener'
@@ -37,7 +36,9 @@ const lang = getLangFromLocale(Astro.currentLocale)
     aria-hidden='true'
   />
 
-  <div class='flex-1 space-y-1 border-l border-dashed border-edge p-4 pr-2'>
+  <div
+    class='flex-1 space-y-1 border-l border-dashed border-edge p-4 pr-2 h-full'
+  >
     <h3
       class='leading-snug font-medium text-balance underline-offset-4 group-hover/cert:underline'
     >
@@ -67,13 +68,4 @@ const lang = getLangFromLocale(Astro.currentLocale)
       </div>
     </div>
   </div>
-
-  {
-    credentialURL && (
-      <Icons.arrowUpRight
-        class='size-4 text-foreground rotate-315'
-        aria-hidden='true'
-      />
-    )
-  }
 </a>

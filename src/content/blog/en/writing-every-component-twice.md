@@ -3,8 +3,8 @@ title: 'Writing every component twice to stop a preview from lying'
 date: 2026-09-09
 excerpt: 'A resizable preview panel makes viewport breakpoints lie. The fix was to author each component twice, once for the viewport and once for the container. What that bought, and what it cost.'
 author: 'Adrian "Nano" Alvarez'
-image: '@/assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
-imageAlt: 'A screen showing code for a UI component library'
+image: '@/assets/blog/writing-every-component-twice.png'
+imageAlt: 'Dark title card reading ''Writing every component twice'' over a technical grid'
 counterpartId: 'es/escribir-cada-componente-dos-veces'
 ---
 

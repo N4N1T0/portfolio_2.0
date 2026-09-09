@@ -3,8 +3,8 @@ title: 'Escribir cada componente dos veces para que el preview no mienta'
 date: 2026-09-09
 excerpt: 'Un panel de preview redimensionable hace que los breakpoints de viewport mientan. La solución fue escribir cada componente dos veces, uno para el viewport y otro para el contenedor.'
 author: 'Adrian "Nano" Alvarez'
-image: '@/assets/blog/ferenc-almasi-eYpcLDXHVb0-unsplash.webp'
-imageAlt: 'Una pantalla mostrando código de una librería de componentes'
+image: '@/assets/blog/writing-every-component-twice.png'
+imageAlt: 'Portada oscura con el texto ''Writing every component twice'' sobre una retícula técnica'
 counterpartId: 'en/writing-every-component-twice'
 ---
 

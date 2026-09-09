@@ -3,8 +3,8 @@ title: 'Scoring a fantasy league on data that has not arrived yet'
 date: 2026-09-09
 excerpt: 'A music fantasy league scores teams on streaming growth pulled from a third-party analytics API. That API is sparse, late and revisable, and almost every backend decision comes from it.'
 author: 'Adrian "Nano" Alvarez'
-image: '@/assets/blog/nordwood-themes-ubIWo074QlU-unsplash.webp'
-imageAlt: 'A desk setup with music streaming analytics on screen'
+image: '@/assets/blog/scoring-on-data-that-has-not-arrived.png'
+imageAlt: 'Dark title card reading ''Scoring on data that has not arrived yet'' over a technical grid'
 counterpartId: 'es/puntuar-con-datos-que-no-han-llegado'
 ---
 

@@ -3,8 +3,8 @@ title: 'The rate limiter was the outage'
 date: 2026-09-09
 excerpt: 'A KV-backed rate limiter on Cloudflare Workers wrote one key per request against a free tier of 1,000 writes a day. When the quota ran out, the thing protecting the API took it down.'
 author: 'Adrian "Nano" Alvarez'
-image: '@/assets/blog/domenico-loia-EhTcC9sYXsw-unsplash.webp'
-imageAlt: 'A developer desk with a dashboard open on screen'
+image: '@/assets/blog/the-rate-limiter-was-the-outage.png'
+imageAlt: 'Dark title card reading ''The rate limiter was the outage'' beside a draining red meter'
 counterpartId: 'es/el-rate-limiter-era-la-caida'
 ---
 

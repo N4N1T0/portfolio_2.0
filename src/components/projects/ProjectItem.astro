@@ -30,6 +30,10 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 })
 const techItems = techStack.map((tech) => tech.title)
 
+// The pixel dissolve needs something underneath to reveal. With a single image
+// there is nothing to reveal, so it stays a plain static thumbnail.
+const hasReveal = images.length > 1
+
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 const projectLink = comingSoon
@@ -52,29 +56,23 @@ const projectLink = comingSoon
     <a
       href={projectLink}
       data-disabled={comingSoon}
-      class='relative select-none [&_img]:aspect-1200/630 rounded-sm overflow-hidden border border-muted group w-full h-auto aspect-square'
+      class='pixel-frame relative select-none [&_img]:aspect-1200/630 rounded-sm overflow-hidden border border-muted group w-full h-auto aspect-square'
     >
       {
-        images.map(({ alt, src }, index) => {
-          const className =
-            index === 0
-              ? 'opacity-100 scale-100 group-hover:scale-120 group-hover:opacity-0 duration-500'
-              : 'opacity-0 scale-80 group-hover:scale-100 duration-200 group-hover:opacity-100'
-          return (
-            <Image
-              src={src as ImageMetadata}
-              alt={alt}
-              width={500}
-              height={500}
-              quality={100}
-              priority={priority}
-              class={cn(
-                'size-full transition-all absolute inset-0 ease-in-out',
-                className
-              )}
-            />
-          )
-        })
+        images.map(({ alt, src }, index) => (
+          <Image
+            src={src as ImageMetadata}
+            alt={alt}
+            width={500}
+            height={500}
+            quality={100}
+            priority={priority}
+            class={cn(
+              'size-full absolute inset-0',
+              index === 0 && hasReveal ? 'pixel-top' : 'pixel-base'
+            )}
+          />
+        ))
       }
     </a>
   </div>
@@ -107,3 +105,67 @@ const projectLink = comingSoon
     <BadgeList items={techItems} className='pb-3 md:pb-0 pl-0' />
   </div>
 </article>
+
+<style>
+  /* Animatable because it is registered: a bare custom property is a string to
+     the engine and jumps between values instead of transitioning. */
+  @property --pixel-size {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+  }
+
+  .pixel-base {
+    z-index: 0;
+  }
+
+  /* Two crossing hard-stop gradients tile the image into a grid of cells, and
+     each cell keeps only a --pixel-size square of itself. Shrink that to zero
+     and the top image breaks apart into pixels, uncovering the one below.
+     One masked element, no tile markup, no script. */
+  .pixel-top {
+    z-index: 10;
+    --pixel-size: 100%;
+    -webkit-mask-image:
+      linear-gradient(to right, #000 var(--pixel-size), transparent 0),
+      linear-gradient(to bottom, #000 var(--pixel-size), transparent 0);
+    mask-image:
+      linear-gradient(to right, #000 var(--pixel-size), transparent 0),
+      linear-gradient(to bottom, #000 var(--pixel-size), transparent 0);
+    -webkit-mask-size: 6.25% 6.25%;
+    mask-size: 6.25% 6.25%;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    transition: --pixel-size 450ms steps(9, end);
+  }
+
+  .pixel-frame:hover .pixel-top,
+  .pixel-frame:focus-visible .pixel-top {
+    --pixel-size: 0%;
+  }
+
+  /* Coarser cells on small screens so the pixels stay legible at thumbnail size. */
+  @media (width < 48rem) {
+    .pixel-top {
+      -webkit-mask-size: 10% 10%;
+      mask-size: 10% 10%;
+    }
+  }
+
+  /* The dissolve is the motion, so there is nothing to soften — drop it and
+     swap the images outright. */
+  @media (prefers-reduced-motion: reduce) {
+    .pixel-top {
+      -webkit-mask-image: none;
+      mask-image: none;
+      transition: opacity 120ms linear;
+    }
+
+    .pixel-frame:hover .pixel-top,
+    .pixel-frame:focus-visible .pixel-top {
+      opacity: 0;
+    }
+  }
+</style>

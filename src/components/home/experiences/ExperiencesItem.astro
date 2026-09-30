@@ -13,9 +13,6 @@ interface Props {
 // PROPS
 const { companyLogo, companyName, positions, isCurrentEmployer } =
   Astro.props.experience
-
-// CONSTS
-const skills = positions.flatMap((position) => position.skills || [])
 ---
 
 <div class='screen-line-after space-y-4 pt-4 pb-6'>

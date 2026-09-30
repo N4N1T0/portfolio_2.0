@@ -1,7 +1,7 @@
 import { Previews } from '@/lib/previews'
 import { glob } from 'astro/loaders'
-import { defineCollection } from 'astro:content'
 import { z } from 'astro/zod'
+import { defineCollection } from 'astro:content'
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
@@ -40,12 +40,12 @@ const projectCollection = defineCollection({
           alt: z.string()
         })
       ),
-      liveLink: z.string().url(),
+      liveLink: z.url(),
       colors: z.string(),
       techStack: z.array(
         z.object({
           title: z.string(),
-          link: z.string().url()
+          link: z.url()
         })
       ),
       challenge: z.string().optional(),
@@ -68,7 +68,7 @@ const snippetCollection = defineCollection({
     z.object({
       title: z.string(),
       excerpt: z.string(),
-      preview: z.nativeEnum(Previews),
+      preview: z.enum(Previews),
       comingSoon: z.boolean().optional(),
       icon: z.enum(['code', 'block']),
       isNew: z.boolean().optional(),

@@ -1,6 +1,6 @@
-import type { JSX } from 'preact/jsx-runtime'
+import type { SVGAttributes } from 'preact'
 
-type IconProps = JSX.SVGAttributes<SVGSVGElement>
+type IconProps = SVGAttributes<SVGSVGElement>
 
 export const Icons = {
   react: (props: IconProps) => (

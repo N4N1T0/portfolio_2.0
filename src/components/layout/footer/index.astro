@@ -1,13 +1,11 @@
 ---
-import { getLangFromLocale, useTranslations } from '@/i18n/utils'
+import { getLangFromLocale } from '@/i18n/utils'
 import Field from './FooterField.astro'
-import Separator from '@/components/shared/Separator.astro'
 import { getSnippetCounts } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
-const t = useTranslations(lang)
 
 // CONST
 const date =

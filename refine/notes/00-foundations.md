@@ -1,7 +1,7 @@
 # Wave 0 — Foundations
 
 Branch: `refine/00-foundations`
-Status: audit complete, scope awaiting approval
+Status: PR abierta #11, esperando review (no se toca vista 1 hasta visto bueno)
 Date: 2026-10-19
 
 ## Baseline (measured)

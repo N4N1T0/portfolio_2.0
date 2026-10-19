@@ -1,11 +1,9 @@
 ---
 import { USER_DATA } from '@/constants/site-data'
 import OverviewItem from './OverviewItem.astro'
-import LocalTime from './LocalTime.astro'
 import { Icons } from '@/components/icons/icons'
 import { getLangFromLocale, useTranslations } from '@/i18n/utils'
 
-// I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 const t = useTranslations(lang)
 ---
@@ -28,7 +26,19 @@ const t = useTranslations(lang)
     <li>
       <OverviewItem item={{ icon: 'clock' }}>
         <Icons.clock class='size-4' />
-        <LocalTime slot='content' />
+        <span slot='content'>
+          <time datetime={new Date().toISOString()}>
+            {
+              new Date().toLocaleString(lang === 'es' ? 'es-ES' : 'en-US', {
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })
+            }
+          </time>
+        </span>
       </OverviewItem>
     </li>
   </ul>

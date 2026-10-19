@@ -5,6 +5,7 @@ import ContentIndex from '@/components/shared/ContentIndex.astro'
 import { buttonVariants } from '@/components/ui/utils'
 import ProjectsLayout from '@/layout/ProjectsLayout.astro'
 import { getProjects } from '@/lib/fetchers'
+import { getLangFromLocale } from '@/i18n/utils'
 import type { GetStaticPaths } from 'astro'
 
 // STATIC
@@ -29,8 +30,7 @@ const {
     date,
     techStack,
     liveLink,
-    testimonial,
-    colors
+    testimonial
   },
   id
 } = Astro.props
@@ -47,7 +47,10 @@ const formattedContentIndex = hasTestimonial
   : contentIndex
 
 // SEO
-const ld = generateProjectJsonLD(Astro.props, 'en')
+const ld = generateProjectJsonLD(
+  Astro.props,
+  getLangFromLocale(Astro.currentLocale)
+)
 ---
 
 <ProjectsLayout project={Astro.props} ld={ld}>
@@ -55,7 +58,7 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
     id={id}
     class='screen-line-before screen-line-after mb-6 py-2 text-5xl font-pixel flex justify-between items-center'
   >
-    <h1 style={{ color: colors }}>
+    <h1>
       {title}
       <time class='text-xs' datetime={date}>({date})</time>
     </h1>
@@ -64,12 +67,13 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
       href={liveLink}
       target='_blank'
       title='See the project live'
+      rel='noopener noreferrer'
       class={buttonVariants({
         variant: 'outline',
         size: 'icon',
         className: 'hover:bg-muted'
       })}
-      ><Icons.arrowUpRight class='size-8' style={{ color: colors }} />
+      ><Icons.arrowUpRight class='size-8' />
       <span class='sr-only'>See the project live</span>
     </a>
   </section>
@@ -78,17 +82,17 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
   <ContentIndex items={formattedContentIndex} />
 
   <section id='challenge' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors}` }}>Challenge</h2>
+    <h2>Challenge</h2>
     <p>{challenge}</p>
   </section>
 
   <section id='solutions' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors}` }}>Solutions</h2>
+    <h2>Solutions</h2>
     {solution}
   </section>
 
   <section id='techstack' class='custom-prose mb-6'>
-    <h2 style={{ borderBottom: `1px solid ${colors}` }}>TechStack</h2>
+    <h2>TechStack</h2>
     <ul class='flex flex-wrap gap-1.5'>
       {
         techStack.map(({ title, link }) => (
@@ -111,11 +115,8 @@ const ld = generateProjectJsonLD(Astro.props, 'en')
   {
     hasTestimonial && (
       <section id='testimonial' class='custom-prose pb-6'>
-        <h2 style={{ borderBottom: `1px solid ${colors}` }}>testimonial</h2>
-        <blockquote
-          class='text-lg'
-          style={{ borderLeft: `4px solid ${colors}` }}
-        >
+        <h2>testimonial</h2>
+        <blockquote class='text-lg'>
           {testimonial.quote}
           <footer class='text-right mt-3 text-sm'>
             -{testimonial.name} / {testimonial.role}

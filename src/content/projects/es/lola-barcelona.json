@@ -52,5 +52,5 @@
   "challenge": "Rediseñar un backend e-commerce con lógica de negocio personalizada, gestión de inventario dinámico y recomendaciones personalizadas integradas",
   "solution": "Construcción de tema Shopify personalizado con lógica Liquid server-side para renderizado de recomendaciones de productos y gestión de inventario. Desarrollo de Shopify Apps personalizadas usando Node.js para integraciones de APIs con servicios de fulfillment y analytics. Implementación de lógica de A/B testing server-side y algoritmos de upselling/cross-selling. Integración de capa de caché Redis para optimización de carrito y gestión de sesiones.",
   "comingSoon": false,
-  "counterpartId": "es/lola-barcelona"
+  "counterpartId": "en/lola-barcelona"
 }

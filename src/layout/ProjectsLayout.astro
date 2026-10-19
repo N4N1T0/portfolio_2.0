@@ -23,29 +23,23 @@ const {
   <Navigation projectId={id} />
   <Separator />
 
-  <section class='screen-line-before aspect-square group max-container'>
+  <section class='screen-line-before group max-container'>
     <div class='size-full overflow-hidden relative'>
       {
-        images.map(({ alt, src }, index) => {
-          const className =
-            index === 0
-              ? 'opacity-100 scale-100 group-hover:scale-120 group-hover:opacity-0 duration-500'
-              : 'opacity-0 scale-80 group-hover:scale-100 duration-200 group-hover:opacity-100'
-          return (
-            <Image
-              src={src as ImageMetadata}
-              alt={alt}
-              width={1200}
-              height={630}
-              quality={100}
-              priority
-              class={cn(
-                'size-full transition-all absolute inset-0 ease-in-out',
-                className
-              )}
-            />
-          )
-        })
+        images.map(({ alt, src }, index) => (
+          <Image
+            src={src as ImageMetadata}
+            alt={alt}
+            width={1200}
+            height={630}
+            quality={100}
+            priority
+            class={cn(
+              'size-full object-cover absolute inset-0',
+              index === 0 ? 'opacity-100' : 'opacity-0'
+            )}
+          />
+        ))
       }
     </div>
   </section>

@@ -36,14 +36,14 @@ export const USER_DATA = {
   displayName: 'Adrian Alvarez',
   avatar: Avatar,
   sentences: {
-    en: 'Fullstack Developer specializing in backend systems, APIs, and data architecture.',
-    es: 'Desarrollador Fullstack especializado en sistemas backend, APIs y arquitectura de datos.'
+    en: 'Senior Fullstack Engineer. I build APIs, interfaces and data systems in production.',
+    es: 'Desarrollador Fullstack Senior. Construyo APIs, interfaces y sistemas de datos en producción.'
   },
   overview: [
     {
       content: {
-        en: 'Senior Frontend-Focused Fullstack Developer',
-        es: 'Desarrollador Fullstack Senior con Enfoque Frontend'
+        en: 'APIs, interfaces and data systems',
+        es: 'APIs, interfaces y sistemas de datos'
       },
       icon: 'code'
     },
@@ -76,7 +76,7 @@ export const USER_DATA = {
     {
       icon: 'linkedIn',
       title: 'LinkedIn',
-      description: 'adrian-alvarez-alonso',
+      description: 'adrian-alvarez-alonso-front-end-developer',
       href: 'https://www.linkedin.com/in/adrian-alvarez-alonso-front-end-developer'
     },
     {
@@ -100,20 +100,16 @@ export const USER_DATA = {
   ],
   about: {
     en: [
-      'Hi! I’m Adrián Álvarez — a Senior Fullstack Developer with deep expertise in backend systems, API architecture, and data engineering.',
-      'I specialize in designing and building scalable server-side solutions using Node.js, Express, and NestJS. I architect robust data pipelines with MongoDB and Redis, optimize database performance, containerize applications with Docker, and implement production-grade CI/CD workflows with GitHub Actions. My experience spans building RESTful APIs, microservice architectures, and data-driven applications that handle complex business logic and high-volume data processing.',
-      'Over the last few years, I’ve worked with agencies and startups across Europe and the US, leading backend infrastructure development for eCommerce platforms, automating data pipelines, and integrating AI-powered tools into production systems. I’ve designed database schemas for scalability, implemented caching strategies, and optimized API performance. I also leverage AI tools in my engineering workflow to accelerate development and maintain high code quality standards.',
-      'I combine backend engineering rigor with fullstack capability, ensuring seamless integration between server and client layers. Whether architecting APIs, optimizing databases, or deploying containerized services, I focus on building systems that are reliable, performant, and maintainable.',
-      'Beyond the code, I bring a strategic mindset — every architecture decision I make considers scalability, data integrity, security, and business objectives.',
-      'Let’s build backend systems that scale.'
+      'I am Adrián Álvarez, a Senior Fullstack Engineer. I build APIs, interfaces and data systems that run in production.',
+      'Most of my work sits between the database and the browser: Node.js and NestJS services, REST and event-driven APIs, React and Astro interfaces, and the data models that connect them. I care about the boring parts: schema design, caching, observability and deployments that do not surprise anyone.',
+      'I have worked with agencies and startups across Europe and the US on eCommerce platforms, internal tools and data pipelines. That usually means designing a schema, wiring an integration, shipping a UI and staying around when it breaks.',
+      'I use AI tools in my workflow to move faster without lowering the bar on review. If you need someone who can own a feature from schema to interface, we should talk.'
     ],
     es: [
-      '¡Hola! Soy Adrián Álvarez — Desarrollador Fullstack Senior con profunda experiencia en sistemas backend, arquitectura de APIs e ingeniería de datos.',
-      'Me especializo en diseñar e implementar soluciones escalables del lado del servidor utilizando Node.js, Express y NestJS. Arquitecto pipelines de datos robustos con MongoDB y Redis, optimizo rendimiento de bases de datos, containerizo aplicaciones con Docker e implemento workflows de CI/CD de nivel producción con GitHub Actions. Mi experiencia abarca construcción de APIs REST, arquitecturas de microservicios y aplicaciones impulsadas por datos que manejan lógica empresarial compleja y procesamiento de datos de alto volumen.',
-      'En los últimos años, he trabajado con agencias y startups en Europa y Estados Unidos, liderando desarrollo de infraestructura backend para plataformas eCommerce, automatizando pipelines de datos e integrando herramientas impulsadas por IA en sistemas de producción. He diseñado esquemas de bases de datos para escalabilidad, implementado estrategias de caché y optimizado rendimiento de APIs. También aprovecho herramientas de IA en mi flujo de trabajo de ingeniería para acelerar desarrollo y mantener altos estándares de calidad de código.',
-      'Combino el rigor de la ingeniería backend con capacidad fullstack, asegurando integración perfecta entre capas de servidor y cliente. Ya sea arquitectando APIs, optimizando bases de datos o desplegando servicios containerizados, me enfoco en construir sistemas confiables, performantes y mantenibles.',
-      'Más allá del código, aporto una mentalidad estratégica — cada decisión de arquitectura que tomo considera escalabilidad, integridad de datos, seguridad y objetivos empresariales.',
-      'Construyamos sistemas backend que escalen.'
+      'Soy Adrián Álvarez, Desarrollador Fullstack Senior. Construyo APIs, interfaces y sistemas de datos que funcionan en producción.',
+      'La mayor parte de mi trabajo está entre la base de datos y el navegador: servicios con Node.js y NestJS, APIs REST y orientadas a eventos, interfaces en React y Astro, y los modelos de datos que las conectan. Me importan las partes aburridas: diseño de esquemas, caché, observabilidad y despliegues que no sorprenden a nadie.',
+      'He trabajado con agencias y startups de Europa y Estados Unidos en plataformas eCommerce, herramientas internas y pipelines de datos. Normalmente eso significa diseñar un esquema, conectar una integración, publicar una interfaz y quedarme cuando algo falla.',
+      'Uso herramientas de IA en mi flujo de trabajo para avanzar más rápido sin bajar el listón en la revisión. Si necesitas a alguien que pueda hacerse cargo de una funcionalidad del esquema a la interfaz, hablemos.'
     ]
   }
 }

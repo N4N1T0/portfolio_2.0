@@ -31,6 +31,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-outline: var(--ring);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -59,6 +60,7 @@
   --font-sans: 'Geist', sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
   --font-pixel: 'GeistPixel-Square', 'Pixelify Sans', sans-serif;
+  --text-micro: 0.625rem;
   --shadow-popover: var(--shadow-popover);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -135,6 +137,7 @@
 }
 
 :root {
+  color-scheme: light;
   --background: oklch(0.7975 0.0951 268.35);
   --foreground: oklch(0.2781 0.0296 256.85);
   --primary: oklch(0.2781 0.0296 256.85);
@@ -151,21 +154,22 @@
   --accent: oklch(0.6735 0.0444 256.85);
   --accent-foreground: oklch(0.21 0.006 285.885);
   --border: oklch(0.4824 0.0518 256.85);
-  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
+  --edge: color-mix(in oklab, var(--border) 92%, var(--background));
   --input: oklch(0.4824 0.0518 256.85);
-  --ring: oklch(0.67 0.17 244.98);
-  --info: oklch(0.67 0.17 244.98);
-  --success: oklch(0.723 0.219 149.579);
-  --destructive: oklch(0.577 0.245 27.325);
-  --link: oklch(0.488 0.243 264.376);
+  --ring: oklch(0.48 0.19 255);
+  --info: oklch(0.48 0.19 255);
+  --success: oklch(0.45 0.17 150);
+  --destructive: oklch(0.5 0.22 27);
+  --link: oklch(0.43 0.2 265);
   --code: oklch(0.985 0 0);
   --code-foreground: oklch(0.2781 0.0296 256.85);
-  --code-number: oklch(0.705 0.015 286.067);
+  --code-number: oklch(0.45 0.01 286);
   --code-highlight: oklch(0.6735 0.0444 256.85);
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.2781 0.0296 256.85);
   --foreground: oklch(0.7975 0.0951 268.35);
   --primary: oklch(0.37 0.013 285.805);
@@ -181,15 +185,16 @@
   --popover-border: oklch(0.37 0.013 285.805);
   --accent: oklch(0.274 0.006 286.033);
   --accent-foreground: oklch(0.7975 0.0951 268.35);
-  --border: oklch(0.4824 0.0518 256.85);
-  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
-  --input: oklch(0.274 0.006 286.033);
+  --ring: oklch(0.72 0.14 245);
+  --border: oklch(0.6 0.05 256.85);
+  --edge: color-mix(in oklab, var(--border) 92%, var(--background));
+  --input: oklch(0.6 0.05 256.85);
   --success: oklch(0.723 0.219 149.579);
-  --destructive: oklch(0.505 0.213 27.518);
-  --link: oklch(0.623 0.214 259.815);
+  --destructive: oklch(0.65 0.2 27);
+  --link: oklch(0.7 0.18 260);
   --code: oklch(0.21 0.006 285.885);
   --code-foreground: oklch(0.7975 0.0951 268.35);
-  --code-number: oklch(0.552 0.016 285.938);
+  --code-number: oklch(0.62 0.015 286);
   --code-highlight: oklch(0.274 0.006 286.033);
   --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
 }
@@ -200,11 +205,16 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+    outline-color: var(--ring);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   html {
-    color-scheme: dark light;
     @apply motion-safe:scroll-smooth;
   }
 
@@ -221,16 +231,16 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--cd-border);
-    border-radius: 5px;
+    background: var(--border);
+    border-radius: 9999px;
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--cd-border) transparent;
+    scrollbar-color: var(--border) transparent;
   }
 
   [id] {
-    @apply scroll-mt-22;
+    @apply scroll-mt-16;
   }
 
   .custom-prose {
@@ -312,16 +322,16 @@
 
   @keyframes success-pop {
     0% {
-      border-color: #d1fae5;
-      box-shadow: 0 0 0px transparent;
+      border-color: transparent;
+      box-shadow: 0 0 0 transparent;
     }
     50% {
-      border-color: #22c55e;
-      box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); /* soft green glow */
+      border-color: var(--success);
+      box-shadow: 0 0 20px color-mix(in oklab, var(--success) 45%, transparent);
     }
     100% {
-      border-color: #22c55e;
-      box-shadow: 0 0 0px transparent;
+      border-color: var(--success);
+      box-shadow: 0 0 0 transparent;
     }
   }
 
@@ -332,5 +342,17 @@
 
   .aria-valid\:animate-border-success[aria-valid='true'] {
     animation: success-pop 0.8s ease-out forwards;
+  }
+}
+
+/* AA: honour the OS preference for every decorative animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

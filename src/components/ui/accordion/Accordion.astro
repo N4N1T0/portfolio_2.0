@@ -120,6 +120,7 @@ const { type = 'single', defaultValue, class: className, ...rest } = Astro.props
       item.content.id = contentId
       item.content.setAttribute('aria-labelledby', triggerId)
       item.content.setAttribute('role', 'region')
+      item.content.inert = true
     }
 
     /**
@@ -241,6 +242,7 @@ const { type = 'single', defaultValue, class: className, ...rest } = Astro.props
       item.content.setAttribute('data-state', state)
       item.trigger.setAttribute('data-state', state)
       item.trigger.setAttribute('aria-expanded', isOpen.toString())
+      item.content.inert = !isOpen
     }
   }
 

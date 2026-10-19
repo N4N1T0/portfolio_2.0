@@ -6,16 +6,30 @@ import { defineConfig } from 'astro/config'
 
 import vercel from '@astrojs/vercel'
 
+const SITE_URL = 'https://www.adrian-alvarez.com'
+
 export default defineConfig({
-  site: process.env.CI
-    ? 'https://www.adrian-alvarez.com'
-    : 'http://localhost:4321',
+  site: SITE_URL,
+
+  trailingSlash: 'always',
 
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        page !== `${SITE_URL}/` &&
+        !page.includes('/404') &&
+        !page.includes('/rss.xml'),
+      i18n: {
+        defaultLocale: 'es',
+        locales: {
+          es: 'es',
+          en: 'en'
+        }
+      }
+    }),
     robotsTxt({
-      sitemap: 'https://www.adrian-alvarez.com/sitemap-0.xml',
-      host: 'adrian-alvarez.com'
+      sitemap: `${SITE_URL}/sitemap-index.xml`,
+      host: new URL(SITE_URL).host
     }),
     preact()
   ],

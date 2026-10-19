@@ -7,73 +7,86 @@ interface Props {
   image?: ImageMetadata
   ld?: string
   lang: string | undefined
+  noindex?: boolean
+  type?: 'website' | 'article'
 }
 
-const { title, description, image, ld, lang } = Astro.props
+const {
+  title,
+  description,
+  image,
+  ld,
+  lang,
+  noindex = false,
+  type = 'website'
+} = Astro.props
 
-const newLangUrl = changeLangFromUrl(Astro.url, lang || 'es')
-const ogImage = image ? image.src : `${Astro.site}/${lang}/og-image.png`
+const locale = lang === 'en' ? 'en' : 'es'
+const alternateLocale = locale === 'es' ? 'en' : 'es'
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString()
+const alternateUrl = new URL(
+  new URL(changeLangFromUrl(Astro.url, locale)).pathname,
+  Astro.site
+).toString()
+const defaultUrl = locale === 'es' ? canonical : alternateUrl
+
+const ogImage = image?.src
+  ? new URL(image.src, Astro.site).toString()
+  : new URL(`/${locale}/og-image.png`, Astro.site).toString()
+
+const siteName = 'Adrian Alvarez'
+const robots = noindex ? 'noindex, follow' : 'index, follow'
 ---
 
 <head>
   <!-- Basic HTML Meta Tags -->
   <meta charset='utf-8' />
-  <meta name='robots' content='index, follow' />
-  <meta name='googlebot' content='index, follow' />
+  <meta name='robots' content={robots} />
+  <meta name='googlebot' content={robots} />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <meta name='generator' content={Astro.generator} />
   <meta name='subject' content='Adrian Alvarez Alonso Portfolio' />
-  <meta name='language' content={lang && lang.toUpperCase()} />
-  <meta name='Classification' content='Business' />
+  <meta name='language' content={locale.toUpperCase()} />
   <meta
     name='author'
     content="Adrian 'Nano' Alvarez, adrian.alvarezalonso1991@gmail.com"
   />
-  <meta name='designer' content="Adrian 'Nano' Alvarez" />
-  <meta name='owner' content="Adrian 'Nano' Alvarez" />
-  <link rel='canonical' href={Astro.url} />
-  <meta name='title' content={title} />
+  <link rel='canonical' href={canonical} />
   <meta name='description' content={description} />
-  <link rel='sitemap' href={`${Astro.site}sitemap-0.xml`} />
-  <link
-    rel='alternate'
-    type='application/rss+xml'
-    title='RSS Feed para mi Website'
-    href='rss.xml'
-  />
+  <link rel='sitemap' href={new URL('sitemap-index.xml', Astro.site)} />
   <title>{title}</title>
 
   <!-- Language -->
-  <link rel='alternate' href={Astro.url} hreflang=`${lang}-es` />
-  <link
-    rel='alternate'
-    href={`${Astro.site}${newLangUrl}`}
-    hreflang=`${lang === 'es' ? 'en' : 'es'}-es`
-  />
+  <link rel='alternate' href={canonical} hreflang={locale} />
+  <link rel='alternate' href={alternateUrl} hreflang={alternateLocale} />
+  <link rel='alternate' href={defaultUrl} hreflang='x-default' />
 
   <!-- Favicon -->
   <link
     rel='apple-touch-icon-precomposed'
-    href={`${Astro.site}apple-touch-icon.png`}
+    href={new URL('apple-touch-icon.png', Astro.site)}
   />
-  <!-- iPhone, iPod e Android 2.2+ -->
-  <link
-    rel='shortcut icon'
-    type='image/x-icon'
-    href={`${Astro.site}favicon.ico`}
-  />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 
   <!-- Open Graph -->
-  <meta property='og:type' content='website' />
-  <meta property='og:url' content={Astro.url} />
+  <meta property='og:type' content={type} />
+  <meta property='og:site_name' content={siteName} />
+  <meta property='og:locale' content={locale === 'es' ? 'es_ES' : 'en_US'} />
+  <meta
+    property='og:locale:alternate'
+    content={alternateLocale === 'es' ? 'es_ES' : 'en_US'}
+  />
+  <meta property='og:url' content={canonical} />
   <meta property='og:title' content={title} />
   <meta property='og:description' content={description} />
   <meta property='og:image' content={ogImage} />
-  <meta property='og:logo' content={`${Astro.site}favicon.ico`} />
 
   <!-- Twitter -->
   <meta property='twitter:card' content='summary_large_image' />
-  <meta property='twitter:url' content={Astro.url} />
+  <meta property='twitter:site' content='@AdrianlvarezAl1' />
+  <meta property='twitter:creator' content='@AdrianlvarezAl1' />
+  <meta property='twitter:url' content={canonical} />
   <meta property='twitter:title' content={title} />
   <meta property='twitter:description' content={description} />
   <meta property='twitter:image' content={ogImage} />
@@ -82,36 +95,18 @@ const ogImage = image ? image.src : `${Astro.site}/${lang}/og-image.png`
   <link
     rel='alternate'
     type='application/rss+xml'
-    title="Your Site's Title"
-    href={new URL('rss.xml', Astro.site)}
+    title='Adrian Alvarez — RSS'
+    href='/rss.xml'
   />
 
   <!-- Schema -->
-  <Fragment
-    set:html={ld
-      ? `<script type='application/ld+json'>${ld}</script>`
-      : `<script type='application/ld+json'>
   {
-    "@context": "https://schema.org",
-    "@type": "WebDevelopment",
-    "name": "Adrian Alvarez",
-    "description": "Senior Full-stack developer with a frontend heart and a strong focus on performance, CRO, and user-centered design. I specialize in building fast, accessible, conversion-driven websites and SaaS platforms using React, Next.js, Astro, and Sanity.",
-    "image": "${Astro.site}${lang}/og-image.jpg",
-    "logo": "${Astro.site}/apple-touch-icon.png",
-    "parentOrganization": {
-      "@type": "OnlineBusiness",
-      "name": "Adrian Alvarez Web Development",
-      "url": "${Astro.site}"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Spain",
-      "addressLocality": "Marbella"
-    },
-    "foundingDate": "2019-10-24"
+    ld && (
+      <Fragment
+        set:html={`<script type='application/ld+json'>${ld}</script>`}
+      />
+    )
   }
-</script>`}
-  />
 
   <!-- Google tag (gtag.js) -->
   <script

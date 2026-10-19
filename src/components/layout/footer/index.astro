@@ -3,25 +3,29 @@ import { getLangFromLocale } from '@/i18n/utils'
 import Field from './FooterField.astro'
 import { getSnippetCounts } from '@/lib/fetchers'
 import { Icons } from '@/components/icons/icons'
+import { USER_DATA } from '@/constants/site-data'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 // I18N
 const lang = getLangFromLocale(Astro.currentLocale)
 
 // CONST
+const year = new Date().getFullYear()
 const date =
   lang === 'en'
     ? new Date().toLocaleDateString('en-US', { dateStyle: 'short' })
     : new Date().toLocaleDateString('es-ES', { dateStyle: 'short' })
 
 const snippetsCounts = await getSnippetCounts(lang)
+const linkedIn = USER_DATA.social.find((social) => social.icon === 'linkedIn')
 
-const stack = ['astro@7.3.1', 'tailwindcss@4.3.3', 'preact@10.29.8']
+const stack = ['astro@7.3.2', 'tailwindcss@4.3.3', 'preact@10.29.8']
 const analytics = ['Vercel Analytics', 'Google Analytics']
 ---
 
-<footer class='max-w-screen overflow-x-clip px-2 group screen-line-before'>
+<footer class='max-w-screen overflow-x-clip px-2 screen-line-before'>
   <div
-    class='mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl'
+    class='mx-auto border-x border-edge group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl'
   >
     <div class='relative'>
       <div
@@ -29,61 +33,54 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
       >
         <span class='font-bold font-pixel text-xl'>AAA</span>
         <span class='font-sans text-muted-foreground'>
-          Adrian alvarez Alonso Portfolio 2024. All rights reserved.
+          © {year} Adrián Álvarez. All rights reserved.
         </span>
       </div>
 
-      <dl class='grid grid-cols-2 gap-px font-mono md:grid-cols-4'>
-        <Field label='Crafted by' className='border-r'>
+      <dl class='grid grid-cols-2 gap-px bg-edge font-mono md:grid-cols-4'>
+        <Field label='Crafted by'>
           <a
             class='link-underline'
-            href='https://www.linkedin.com/in/adrian-nano-alvarez'
+            href={linkedIn?.href}
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
           >
             @adrian
           </a>
         </Field>
 
-        <Field label='Build' className='border-r line-clamp-1'>
-          <div class='flex items-center gap-2'>
-            <div
-              class='bg-green-600 size-3 rounded-full animate-pulse flex items-center justify-center'
-            >
-              <div class='bg-green-400 size-1.5 rounded-full'></div>
-            </div>
-            1dd603981...
-          </div>
+        <Field label='Build'>
+          <span class='text-muted-foreground'>static build</span>
         </Field>
 
-        <Field label='Date' className='border-r'>
+        <Field label='Date'>
           <time datetime={date}>{date}</time>
         </Field>
 
         <Field label='Registry'>{snippetsCounts} snippets</Field>
 
-        <Field label='Deployed on' className='border-r'>
+        <Field label='Deployed on'>
           <span class='font-sans' aria-hidden> ▲ </span>
           <span>Vercel</span>
         </Field>
 
-        <Field label='Source code' className='border-r'>
+        <Field label='Source code'>
           <a
             class='link-underline'
             href='https://github.com/N4N1T0/portfolio_2.0'
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
           >
             GitHub
           </a>
         </Field>
 
-        <Field label='License' className='border-r'>
+        <Field label='License'>
           <a
             class='link-underline'
             href='https://github.com/N4N1T0/portfolio_2.0'
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
           >
             MIT License
           </a>
@@ -94,19 +91,19 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
             class='link-underline'
             href='https://vercel.com/blog/introducing-geist-pixel'
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
           >
             Geist Pixel
           </a></Field
         >
 
-        <Field className='col-span-2 border-r border-b-0' label='Stack'>
+        <Field className='col-span-2' label='Stack'>
           <ul class='flex flex-col gap-0.5'>
             {stack.map((entry) => <li>{entry}</li>)}
           </ul>
         </Field>
 
-        <Field className='col-span-2 border-b-0' label='Analytics'>
+        <Field className='col-span-2' label='Analytics'>
           <ul class='flex flex-col gap-0.5'>
             {analytics.map((entry) => <li>{entry}</li>)}
           </ul>
@@ -120,7 +117,7 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
       class='flex items-center gap-3 px-4 py-3 text-muted-foreground screen-line-after'
     >
       <a
-        href='/'
+        href={getRelativeLocaleUrl(lang, '/')}
         class='mr-auto text-muted-foreground transition-[color] hover:text-foreground'
         aria-label='Home'
       >
@@ -129,10 +126,10 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
 
       <div class='divide-x flex items-center gap-3'>
         <a
-          class='flex items-center transition-[color] hover:text-foreground pr-4'
-          href='https://www.linkedin.com/in/adrian-nano-alvarez/'
+          class='flex items-center pr-4 transition-[color] hover:text-foreground'
+          href={linkedIn?.href}
           target='_blank'
-          rel='noopener'
+          rel='noopener noreferrer'
           aria-label='LinkedIn Profile'
         >
           <Icons.linkedIn class='size-5' />
@@ -141,7 +138,7 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
           class='flex items-center transition-[color] hover:text-foreground'
           href='https://www.dmca.com/ProtectionPro.aspx'
           target='_blank'
-          rel='noopener'
+          rel='noopener noreferrer'
           aria-label='DMCA.com Protection Status'
         >
           <Icons.dmca class='w-12 h-5' />
@@ -151,7 +148,8 @@ const analytics = ['Vercel Analytics', 'Google Analytics']
   </div>
 
   <h2
-    class='mb-[-2vw] text-[16vw] leading-none font-black tracking-tighter select-none md:text-[12vw] font-pixel uppercase text-muted-foreground opacity-10 mx-auto w-fit group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none'
+    class='mx-auto mb-[-2vw] w-fit text-[16vw] leading-none font-black tracking-tighter uppercase font-pixel text-muted-foreground opacity-10 transition-opacity duration-500 ease-in-out select-none hover:opacity-100 md:text-[12vw]'
+    aria-hidden='true'
   >
     AAA / N-9
   </h2>

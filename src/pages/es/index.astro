@@ -11,11 +11,15 @@ import Experience from '@/components/home/experiences/index.astro'
 import Projects from '@/components/projects/index.astro'
 import Certifications from '@/components/home/certifications/index.astro'
 import GithubContributions from '@/components/home/github-contributions/index.astro'
+import { generateHomeJsonLD } from '@/components/layout/head/jsonLD'
+
+const ld = generateHomeJsonLD('es')
 ---
 
 <MainLayout
-  description='Desarrollador Full-stack Senior con corazón frontend y un fuerte enfoque en rendimiento, CRO y diseño centrado en el usuario. Me especializo en crear sitios web y plataformas SaaS rápidos, accesibles y orientados a la conversión, usando React, Next.js, Astro y Sanity.'
-  title='Adrian Alvarez Portfolio'
+  description='Portafolio de Adrián Álvarez, desarrollador fullstack senior. Construyo APIs, interfaces y sistemas de datos en producción. Proyectos y artículos.'
+  title='Adrián Álvarez — Desarrollador Fullstack Senior'
+  ld={ld}
 >
   <Hero />
   <Separator />

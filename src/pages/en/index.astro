@@ -23,21 +23,17 @@ const ld = generateHomeJsonLD('en')
   ld={ld}
 >
   <Hero />
-  <Separator />
+  <Separator weight='strong' />
   <Overview />
-  <Separator />
   <GithubContributions />
-  <Separator />
   <SocialLinks />
-  <Separator />
+  <Separator weight='muted' />
   <About />
-  <Separator />
+  <Separator weight='muted' />
   <TechStack />
-  <Separator />
   <BlogList />
-  <Separator />
   <Experience />
-  <Separator />
+  <Separator weight='strong' />
   <Projects>
     <div
       class='bottom-1/6 right-1/2 -translate-x-96 mr-2 absolute md:flex gap-2 items-start hidden'
@@ -46,7 +42,5 @@ const ld = generateHomeJsonLD('en')
       <NoteArrow class='size-4 text-foreground rotate-132' />
     </div>
   </Projects>
-  <Separator />
   <Certifications />
-  <Separator className='screen-line-after' />
 </MainLayout>

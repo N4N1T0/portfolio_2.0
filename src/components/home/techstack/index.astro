@@ -10,9 +10,7 @@ import { Image } from 'astro:assets'
 ---
 
 <section id='techstack' class='section max-container relative'>
-  <div
-    class='[--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75 px-5 py-10'
-  >
+  <div class='bg-background px-5 py-10'>
     <ul class='flex flex-wrap gap-5 select-none'>
       {
         TECH_STACK.map(({ href, title, key }: (typeof TECH_STACK)[0]) => {

@@ -8,31 +8,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
 ---
 
 <div class='screen-line-after flex border-x border-edge max-container'>
-  <div class='shrink-0 border-r border-edge'>
-    <div class='mx-0.5 my-0.75'>
-      <Image
-        class='size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40'
-        alt={`${USER_DATA.displayName}'s avatar`}
-        src={USER_DATA.avatar}
-        width={512}
-        height={512}
-        quality={100}
-        priority
-      />
-    </div>
-  </div>
-
-  <div class='flex flex-1 flex-col'>
-    <div
-      class='hidden md:flex h-full grow items-end pb-1 pl-4 bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56 sm:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)]'
-    >
-      <div class='text-xs select-none text-muted-foreground/50 w-full'>
-        <code class='block whitespace-pre'>
-          {`// TODO: Something cool in here ;)`}
-        </code>
-      </div>
-    </div>
-
+  <div class='flex-1'>
     <div class='sm:border-t border-edge'>
       <h1 class='flex items-center pl-4 text-3xl font-semibold'>
         {USER_DATA.displayName}
@@ -42,7 +18,7 @@ const lang = getLangFromLocale(Astro.currentLocale)
         class='h-16 border-t border-edge py-1 pl-4 sm:h-auto overflow-hidden'
       >
         <span
-          class='hero-flip-sentences text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
+          class='text-sm text-balance text-muted-foreground select-none h-fit flex flex-col justify-center my-auto'
         >
           {USER_DATA.sentences[lang]}
         </span>

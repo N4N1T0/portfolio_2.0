@@ -1,25 +1,53 @@
-# adrian-alvarez.dev
+# adrian-alvarez.com
 
-> adrian-alvarez.dev is my minimal portfolio website, showcasing my work and experience as a Front-end Developer & marketing strategist
+> Bilingual portfolio of Adrián Álvarez, Senior Fullstack Engineer based in Asturias, Spain. I build APIs, interfaces and data systems in production with TypeScript, Node.js, React and Astro. The site is available in Spanish (default) and English.
 
-## Blog
-- (https://www.adrian-alvarez.dev/es/blog/habilidades-de-busqueda-de-orama-e-ia/)[Búsqueda e IA: El Dúo Imbatible para Aumentar Ingresos en eCommerce]
-- (https://www.adrian-alvarez.dev/es/blog/introducion-a-redsys-en-nextjs-15-parte-2/)[Integrando Redsys con Next.js 15 – Parte 2]
-- (https://www.adrian-alvarez.dev/es/blog/como-extraer-productos-para-un-ecommerce-con-sanity-cms-y-cheerio/)[Cómo Extraer Productos para un E-commerce con Sanity CMS y Cheerio]
-- (https://www.adrian-alvarez.dev/es/blog/introducion-a-redsys-en-nextjs-15/)[Introducción a la Integración de Redsys con Next.js 15]
-- (https://www.adrian-alvarez.dev/es/blog/tina-un-impresionante-headless-cms/)[TinaCMS: Un CMS Headless con Control de Versiones en Git]
-- (https://www.adrian-alvarez.dev/es/blog/usando-notion-para-mejorar-tus-royectos/)[Usando Notion para Mejorar Tus Proyectos]
-- (https://www.adrian-alvarez.dev/es/blog/astro-el-futuro-del-desarrollo-web/)[Astro 5.0 el Futuro del Desarrollo Web]
-- (https://www.adrian-alvarez.dev/es/blog/8-tips-para-optimizar-ecommerce/)[8 Tips para optimizar tu Pagina de Productos]
-- (https://www.adrian-alvarez.dev/es/blog/estrategias-narrativas/)[Estrategias Narrativas]
-- (https://www.adrian-alvarez.dev/es/blog/gestion-en-scrum/)[Gestionando Proyectos Digitales con Scrum]
-- (https://www.adrian-alvarez.dev/es/blog/dise%C3%B1o-marketing-digital/)[El Poder del Diseño Gráfico en el Marketing]
-- (https://www.adrian-alvarez.dev/es/blog/optimizacion-seo/)[Optimización SEO]
-- (https://www.adrian-alvarez.dev/es/blog/guia-dise%C3%B1o-responsive/)[Diseño Responsivo en Sitios Web]
+## About
+
+- Name: Adrián Álvarez Alonso
+- Role: Senior Fullstack Engineer at Kreitech
+- Location: Asturias, Spain
+- Languages: Spanish (native), English (professional)
+- Contact: adrian.alvarezalonso1991@gmail.com
+- LinkedIn: https://www.linkedin.com/in/adrian-alvarez-alonso-front-end-developer
+- GitHub: https://github.com/N4N1T0
+- dev.to: https://dev.to/n4n1t0
+- X: https://x.com/AdrianlvarezAl1
+
+## Pages
+
+- Portfolio: https://www.adrian-alvarez.com/es/
+- Projects: https://www.adrian-alvarez.com/es/projects/
+- Blog: https://www.adrian-alvarez.com/es/blog/
+- Snippets: https://www.adrian-alvarez.com/es/snippets/
 
 ## Projects
-- (https://www.adrian-alvarez.dev/en/projects/yogin/)[Yog-IN]
-- (https://www.adrian-alvarez.dev/en/projects/interprefy/)[Interprefy]
-- (https://www.adrian-alvarez.dev/en/projects/enka-cosmetics/)[Enka Cosmetics]
-- (https://www.adrian-alvarez.dev/en/projects/termogar/)[Termogar]
-- (https://www.adrian-alvarez.dev/en/projects/lola-barcelona/)[Lola Barcelona]
+
+- Yog-IN: https://www.adrian-alvarez.com/es/projects/yogin/
+- Interprefy: https://www.adrian-alvarez.com/es/projects/interprefy/
+- Lola Barcelona: https://www.adrian-alvarez.com/es/projects/lola-barcelona/
+- Termogar: https://www.adrian-alvarez.com/es/projects/termogar/
+- The Forge: https://www.adrian-alvarez.com/es/projects/the-forge/
+- Nano Studio: https://www.adrian-alvarez.com/es/projects/nano-studio/
+
+## Blog
+
+- 8 tips para optimizar tu página de productos: https://www.adrian-alvarez.com/es/blog/8-tips-para-optimizar-ecommerce/
+- Astro Actions y JavaScript vanilla para formularios: https://www.adrian-alvarez.com/es/blog/astro-actions-y-vanilla-para-formularios/
+- Astro 5.0, el futuro del desarrollo web: https://www.adrian-alvarez.com/es/blog/astro-el-futuro-del-desarrollo-web/
+- Automatiza tu feed de Google Merchant Center con Node.js: https://www.adrian-alvarez.com/es/blog/automatiza-tu-feed-google-merchant-nodejs/
+- Claude Code con cualquier modelo: OpenRouter como gateway: https://www.adrian-alvarez.com/es/blog/claude-code-con-cualquier-modelo-openrouter/
+- Cómo extraer productos para un e-commerce con Sanity CMS y Cheerio: https://www.adrian-alvarez.com/es/blog/como-extraer-productos-para-un-ecommerce-con-sanity-cms-y-cheerio/
+- El poder del diseño gráfico en el marketing: https://www.adrian-alvarez.com/es/blog/diseño-marketing-digital/
+- El rate limiter era la caída: https://www.adrian-alvarez.com/es/blog/el-rate-limiter-era-la-caida/
+- Escribir cada componente dos veces para que el preview no mienta: https://www.adrian-alvarez.com/es/blog/escribir-cada-componente-dos-veces/
+- Estrategias narrativas: https://www.adrian-alvarez.com/es/blog/estrategias-narrativas/
+- Gestionando proyectos digitales con Scrum: https://www.adrian-alvarez.com/es/blog/gestion-en-scrum/
+- Diseño responsive en sitios web: https://www.adrian-alvarez.com/es/blog/guía-diseño-responsive/
+- Búsqueda e IA: https://www.adrian-alvarez.com/es/blog/habilidades-de-busqueda-de-orama-e-ia/
+- Integrando Redsys con Next.js 15, parte 2: https://www.adrian-alvarez.com/es/blog/introducion-a-redsys-en-nextjs-15-parte-2/
+- Introducción a la integración de Redsys con Next.js 15: https://www.adrian-alvarez.com/es/blog/introducion-a-redsys-en-nextjs-15/
+- Optimización SEO: https://www.adrian-alvarez.com/es/blog/optimizacion-seo/
+- Puntuar una liga fantasy con datos que aún no han llegado: https://www.adrian-alvarez.com/es/blog/puntuar-con-datos-que-no-han-llegado/
+- TinaCMS, un CMS headless con control de versiones en Git: https://www.adrian-alvarez.com/es/blog/tina-un-impresionante-headless-cms/
+- Usando Notion para mejorar tus proyectos: https://www.adrian-alvarez.com/es/blog/usando-notion-para-mejorar-tus-royectos/

@@ -10,13 +10,10 @@ const { label, className } = Astro.props
 ---
 
 <div
-  class={cn(
-    'flex min-w-0 flex-col gap-1 bg-background px-4 py-3 border-b',
-    className
-  )}
+  class={cn('flex min-w-0 flex-col gap-1 bg-background px-4 py-3', className)}
 >
   <dt
-    class='text-[0.625rem]/4 font-medium tracking-wider text-muted-foreground uppercase'
+    class='text-micro/4 font-medium tracking-wider text-muted-foreground uppercase'
   >
     {label}
   </dt>

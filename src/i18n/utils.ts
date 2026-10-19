@@ -38,12 +38,13 @@ export function changeLangFromUrl(
   lang: string,
   counterpartId?: string | undefined
 ) {
+  const target = new URL(url)
   const newLang = lang === 'es' ? 'en' : 'es'
-  const splitUrl = url.pathname.split('/')
+  const splitUrl = target.pathname.split('/')
   splitUrl[1] = newLang
   if (counterpartId) {
     splitUrl[3] = counterpartId.split('/').filter(Boolean)[1]
   }
-  url.pathname = splitUrl.join('/')
-  return url.toString()
+  target.pathname = splitUrl.join('/')
+  return target.toString()
 }

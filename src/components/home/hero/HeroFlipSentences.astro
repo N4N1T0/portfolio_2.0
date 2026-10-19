@@ -18,9 +18,13 @@
     const sentences = JSON.parse(el.dataset.sentences || '[]')
     let current: number = 0
     let intervalId: number | null = null
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
 
     const updateSentence = () => {
       el.textContent = sentences[current]
+      if (reduceMotion) return
       animate(el, {
         translateY: [10, 0],
         opacity: [0, 1],
@@ -31,6 +35,7 @@
 
     const start = () => {
       updateSentence()
+      if (reduceMotion) return
       intervalId = window.setInterval(() => {
         current = (current + 1) % sentences.length
         updateSentence()

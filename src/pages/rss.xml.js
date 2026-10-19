@@ -4,9 +4,9 @@ import rss from '@astrojs/rss'
 export async function GET(context) {
   const blog = await getPosts('en')
   return rss({
-    title: 'Adrian Alvarez Blog',
+    title: 'Adrián Álvarez — Blog',
     description:
-      'Cuban-born and self-taught, I bring a unique blend of passion and proficiency to development and design. Obsessed with performance and dedicated to crafting clean, impactful designs, my work is a testament to the fusion of skill and creativity.',
+      'Writing on fullstack development, APIs, data, performance and product. Technical decisions and trade-offs, without the fluff.',
     site: context.site,
     stylesheet: '/rss/styles.xsl',
     items: blog.map((post) => ({
@@ -14,7 +14,7 @@ export async function GET(context) {
       pubDate: post.data.date,
       description: post.data.excerpt,
       author: post.data.author,
-      link: `/en/blog/${post.id}`
+      link: `/en/blog/${post.id}/`
     }))
   })
 }

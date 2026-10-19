@@ -16,7 +16,7 @@ const { items, className } = Astro.props
     <ul class={cn('flex flex-wrap gap-1.5 pt-2 pl-9', className)}>
       {items.map((item) => (
         <li class='flex'>
-          <span class='inline-flex items-center rounded-lg border bg-muted px-1.5 py-0.5 font-pixel text-xs text-foreground'>
+          <span class='inline-flex items-center rounded-lg border bg-muted px-1.5 py-0.5 font-pixel text-xs text-foreground dark:bg-secondary'>
             {item}
           </span>
         </li>

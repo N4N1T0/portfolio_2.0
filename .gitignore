@@ -25,3 +25,13 @@ pnpm-debug.log*
 
 # vercel
 .vercel/
+
+# local agent skills (installed per machine, not committed)
+.claude/skills/
+
+# impeccable live mode runtime state (config is committed)
+.impeccable/live/*
+!.impeccable/live/config.json
+
+# refine workflow scratch
+refine/pr-body.md

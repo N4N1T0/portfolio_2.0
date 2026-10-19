@@ -20,10 +20,11 @@ const lang = getLangFromLocale(Astro.currentLocale)
       return (
         <a
           class={cn(
-            'text-sm font-medium text-foreground/50 hover:text-foreground transition-colors ease-in duration-200',
-            isActive && 'text-foreground underline'
+            'text-sm font-medium text-muted-foreground transition-colors ease-in duration-200 hover:text-foreground',
+            isActive && 'text-foreground underline underline-offset-4'
           )}
           href={getRelativeLocaleUrl(lang, href)}
+          aria-current={isActive ? 'page' : undefined}
         >
           {title[lang]}
         </a>

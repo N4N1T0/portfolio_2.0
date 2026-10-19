@@ -11,18 +11,22 @@ interface Props {
   description?: string | undefined
   image?: ImageMetadata
   ld?: string
+  noindex?: boolean
 }
 
 // PROPS
 const {
-  title = 'Default Title',
-  description = 'Default description for the website',
+  title = 'Adrian Alvarez Portfolio',
+  description = 'Adrian Alvarez, fullstack engineer. APIs, interfaces and data systems in production.',
   image,
-  ld = 'summary_large_image'
+  ld,
+  noindex = false
 } = Astro.props
 
 // I18N
 const lang = Astro.currentLocale
+const skipLabel =
+  lang === 'en' ? 'Skip to main content' : 'Saltar al contenido principal'
 ---
 
 <!doctype html>
@@ -33,19 +37,23 @@ const lang = Astro.currentLocale
     lang={lang}
     image={image}
     ld={ld}
+    noindex={noindex}
   />
   <body class='relative antialiased'>
+    <a
+      href='#main'
+      class='sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-100 focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:outline-2 focus:outline-ring'
+    >
+      {skipLabel}
+    </a>
     <Header />
-    <main class='max-w-screen overflow-x-hidden px-2 mt-12'>
+    <main
+      id='main'
+      class='max-w-screen overflow-x-hidden px-2 mt-12'
+      tabindex='-1'
+    >
       <slot />
     </main>
     <Footer />
-    <div class='pointer-events-none fixed inset-x-0 bottom-0 z-50' aria-hidden>
-      <div
-        class='h-20 bg-linear-to-b from-transparent to-background mask-linear-[to_top,var(--background)_25%,transparent] backdrop-blur-[1px]'
-      >
-      </div>
-      <div class='bg-background pb-[env(safe-area-inset-bottom,0)]'></div>
-    </div>
   </body>
 </html>

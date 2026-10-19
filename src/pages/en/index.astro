@@ -12,11 +12,15 @@ import Projects from '@/components/projects/index.astro'
 import Certifications from '@/components/home/certifications/index.astro'
 import GithubContributions from '@/components/home/github-contributions/index.astro'
 import { Note, NoteArrow } from '@/components/ui/floating-notes'
+import { generateHomeJsonLD } from '@/components/layout/head/jsonLD'
+
+const ld = generateHomeJsonLD('en')
 ---
 
 <MainLayout
-  description='Senior Full-stack developer with a frontend heart and a strong focus on performance, CRO, and user-centered design. I specialize in building fast, accessible, conversion-driven websites and SaaS platforms using React, Next.js, Astro, and Sanity.'
-  title='Adrian Alvarez Portfolio'
+  description='Portfolio of Adrián Álvarez, senior fullstack engineer. I build APIs, interfaces and data systems in production. Projects and writing.'
+  title='Adrián Álvarez — Senior Fullstack Engineer'
+  ld={ld}
 >
   <Hero />
   <Separator />

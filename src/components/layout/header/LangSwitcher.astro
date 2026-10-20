@@ -2,17 +2,17 @@
 import { buttonVariants } from '@/components/ui/utils'
 import { getLangFromLocale } from '@/i18n/utils'
 import { getCounterpartById } from '@/lib/fetchers'
-import { getIsBlogOrProject, getBlogOrProject } from '@/lib/utils'
+import { getBlogOrProject } from '@/lib/utils'
 
 let counterPartId = null
 
 const lang = getLangFromLocale(Astro.currentLocale)
-const isBlogOrProject = getIsBlogOrProject(Astro.url)
+const section = getBlogOrProject(Astro.url)
 
-if (!isBlogOrProject) {
-  const PageId = Astro.url.toString().split('/').filter(Boolean)[4]
-  const blogOrProject = getBlogOrProject(Astro.url)
-  counterPartId = await getCounterpartById(PageId, lang, blogOrProject)
+if (section) {
+  const pathArray = Astro.url.pathname.split('/').filter(Boolean)
+  const slug = pathArray[pathArray.length - 2]
+  counterPartId = await getCounterpartById(slug, lang, section)
 }
 ---
 

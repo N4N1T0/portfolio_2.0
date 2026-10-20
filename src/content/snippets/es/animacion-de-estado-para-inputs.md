@@ -5,7 +5,7 @@ preview: 'input-state-animation'
 icon: 'code'
 isNew: true
 comingSoon: false
-counterpartId: es/input-animation-on-state
+counterpartId: en/input-animation-on-state
 ---
 
 Las animaciones pequeñas mejoran mucho la UX cuando se usan bien. Un patrón habitual es la **animación de "shake" en inputs inválidos** y un **feedback de éxito en inputs válidos**, que dan al usuario una señal visual rápida del estado del campo.
@@ -60,24 +60,24 @@ Define las animaciones dentro de `@layer utilities` para que encajen con tu setu
 **Success pop (estado válido):**
 
 ```css
-  @keyframes success-pop {
-    0% {
-      border-color: #d1fae5;
-      box-shadow: 0 0 0px transparent;
-    }
-    50% {
-      border-color: #22c55e;
-      box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); /* resplandor verde suave */
-    }
-    100% {
-      border-color: #22c55e;
-      box-shadow: 0 0 0px transparent;
-    }
+@keyframes success-pop {
+  0% {
+    border-color: #d1fae5;
+    box-shadow: 0 0 0px transparent;
   }
+  50% {
+    border-color: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); /* resplandor verde suave */
+  }
+  100% {
+    border-color: #22c55e;
+    box-shadow: 0 0 0px transparent;
+  }
+}
 
-  .aria-valid\:animate-border-success[aria-valid='true'] {
-    animation: success-pop 0.8s ease-out forwards;
-  }
+.aria-valid\:animate-border-success[aria-valid='true'] {
+  animation: success-pop 0.8s ease-out forwards;
+}
 ```
 
 Estas animaciones son **ligeras** porque usan:
@@ -93,8 +93,7 @@ Estas animaciones son **ligeras** porque usan:
 En vez de clases propias como `error` o `invalid`, usamos **atributos ARIA**:
 
 ```html
-aria-invalid="true"
-aria-valid="true"
+aria-invalid="true" aria-valid="true"
 ```
 
 Estos atributos importan porque:
@@ -107,12 +106,12 @@ Ejemplo de componente input:
 ```tsx
 <input
   type={type}
-  data-slot="input"
+  data-slot='input'
   className={cn(
-    "h-12 w-full rounded-lg border border-opacity-neutral-800-60 bg-opacity-neutral-white-6 px-4 py-3 text-base text-neutrals-white shadow-xs outline-none transition-[color,box-shadow]",
-    "focus:border-primary-100",
-    "aria-invalid:animate-shake-x",
-    "aria-valid:animate-border-success",
+    'border-opacity-neutral-800-60 bg-opacity-neutral-white-6 text-neutrals-white h-12 w-full rounded-lg border px-4 py-3 text-base shadow-xs transition-[color,box-shadow] outline-none',
+    'focus:border-primary-100',
+    'aria-invalid:animate-shake-x',
+    'aria-valid:animate-border-success',
     className
   )}
   {...props}
@@ -157,8 +156,7 @@ Pero **las utilidades personalizadas no se reconocen automáticamente dentro de 
 Es decir, Tailwind no generará algo como:
 
 ```html
-aria-invalid:animate-shake-x
-aria-valid:animate-border-success
+aria-invalid:animate-shake-x aria-valid:animate-border-success
 ```
 
 para tus animaciones a menos que **definas los selectores explícitamente** en tu CSS:
@@ -187,8 +185,7 @@ Los lectores de pantalla pueden detectar si un input es inválido o válido y an
 Ejemplo:
 
 ```html
-<input aria-invalid="true" />
-<input aria-valid="true" />
+<input aria-invalid="true" /> <input aria-valid="true" />
 ```
 
 Las tecnologías de asistencia entienden el **estado del campo**.
@@ -239,8 +236,7 @@ Con esta configuración:
 Todo disparado por atributos ARIA:
 
 ```html
-aria-invalid="true"
-aria-valid="true"
+aria-invalid="true" aria-valid="true"
 ```
 
 ---

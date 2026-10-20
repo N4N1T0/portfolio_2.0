@@ -19,7 +19,7 @@ export const getStaticPaths = (async () => {
 const {
   id,
   rendered,
-  data: { title, excerpt }
+  data: { title, excerpt, counterpartId }
 } = Astro.props
 const content = rendered
 const PreviewComponent = getPreviewComponent(Astro.props)
@@ -28,16 +28,14 @@ const PreviewComponent = getPreviewComponent(Astro.props)
 const ld = generateSnippetJsonLD(Astro.props, 'es')
 ---
 
-<SnippetsLayout snippet={Astro.props} ld={ld}>
-  <section
-    class='min-h-[50dvh] max-container mb-6 flex justify-center items-center relative'
-  >
+<SnippetsLayout snippet={Astro.props} ld={ld} type='article' counterpartId={counterpartId}>
+  <section class='max-container mb-6 relative'>
     <PreviewComponent />
   </section>
 
   <section
     id={id}
-    class='screen-line-before screen-line-after py-2 text-5xl font-pixel flex justify-between items-center'
+    class='screen-line-before screen-line-after py-2 text-lg font-medium flex justify-between items-center'
   >
     <h1>
       {title}
@@ -53,7 +51,7 @@ const ld = generateSnippetJsonLD(Astro.props, 'es')
     </p>
   </section>
 
-  <section class='custom-prose max-w-none px-4 pb-4'>
+  <section class='custom-prose max-container px-4 pb-4'>
     <div set:html={content?.html} />
   </section>
 </SnippetsLayout>

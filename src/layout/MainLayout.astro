@@ -12,6 +12,8 @@ interface Props {
   image?: ImageMetadata
   ld?: string
   noindex?: boolean
+  type?: 'website' | 'article'
+  counterpartId?: string
 }
 
 // PROPS
@@ -20,7 +22,9 @@ const {
   description = 'Adrian Alvarez, fullstack engineer. APIs, interfaces and data systems in production.',
   image,
   ld,
-  noindex = false
+  noindex = false,
+  type = 'website',
+  counterpartId
 } = Astro.props
 
 // I18N
@@ -38,6 +42,8 @@ const skipLabel =
     image={image}
     ld={ld}
     noindex={noindex}
+    type={type}
+    counterpartId={counterpartId}
   />
   <body class='relative antialiased'>
     <a

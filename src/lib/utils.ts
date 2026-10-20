@@ -31,15 +31,21 @@ export const formatDate = (date: string) => {
 export const getIsBlogOrProject = (url: URL) => {
   const pathname = url.pathname
   const pathArray = pathname.split('/')
-  return pathArray[1] === 'blog' || pathArray[1] === 'projects'
+  return (
+    pathArray[1] === 'blog' ||
+    pathArray[1] === 'projects' ||
+    pathArray[1] === 'snippets'
+  )
 }
 
 /**
  * Gets the section type from URL path
  * @param url - URL object to check
- * @returns 'blog' or 'projects' if path matches, undefined otherwise
+ * @returns 'blog', 'projects' or 'snippets' if path matches, undefined otherwise
  */
-export const getBlogOrProject = (url: URL): 'blog' | 'projects' | undefined => {
+export const getBlogOrProject = (
+  url: URL
+): 'blog' | 'projects' | 'snippets' | undefined => {
   const pathname = url.pathname
   const pathArray = pathname.split('/')
   const blogOrProject = pathArray[2]
@@ -49,6 +55,8 @@ export const getBlogOrProject = (url: URL): 'blog' | 'projects' | undefined => {
       return 'blog'
     case 'projects':
       return 'projects'
+    case 'snippets':
+      return 'snippets'
     default:
       return undefined
   }

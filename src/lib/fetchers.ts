@@ -101,6 +101,17 @@ async function getProjectById(
   return project
 }
 
+async function getSnippetById(
+  id: string
+): Promise<CollectionEntry<'snippets'> | undefined> {
+  const snippets = await getCollection('snippets')
+
+  const snippet = snippets.find((snippet) => snippet.id === id)
+
+  if (!snippet) return undefined
+  return snippet
+}
+
 /**
  * Retrieves the counterpart blog post ID for a given blog post ID.
  *
@@ -111,26 +122,32 @@ async function getProjectById(
 export async function getCounterpartById(
   id: string,
   lang: 'es' | 'en',
-  blogOrProject: 'blog' | 'projects' | undefined
+  section: 'blog' | 'projects' | 'snippets' | undefined
 ): Promise<string | undefined> {
-  let actualPostOrProject: CollectionEntry<'blog' | 'projects'> | undefined =
-    undefined
+  let actualEntry:
+    | CollectionEntry<'blog'>
+    | CollectionEntry<'projects'>
+    | CollectionEntry<'snippets'>
+    | undefined = undefined
 
-  if (blogOrProject === 'blog') {
-    actualPostOrProject = await getPostById(`${lang}/${id}`)
-  } else {
-    actualPostOrProject = await getProjectById(`${lang}/${id}`)
+  if (section === 'blog') {
+    actualEntry = await getPostById(`${lang}/${id}`)
+  } else if (section === 'projects') {
+    actualEntry = await getProjectById(`${lang}/${id}`)
+  } else if (section === 'snippets') {
+    actualEntry = await getSnippetById(`${lang}/${id}`)
   }
 
-  if (!actualPostOrProject) return undefined
+  if (!actualEntry) return undefined
 
-  const counterpartBlog = await getPostById(
-    actualPostOrProject.data.counterpartId as string
-  )
+  const counterpart =
+    section === 'snippets'
+      ? await getSnippetById(actualEntry.data.counterpartId as string)
+      : await getPostById(actualEntry.data.counterpartId as string)
 
-  if (!counterpartBlog) return undefined
+  if (!counterpart) return undefined
 
-  return counterpartBlog.id
+  return counterpart.id
 }
 
 /**

@@ -7,16 +7,18 @@ import Navigation from '@/components/snippets/Navigation.astro'
 interface Props {
   snippet: CollectionEntry<'snippets'>
   ld: string
+  type?: 'website' | 'article'
+  counterpartId?: string
 }
 
-const { snippet, ld } = Astro.props
+const { snippet, ld, type = 'website', counterpartId } = Astro.props
 const {
   id,
   data: { title, excerpt }
 } = snippet
 ---
 
-<MainLayout title={title} description={excerpt} ld={ld}>
+<MainLayout title={title} description={excerpt} ld={ld} type={type} counterpartId={counterpartId}>
   <Separator className='screen-line-after' />
   <Navigation snippetId={id} />
   <Separator />

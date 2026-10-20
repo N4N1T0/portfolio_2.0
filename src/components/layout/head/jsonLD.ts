@@ -138,16 +138,29 @@ export const generateSnippetJsonLD = (
   snippet: CollectionEntry<'snippets'>,
   lang: 'es' | 'en'
 ) => {
+  const url = `${SITE_URL}/${lang}/snippets/${snippet.id}/`
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    '@id': `${SITE_URL}/${lang}/snippets/${snippet.id}/`,
-    url: `${SITE_URL}/${lang}/snippets/${snippet.id}/`,
-    name: snippet.data.title,
-    description: snippet.data.excerpt,
-    inLanguage: lang,
-    author: { '@id': `${SITE_URL}/#person` },
-    publisher: { '@id': `${SITE_URL}/#person` }
+    '@graph': [
+      {
+        '@type': 'TechArticle',
+        '@id': `${url}#article`,
+        url,
+        name: snippet.data.title,
+        description: snippet.data.excerpt,
+        inLanguage: lang,
+        author: { '@id': `${SITE_URL}/#person` },
+        publisher: { '@id': `${SITE_URL}/#organization` }
+      },
+      {
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Adrian Alvarez',
+        url: `${SITE_URL}/${lang}/`
+      },
+      websiteNode(lang),
+      personNode(lang)
+    ]
   })
 }
 
